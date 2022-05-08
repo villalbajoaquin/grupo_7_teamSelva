@@ -30,3 +30,5 @@ En mis ratos libres me interesa la historia.
 - link a los wireframes:
 
 https://wireframe.cc/pro/pp/d4703015a543399
+
+https://wireframe.cc/pro/edit/543399
