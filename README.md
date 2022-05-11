@@ -8,25 +8,24 @@ tiempo para hacer largas filas a la hora de comprar un ticket y prefieren la com
 
 - Integrantes del grupo
 
-Luis Kislo: 31 años, trabajo en un multimedio de comunicación operando diferentes tipos cámaras de filmación y también grúa, soy futuro desarollador
-full stack, actualmente estudiando.
+[Luis Kislo](https://github.com/kislo-Luis): 31 años, trabajo en un multimedio de comunicación operando diferentes tipos cámaras de filmación y
+también grúa, soy futuro desarollador full stack, actualmente estudiando.
 
-Uriel Perren: estudio Mkt y Publicidad Digital y soy jugador de básquet. Disfruto de las series y las películas de cultura como Donnie Darko.
-Soy amante del Sneaker Game y de la moda.
+[Uriel Perren](https://github.com/Urieluno): estudio Mkt y Publicidad Digital y soy jugador de básquet. Disfruto de las series y las películas
+de cultura como Donnie Darko. Soy amante del Sneaker Game y de la moda.
 
-Walter Vegas: 18 años estudio técnico aeronáutico, programación y tengo bases en marketing digital. Me gusta coleccionar todo tipo de cosas.
+[Walter Vegas](https://github.com/vegaswalter): 18 años estudio técnico aeronáutico, programación y tengo bases en marketing digital. Me gusta
+coleccionar todo tipo de cosas.
 
-Joaquin Villalba: 20 años, Maestro mayor de obras, estudiante universitario y programador. Me gusta el futbol, soy hincha de San Lorenzo.
-En mis ratos libres me interesa la historia.
+[Joaquin Villalba](https://github.com/villalbajoaquin): 20 años, Maestro mayor de obras, estudiante universitario y programador. Me gusta el futbol,
+soy hincha de San Lorenzo. En mis ratos libres me interesa la historia.
 
 - Lista de referentes de inspiración:
 
-1. https://www.hbomax.com/ar/es
-2. https://www.tuentrada.com/
-3. https://www.ticketek.com.ar/
-4. http://www.ticketportal.com.ar/
-5. https://imaxdelconocimiento.com/
+1. [HBO Max](https://www.hbomax.com/ar/es)
+2. [tuentrada.com](https://www.tuentrada.com/)
+3. [Ticketek](https://www.ticketek.com.ar/)
+4. [TicketPortal](http://www.ticketportal.com.ar/)
+5. [IMAX del Conocimiento](https://imaxdelconocimiento.com/)
 
-- link a los wireframes:
-
-https://wireframe.cc/pro/pp/d4703015a543399
+- [Wireframes](https://wireframe.cc/pro/pp/d4703015a543399)
