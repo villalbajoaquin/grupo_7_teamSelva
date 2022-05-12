@@ -28,4 +28,4 @@ soy hincha de San Lorenzo. En mis ratos libres me interesa la historia.
 4. [TicketPortal](http://www.ticketportal.com.ar/)
 5. [IMAX del Conocimiento](https://imaxdelconocimiento.com/)
 
-- [Wireframes](https://wireframe.cc/pro/pp/d4703015a543399)
+- Enlace a los [Wireframes](https://wireframe.cc/pro/pp/d4703015a543399)
