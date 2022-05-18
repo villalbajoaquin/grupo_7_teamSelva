@@ -1,39 +1,145 @@
+/* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Text&family=Roboto&display=swap');
 
+/* Bootstrap Icons */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css");
+
+/*  
+    Coolors palette:
+        Negro: #000
+        Verde oscuro: #132A13,
+        Verde: #31572C,
+        Verde claro: #4F772D,
+        Marfil verdoso: #90A955,
+        Marfil: #ECF39E,
+        Blanco: #fff,
+*/
+
 * {
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
 }
 
 body {
     background-position: center;
 }
 
+header {
+    width: 100%;
+    height: 100vh;
+}
+
+header p.logo {
+    font-size: large;
+    margin: 0;
+    padding: 25px 30px;
+    width: 140px;
+    white-space: pre;
+}
+
+nav {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .container {
-    height: 33vh;
+    max-width: 1400px;
+    margin: auto;
 }
 
 .logo {
     font-family: 'Libre Barcode 39 Text', cursive;
-    font-size: 14px;
-
-    max-width: 33vw;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-}
-
-a {
-    text-decoration: none;
     color: #000;
 }
 
-@media (min-width: 360px) {
-    body {
-        width: 90vw;
-        max-width: 450px;
+.bar-btn {
+    font-size: 35px;
+    color: #132A13;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.nav-menu {
+    position: fixed;
+    width: 100%;
+    height: 0vh;
+    top: 100px;
+    background-color: #ECF39E;
+    text-align: center;
+    transition: all .5s;
+
+}
+
+.nav-menu li {
+    display: none;
+    line-height: 30px;
+    margin: 30px 0;
+    transition: all .5s;
+}
+
+.nav-menu li a {
+    color: #132a13;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.nav-menu li a.active,
+.nav-menu li a:hover {
+    color: #90A955;
+    transition: .3s;
+}
+
+#check {
+    display: none;
+}
+
+#check:checked~.nav-menu {
+    height: 100vh;
+}
+
+#check:checked~.nav-menu li {
+    display: block;
+}
+
+@media screen and (min-width: 768px) {
+    .logo{
+        margin-left: 50px;
     }
 
-    .logo{
-        font-size: 25px;
+    nav {
+        height: 100px;
+    }
+
+    .bar-btn {
+        display: none;
+    }
+
+    .nav-menu {
+        position: relative;
+        height: 100px;
+        top: 0;
+        background: none;
+        transition: none;
+        text-align: right;
+        margin-right: 50px;
+    }
+
+    .nav-menu li {
+        display: inline-block;
+        line-height: 100px;
+        margin: 0 20px;
+        transition: none;
+    }
+
+    .nav-menu li a {
+        font-size: 12px;
     }
 }
+
+@media (min-width: 1024px) {}
