@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "express": "^4.18.1",
+    "nodemon": "^2.0.16"
+  },
+  "name": "ticketselva",
+  "description": "- Tema del sitio",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/villalbajoaquin/grupo_7_teamSelva.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/villalbajoaquin/grupo_7_teamSelva/issues"
+  },
+  "homepage": "https://github.com/villalbajoaquin/grupo_7_teamSelva#readme"
+}
