@@ -26,7 +26,6 @@
 }
 
 body {
-    background-position: center;
     width: 100%;
     margin: 0 auto;
 }
@@ -34,18 +33,19 @@ body {
 header {
     width: 100%;
     height: 100vh;
+    margin: 0 auto;
 }
 
 header img.logo {
-    font-size: large;
     margin: 0;
     padding: 25px 30px;
-    width: 230px;
+    width: 250px;
 }
 
 nav {
     height: 100px;
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
     box-shadow: rgb(0 0 0 / 15%) 0 1px;
     display: flex;
     justify-content: space-between;
@@ -64,8 +64,6 @@ nav {
     margin: 20px;
     cursor: pointer;
 }
-
-
 
 .nav-menu {
     position: fixed;
@@ -109,7 +107,7 @@ nav {
     display: block;
 }
 
-.search-box{
+.search-box {
     display: flex;
     align-items: center;
     margin: 0 auto;
@@ -119,7 +117,7 @@ nav {
     width: 75%;
 }
 
-.search-box input{
+.search-box input {
     border: none;
     outline: none;
     background-color: #ffffff;
@@ -138,11 +136,88 @@ nav {
     cursor: pointer;
 }
 
+footer {
+    width: 100%;
+    background-color: #132a13;
+    color: #ffffff;
+}
+
+footer .footer {
+    width: 90%;
+    margin: 0 auto;
+}
+
+footer h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+footer h3 {
+    font-size: 17px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+footer a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 100;
+    font-size: 14px;
+}
+
+footer li {
+    padding-bottom: 3px;
+}
+
+footer img.logo {
+    margin: 0;
+    padding-bottom: 30px;
+    width: 50%;
+    max-width: 200px;
+}
+
+footer .footer-top {
+    padding: 30px 0;
+}
+
+.footer-top div {
+    padding: 0 10px 20px;
+}
+
+footer .logo-sobrenos {
+    font-size: 14px;
+    line-height: 23px;
+    text-align: justify;
+}
+
+.informations p {
+    font-size: 14px;
+    padding-bottom: 20px;
+    align-items: center;
+}
+
+footer .footer-bottom {
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #ffffff;
+    margin: 0 auto;
+    font-size: 10px;
+    height: 100px;
+    align-items: center;
+}
+
 @media screen and (min-width: 768px) {
     body {
         width: 100%;
-        max-width: 768px;
         margin: 0 auto;
+    }
+
+    header {
+        width: 100%;
+        max-width: 768px;
+        height: 100vh;
+        margin: 0 auto
     }
 
     .logo {
@@ -185,18 +260,40 @@ nav {
         font-size: 15px;
     }
 
-    .search-box{
+    .search-box {
         height: 35px;
+    }
+
+    footer .footer {
+        width: 100%;
+        max-width: 768px;
+        margin: 0 auto;
+    }
+
+    footer .footer-top {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .footer-top .informations,
+    .footer-top .nuestras-redes {
+       min-width: 25%;
     }
 }
 
 @media (min-width: 1024px) {
     body {
         width: 100%;
-        max-width: 1024px;
         margin: 0 auto;
     }
-    
+
+    header {
+        width: 100%;
+        max-width: 1024px;
+        height: 100vh;
+        margin: 0 auto
+    }
+
     nav {
         height: 100px;
         width: 100%;
@@ -205,6 +302,15 @@ nav {
     }
 
     .nav-menu li a {
-        font-size: 18px;
+        font-size: 16px;
+    }
+
+    footer .footer {
+        max-width: 1024px;
+    }
+
+    footer .footer-top {
+        display: flex;
+        justify-content: space-around;
     }
 }
