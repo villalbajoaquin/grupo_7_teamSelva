@@ -1,0 +1,53 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.titulo-show{
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 180%;
+}
+
+.imagen-show {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start;
+    border: 5px double black;
+   /* max-width: 400px;Duda? poner maximo ancho maximo para moviles? porque cuando se hace muy grande la resolucion, la imagen es muy grande */
+}
+
+.subtitulo{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 24px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #90A955;
+}
+
+.disponibilidad{
+    font-size: 15px;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+@media screen and (min-width: 768px) {
+    main {
+        height: 70vh;
+        display: flex;
+        justify-content: flex-start;
+    }
+    
+}
