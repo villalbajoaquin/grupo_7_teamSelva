@@ -33,21 +33,66 @@
     font-size: 24px;
     margin-top: 20px;
     margin-bottom: 20px;
-    background-color: #90A955;
+   /* background-color: #90A955; */
 }
 
 .disponibilidad{
-    font-size: 15px;
+    font-size: 10px;
     width: 90%;
     margin: 0 auto;
     margin-bottom: 10px;
 }
 
+.check-correct{
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+   /* background-color: #4F772D; */
+   font-size: 13px;
+}
+
+.stock{
+    font-size: 15px;
+}
+
+.info-del-show {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.info-del-show h5{
+margin-bottom: 10px
+}
+
+.caja-de-compra{
+    width: 90%;
+    margin: 0 auto;
+    box-sizing: 1px;
+    border-style: dashed;
+    border-color: #5D5D5D;
+    padding-left: 4%;
+    padding-right: 4%;
+    background: transparent;
+}
+
+.caja-de-compra span {
+    font-size: 28px;
+    color: #009E09;
+    font-weight: bold;
+}
+
+.cantidad-de-entradas {
+    margin-top: 15px;
+}
+
 @media screen and (min-width: 768px) {
     main {
         height: 70vh;
+        width: 90%;
         display: flex;
         justify-content: flex-start;
+        margin: 0 auto;
     }
     
 }
