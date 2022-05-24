@@ -14,6 +14,8 @@ main{
 
 .border{
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    margin-left: 2%;
+    margin-right: 2%;
 }
 
 .titulo-show{
@@ -138,5 +140,38 @@ margin-bottom: 10px
 
 
 @media screen and (min-width: 768px) {
-    
+    .description-product {
+        display: flex;
+    }
+    main {
+        max-width: 800px;
+        margin-bottom: 30px;
+    }
+
+    .imagen-show{
+        height: 300px;
+        width: 300px;
+       margin: 10px;
+       border: solid 1px black;
+    }
+
+}
+
+@media screen and (min-width: 1028px) {
+    .description-product {
+        display: flex;
+        margin-left: 50px;
+    }
+    main {
+        max-width: 1000px;
+        margin-bottom: 30px;
+    }
+
+    .imagen-show{
+        height: 300px;
+        width: 300px;
+       margin: 10px;
+       border: solid 1px black;
+    }
+
 }
