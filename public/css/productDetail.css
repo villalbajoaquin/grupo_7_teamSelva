@@ -10,6 +10,7 @@
 main{
     max-width: 550px;
     margin: 0 auto;
+    margin-bottom: 100px;
 }
 
 .border{
@@ -163,7 +164,7 @@ margin-bottom: 10px
         margin-left: 50px;
     }
     main {
-        max-width: 1000px;
+        max-width: 1100px;
         margin-bottom: 30px;
     }
 
