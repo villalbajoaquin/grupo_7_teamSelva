@@ -135,6 +135,10 @@ margin-bottom: 10px
     height: 30px;
 }
 
+.add-to-cart:hover {
+    background-color: #009E09;
+}
+
 .add-to-cart i {
     margin-right: 3px;
 }
