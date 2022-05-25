@@ -7,18 +7,18 @@
     font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
-main{
+main {
     max-width: 550px;
     margin: 0 auto;
 }
 
-.border{
-    
-     
+.border {
+
+
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
 
-.titulo-show{
+.titulo-show {
     text-align: center;
     display: flex;
     justify-content: space-around;
@@ -34,10 +34,10 @@ main{
     display: flex;
     justify-content: flex-start;
     border: 5px double black;
-   /* max-width: 400px;Duda? poner maximo ancho maximo para moviles? porque cuando se hace muy grande la resolucion, la imagen es muy grande */
+    /* max-width: 400px;Duda? poner maximo ancho maximo para moviles? porque cuando se hace muy grande la resolucion, la imagen es muy grande */
 }
 
-.subtitulo{
+.subtitulo {
     width: 90%;
     margin: 0 auto;
     display: flex;
@@ -45,25 +45,29 @@ main{
     font-size: 24px;
     margin-top: 20px;
     margin-bottom: 20px;
-   /* background-color: #90A955; */
+    /* background-color: #90A955; */
 }
 
-.disponibilidad{
+a {
+    color: #000;
+}
+
+.disponibilidad {
     font-size: 10px;
     width: 90%;
     margin: 0 auto;
     margin-bottom: 10px;
 }
 
-.check-correct{
+.check-correct {
     width: 90%;
     margin: 0 auto;
     margin-bottom: 10px;
-   /* background-color: #4F772D; */
-   font-size: 13px;
+    /* background-color: #4F772D; */
+    font-size: 13px;
 }
 
-.stock{
+.stock {
     font-size: 15px;
 }
 
@@ -71,23 +75,23 @@ main{
     width: 90%;
     margin: 0 auto;
     margin-top: 20px;
-    
+
 }
 
-.info-del-show h5{
-margin-bottom: 10px
+.info-del-show h5 {
+    margin-bottom: 10px
 }
 
-.caja-de-compra{
+.caja-de-compra {
     width: 90%;
     margin: 0 auto;
     margin-top: 30px;
     margin-bottom: 30px;
     box-sizing: 1px;
-   padding-bottom: 5%;
+    padding-bottom: 5%;
 }
 
-.border-caja-compra{
+.border-caja-compra {
     border-style: dashed;
     border-color: #5D5D5D;
     padding-left: 4%;
@@ -120,7 +124,7 @@ margin-bottom: 10px
 }
 
 
-.cuadro-de-cantidad{
+.cuadro-de-cantidad {
     width: 17px;
     align-items: center;
     text-align: center;
@@ -140,6 +144,4 @@ margin-bottom: 10px
 }
 
 
-@media screen and (min-width: 768px) {
-    
-}
+@media screen and (min-width: 768px) {}
