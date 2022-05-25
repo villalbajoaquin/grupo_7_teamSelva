@@ -5,10 +5,172 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito de compras</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/productCart.css">
+    <title>Product-cart</title>
 </head>
+<!--esto es un comentario-->
+
+<h1></h1>
 
 <body>
+    <header>
+        <nav>
+            <div class="container">
+                <a href="/"><img src="img\logo-prop2.png" alt="logo" class="logo"></a>
+            </div>
+            <input type="checkbox" id="check">
+            <label for="check" class="bar-btn">
+                <i class="bi bi-list"></i>
+            </label>
+            <ul class="nav-menu">
+                <li><a href="#">24 HS</a></li>
+                <li><a href="#">7 DIAS</a></li>
+                <li><a href="#">30 DIAS</a></li>
+                <li><a href="#"><i class="bi bi-person-fill"></i> CUENTA</a></li>
+            </ul>
+
+        </nav>
+
+        <div class="search-box">
+            <input type="search" placeholder="Buscar...">
+            <i class="bi bi-search"></i>
+        </div>
+    </header>
+
+    <main>
+
+        <div class="border">
+
+            <h1 class="titulo-show">Tus TicketSelva son:</h1>
+            <div>
+                <img src="img/show3.jpg" class="imagen-show" alt="Imagen del Show correspondiente">
+            </div>
+
+            <div class="info-del-show">
+                <h5>Precio $1500</h5>
+                <h5>Fecha: Miercoles 25 de Mayo</h5>
+
+                <div class="cantidad-de-entradas">
+                    <h5 class="">Cantidad</h5>
+                    <i class="fa-solid fa-circle-arrow-left"></i>
+                    <input class="cuadro-de-cantidad" type="text" name="qty" id="quantity_wanted" value="1"
+                        class="form-control" min="1" aria-label="Cantidad" style="display: block;">
+                    <i class="fa-solid fa-circle-arrow-right"></i>
+                </div>
+                <h1 class="subtitulo">Entradas para mega matiné bailable</h1>
+
+
+
+            </div>
+
+
+            <h1 class="titulo-show"></h1>
+            <div>
+                <img src="/img/Show1.jpg" class="imagen-show" alt="Imagen del Show correspondiente">
+            </div>
+            <h1 class="subtitulo">Entradas para Feriadoland</h1>
+
+
+            <div class="info-del-show">
+                <h5>Precio $3000</h5>
+                <h5>Fecha: Viernes 32 de Junio</h5>
+
+                <div class="cantidad-de-entradas">
+                    <h5 class="">Cantidad</h5>
+                    <i class="fa-solid fa-circle-arrow-left"></i>
+                    <input class="cuadro-de-cantidad" type="text" name="qty" id="quantity_wanted" value="1"
+                        class="form-control" min="1" aria-label="Cantidad" style="display: block;">
+                    <i class="fa-solid fa-circle-arrow-right"></i>
+                </div>
+                <h5>Para autorizar su ingreso: deberá mostrar el código que enviamos a su correo electronico.</h5>
+            </div>
+
+
+
+
+
+
+
+            <div class="caja-de-compra">
+                <div class="border-caja-compra">
+                    <p>Total de la compra $4500 ARS</p>
+                    <div class="aniadir-al-carrito">
+                        <div class="cantidad-de-entradas">
+                            <h5 class="">Cantidad de tickets</h5>
+                            <i class="fa-solid fa-circle-arrow-left"></i>
+                            <input class="cuadro-de-cantidad" type="number" name="qty" id="quantity_wanted" value="1"
+                                class="form-control" min="1" aria-label="Cantidad" style="display: block;">
+                            <i class="fa-solid fa-circle-arrow-right"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="add-to-cart" data-button-action="add-to-cart" type="submit">
+                            <i class="bi bi-cart4"></i>
+                            <i class="fa-solid fa-cart-shopping"></i><span>Vaciarcarrito</span>
+                        </button>
+                        <button class="add-to-cart" data-button-action="add-to-cart" type="submit">
+                            <i class="bi bi-cash-coin"></i>
+                            <i class="fa-solid fa-cart-shopping"></i><span> Finalizar compra</span>
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </main>
+
+
+
+
+
+
+    <footer>
+        <div class="footer">
+            <div class="footer-top">
+                <div class="logo-sobrenos">
+                    <img src="img\logo-prop2-modo-oscuro.png" alt="logo-footer" class="logo">
+                    <h2>Sobre Nosotros</h2>
+                    <p>Nuestro proyecto será un e-commerce de ventas de entradas para espectáculos en vivo.
+                        Principalmente
+                        está dirigido para las personas que consuman eventos en vivo, que no disponen de tiempo para
+                        hacer
+                        largas filas a la hora de comprar un ticket y prefieren la comodidad y rapidez de los pagos
+                        online.</p>
+                </div>
+                <div class="informations">
+                    <h3>Contáctanos</h3>
+                    <p><i class="bi bi-telephone-fill"></i> +54 3764 12-3456</p>
+                    <h2>Información</h2>
+                    <ul>
+                        <li><a href="#">Sobre Nosotros</a></li>
+                        <li><a href="#">Guía de Compra</a></li>
+                        <li><a href="#">Preguntas Frecuentes</a></li>
+                        <li><a href="#">Términos y Condiciones</a></li>
+                    </ul>
+                </div>
+                <div class="nuestras-redes">
+                    <h2>Nuestras Redes</h2>
+                    <ul>
+                        <li><a href="#"><i class="bi bi-facebook"></i> Facebook</a></li>
+                        <li><a href="#"><i class="bi bi-instagram"></i> Instagram</a></li>
+                        <li><a href="#"><i class="bi bi-linkedin"></i> LinkedIn</a></li>
+                        <li><a href="#"><i class="bi bi-twitter"></i> Twitter</a></li>
+                        <li><a href="https://github.com/villalbajoaquin/grupo_7_teamSelva"><i class="bi bi-github"></i>
+                                GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>Copyright © 2022 Ticket-selva | Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
