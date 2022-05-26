@@ -1,0 +1,168 @@
+
+*{
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans',
+        sans-serif;
+}
+header{
+    background-color: white;
+}
+
+
+
+body{
+    
+    background: url(/img/selva1.webp);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+h1{
+    text-align: center;
+    color: #132A13;
+    font-size: 40px;
+}
+
+.formulario{
+background: #90A955 ;
+opacity: 0.89;
+margin-top: 200px;
+margin-bottom: 200px;
+margin-left: 5%;
+margin-right: 5%;
+border-radius: 5px;
+padding: 3px;
+text-align: center;
+}
+
+.formulario1 {
+    background: #90A955;
+    opacity: 0.89;
+    margin-top: 25%;
+    margin-bottom: 25%;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-radius: 5px;
+    padding: 3px;
+    text-align: center;
+}
+
+.contenedor{
+    width: 100%;
+    padding: 15px;
+}
+
+.input-contenedor{
+margin-bottom: 5px;
+border: 1px solid #132A13;
+border-radius: 5px;
+margin-left: 5%;
+margin-right: 5%;
+
+}
+
+ .icon{
+color: rgb(0, 0, 0);
+ }
+
+
+input[type="text"],
+input[type="password"]{
+    padding: 10px;
+    background-color: #90A955;
+    font-size: 15px;
+    width: 93%;
+    border: none;
+}
+
+::placeholder{
+    color: #132A13;
+}
+
+.button{
+border: none;
+border-radius: 5px;
+width: 200px;
+font-size: 20px;
+color: #132A13;
+background: white;
+padding: 20px 15px;
+cursor: pointer;
+}
+
+.button1 {
+    border: none;
+    border-radius: 5px;
+    width: 200px;
+    font-size: 20px;
+    color: #132A13;
+    background: white;
+    padding: 20px 15px;
+    cursor: pointer;     
+}
+
+.button:hover{
+    background: cadetblue;
+}
+
+
+.link{
+    text-decoration: none;
+    color: #132A13;
+    font-weight: 600;
+}
+
+.link:hover{
+    color: cadetblue;
+}
+
+@media(min-width:768px){
+
+    body{
+      background: url(/img/bajada.jpg);
+      background-attachment: fixed;
+      background-size: cover;
+    }
+
+    .formulario{
+        margin: auto;
+        width: 600px;
+        margin-top: 21%;
+        margin-bottom: 21%;
+    }
+
+     .formulario1 {
+            margin: auto;
+            width: 600px;
+            margin-top: 10%;
+            margin-bottom: 20%;
+     }
+}
+
+@media(min-width:1024px){
+
+        input[type="text"],
+        input[type="password"]{  
+            
+            font-size: 18px;
+         
+        }
+
+            p{
+              font-size: 17px;
+             }
+
+        .formulario {
+         margin: auto;
+         width: 600px;
+         margin-top: 10%;
+         margin-bottom: 23%;
+                         }
+            
+        .formulario1 {
+         margin: auto;
+         width: 600px;
+         margin-top: 10%;
+         margin-bottom: 15%;
+                         }
+}
