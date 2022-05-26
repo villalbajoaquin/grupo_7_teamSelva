@@ -14,7 +14,7 @@ también grúa, soy futuro desarollador full stack, actualmente estudiando.
 [Uriel Perren](https://github.com/Urieluno): 19 años, estudio Mkt y Publicidad Digital y soy jugador de básquet. Disfruto de las series y las películas
 de cultura como Donnie Darko. Soy amante del Sneaker Game y de la moda.
 
-[Walter Vegas](https://github.com/vegaswalter): 18 años, estudio técnico aeronáutico, programación y tengo bases en marketing digital. Me gusta
+[Walter Vegas](https://github.com/vegaswalter): 19 años, estudio técnico aeronáutico, programación y tengo bases en marketing digital. Me gusta
 coleccionar todo tipo de cosas.
 
 [Joaquin Villalba](https://github.com/villalbajoaquin): 20 años, Maestro mayor de obras, estudiante universitario y programador. Me gusta el futbol,
