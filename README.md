@@ -1,5 +1,7 @@
 # grupo_7_teamSelva
 
+- Enlace a la [App](https://ticket-selva.herokuapp.com).
+
 - Tema del sitio
 
 Nuestro proyecto será un e-commerce de ventas de entradas para espectáculos en vivo. En dicho sitio se podrá consultar por los shows a la venta
@@ -29,4 +31,3 @@ soy hincha de San Lorenzo. En mis ratos libres me interesa la historia.
 5. [IMAX del Conocimiento](https://imaxdelconocimiento.com/)
 
 - Enlace a los [Wireframes](https://wireframe.cc/pro/pp/d4703015a543399)
-- Enlace a la [App](https://ticket-selva.herokuapp.com).
