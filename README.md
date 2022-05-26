@@ -11,7 +11,7 @@ tiempo para hacer largas filas a la hora de comprar un ticket y prefieren la com
 [Luis Kislo](https://github.com/kislo-Luis): 31 años, trabajo en un multimedio de comunicación operando diferentes tipos cámaras de filmación y
 también grúa, soy futuro desarollador full stack, actualmente estudiando.
 
-[Uriel Perren](https://github.com/Urieluno): 18 años, estudio Mkt y Publicidad Digital y soy jugador de básquet. Disfruto de las series y las películas
+[Uriel Perren](https://github.com/Urieluno): 19 años, estudio Mkt y Publicidad Digital y soy jugador de básquet. Disfruto de las series y las películas
 de cultura como Donnie Darko. Soy amante del Sneaker Game y de la moda.
 
 [Walter Vegas](https://github.com/vegaswalter): 18 años, estudio técnico aeronáutico, programación y tengo bases en marketing digital. Me gusta
