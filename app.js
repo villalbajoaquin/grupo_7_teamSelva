@@ -9,6 +9,8 @@ app.listen(port, () => {
     console.log(`http://localhost:${port}`);
 });
 
+app.use(express.urlencoded({extended:false}));
+
 // static
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -37,5 +39,3 @@ app.get('/register', (req, res) => {
 app.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname, 'views/login.html'));
 });
-
-/* Hola */
