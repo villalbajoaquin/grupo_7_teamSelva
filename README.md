@@ -32,8 +32,8 @@ soy hincha de San Lorenzo. En mis ratos libres me interesa la historia.
 
 - Enlace a los [Wireframes](https://wireframe.cc/pro/pp/d4703015a543399)
 
-- Tableros de trabajo (Trello):
+Tableros de trabajo (Trello):
 
-[Sprint 1](https://trello.com/b/oYjWGUhc/sprint-1-wireframes-y-boceto)
-[Sprint 2](https://trello.com/b/ntvjPsfD/sprint-2-html-y-css3)
-[Sprint 3](https://trello.com/b/lVUsiBQK/sprint-3-template-engines)
+- [Sprint 1](https://trello.com/b/oYjWGUhc/sprint-1-wireframes-y-boceto)
+- [Sprint 2](https://trello.com/b/ntvjPsfD/sprint-2-html-y-css3)
+- [Sprint 3](https://trello.com/b/lVUsiBQK/sprint-3-template-engines)
