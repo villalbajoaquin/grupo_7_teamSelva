@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const routes = require('./src/routes/index.routes');
 const app = express();
 
 // port & server
@@ -9,33 +10,11 @@ app.listen(port, () => {
     console.log(`http://localhost:${port}`);
 });
 
-app.use(express.urlencoded({extended:false}));
+// urlencoded
+app.use(express.urlencoded({ extended: false }));
 
 // static
 app.use(express.static(path.join(__dirname, 'public')));
 
 // routes
-    // index
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views/index.html'));
-});
-
-    // product detail
-app.get('/product_detail', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views/productDetail.html'));
-});
-
-    // product cart
-app.get('/product_cart', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views/productCart.html'));
-});
-
-    // register
-app.get('/register', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views/register.html'));
-});
-
-    // login
-app.get('/login', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views/login.html'));
-});
+app.use('/', routes);
