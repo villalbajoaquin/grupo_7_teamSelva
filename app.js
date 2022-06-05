@@ -1,6 +1,5 @@
 const express = require('express');
 const path = require('path');
-const routes = require('./src/routes/index.routes');
 const app = express();
 
 // port & server
@@ -17,4 +16,4 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // routes
-app.use('/', routes);
+app.use('/', require('./src/routes/index.routes'));
