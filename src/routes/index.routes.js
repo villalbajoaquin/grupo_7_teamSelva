@@ -1,21 +1,14 @@
-const express = require ("express");
+const express = require("express");
 const routes = express.Router();
-const controller = require ("../controllers/controller");
 
 // routes
-    // index
-    routes.get('/', controller.index);
-    
-        // product detail
-    routes.get('/product_detail', controller.product_detail);
-    
-        // product cart
-    routes.get('/product_cart', controller.product_cart);
-    
-        // register
-    routes.get('/register', controller.register);
-    
-        // login
-    routes.get('/login', controller.login);
+    // main
+    routes.use("/", require("./main.routes"));
+
+    // products
+    routes.use("/product", require("./product.routes"));
+
+    // user
+    routes.use("/user", require("./user.routes"));;    
 
 module.exports = routes;
