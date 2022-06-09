@@ -142,18 +142,21 @@ main {
 }
 
 @media screen and (min-width: 768px) {
+    .video {
+        height: 55vh;
+    }
+
     .video .banner {
         width: 80%;
         position: absolute;
-        top: 230px;
+        top: 250px;
         left: 10%;
         z-index: 2;
-        font-size: 35px;
         font-weight: 800;
     }
 
     .video .banner h1 {
-        font-size: 30px;
+        font-size: 38px;
         font-weight: 800;
     }
 
@@ -162,7 +165,7 @@ main {
         padding-top: 20px;
         margin: 0 auto;
         width: 75%;
-        font-size: 15px;
+        font-size: 20px;
     }
 
     .main {
@@ -182,18 +185,21 @@ main {
 }
 
 @media screen and (min-width: 1024px) {
+    .video {
+        height: 75vh;
+    }
+
     .video .banner {
         position: absolute;
-        top: 230px;
-        font-size: 50px;
+        top: 320px;
     }
 
     .video .banner h1 {
-        font-size: 35px;
+        font-size: 45px;
     }
 
     .video .banner h2 {
-        font-size: 18px;
+        font-size: 25px;
     }
 
     .main {
