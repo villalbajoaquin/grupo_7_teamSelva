@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/products/productDetail.css">
+
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <script src="https://kit.fontawesome.com/d160ea4c64.js" crossorigin="anonymous"></script>
+    <title>Editar producto</title>
+</head>
+<body>
+
+    <main>
+        <div class="newEvent">
+
+            <div>
+                <h2>Editar evento</h2>
+            </div>
+
+            <div class="container">
+                <div class="standarImg"></div>
+                <form action="/" method="get">
+                    <section class="infoShow">
+                        
+                        <div>
+                            <input id="e-i-show-name" type="text" name="show-name" placeholder="Nombre del show" required>
+                        </div>
+
+                      
+                        <div>
+                            <input id="e-i-show-date" type="datetime-local" name="show-date" placeholder="Fecha y hora del show" required>
+                        </div>
+
+                        
+                        <div>
+                            <input id="e-i-show-n-tickets" type="number" name="show-n-tickets" placeholder="cantidad de tickets" required>
+                        </div>
+
+
+                        
+
+                        <div>
+                            <input id="e-i-show-file" type="file" name="show-file" placeholder="Imagen del show" required>
+                        </div>
+
+                        <div class="button-send">
+                            <button onclick="alert('Los datos fueron subidos exitosamente');" href="/" type="send">Enviar</button>
+                        </div>    
+
+                        <div class="button-reset">
+                            <button type="reset">Borrar campos</button>
+                        </div>
+                    </section>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    
+    <footer>
+        <div class="footer">
+            <div class="footer-top">
+                <div class="logo-sobrenos">
+                    <img src="\img\logo-prop2-modo-oscuro.png" alt="logo-footer" class="logo">
+                    <h2>Sobre Nosotros</h2>
+                    <p>Nuestro proyecto será un e-commerce de ventas de entradas para espectáculos en vivo.
+                        Principalmente
+                        está dirigido para las personas que consuman eventos en vivo, que no disponen de tiempo para
+                        hacer
+                        largas filas a la hora de comprar un ticket y prefieren la comodidad y rapidez de los pagos
+                        online.</p>
+                </div>
+                <div class="informations">
+                    <h3>Contáctanos</h3>
+                    <p><i class="bi bi-telephone-fill"></i> +54 3764 12-3456</p>
+                    <h2>Información</h2>
+                    <ul>
+                        <li><a href="#">Sobre Nosotros</a></li>
+                        <li><a href="#">Guía de Compra</a></li>
+                        <li><a href="#">Preguntas Frecuentes</a></li>
+                        <li><a href="#">Términos y Condiciones</a></li>
+                    </ul>
+                </div>
+                <div class="nuestras-redes">
+                    <h2>Nuestras Redes</h2>
+                    <ul>
+                        <li><a href="#"><i class="bi bi-facebook"></i> Facebook</a></li>
+                        <li><a href="#"><i class="bi bi-instagram"></i> Instagram</a></li>
+                        <li><a href="#"><i class="bi bi-linkedin"></i> LinkedIn</a></li>
+                        <li><a href="#"><i class="bi bi-twitter"></i> Twitter</a></li>
+                        <li><a href="https://github.com/villalbajoaquin/grupo_7_teamSelva"><i class="bi bi-github"></i>
+                                GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>Copyright © 2022 Ticket-selva | Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
