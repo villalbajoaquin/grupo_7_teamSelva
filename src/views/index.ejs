@@ -29,88 +29,32 @@
         <div class="main">
             <h1>Próximos eventos</h1>
             <div class="cards">
-                <div class="card">
-                    <img src="img\show3.jpg" alt="show">
-                    <div class="card-description">
-                        <h1>Mega Matine Bailable</h1>
-                        <p>Fecha: 25 de mayo</p>
-                        <a href="/product/product_detail">
-                            <button>COMPRAR</button>
-                        </a>
+                <% for( let i = 0; i < 4; i++ ) { %>
+                    <div class="card">                    
+                        <img src= <%= shows[i].imgsrc %>  alt="deberia show">
+                        <div class="card-description">
+                            <h1><%= shows[i].name %></h1>
+                            <p>Fecha: <%= shows[1].date %></p>
+                            <a href="/product/product_detail">
+                                <button>COMPRAR</button>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="card">
-                    <img src="img\show4.jpg" alt="show">
-                    <div class="card-description">
-                        <h1>Mega Matine Bailable</h1>
-                        <p>Fecha: 25 de mayo</p>
-                        <a href="/product/product_detail">
-                            <button>COMPRAR</button>
-                        </a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="img\show5.jpg" alt="show">
-                    <div class="card-description">
-                        <h1>Mega Matine Bailable</h1>
-                        <p>Fecha: 25 de mayo</p>
-                        <a href="/product/product_detail">
-                            <button>COMPRAR</button>
-                        </a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="img\show7.jpg" alt="show">
-                    <div class="card-description">
-                        <h1>Mega Matine Bailable</h1>
-                        <p>Fecha: 25 de mayo</p>
-                        <a href="/product/product_detail">
-                            <button>COMPRAR</button>
-                        </a>
-                    </div>
-                </div>
+                <% } %>
             </div>
             <div class="cards">
-                <div class="card">
-                    <img src="img\show3.jpg" alt="show">
-                    <div class="card-description">
-                        <h1>Mega Matine Bailable</h1>
-                        <p>Fecha: 25 de mayo</p>
-                        <a href="/product/product_detail">
-                            <button>COMPRAR</button>
-                        </a>
+                <% for( let i = 4; i < 8; i++ ) { %>
+                    <div class="card">                    
+                        <img src= <%= shows[i].imgsrc %>  alt="deberia show">
+                        <div class="card-description">
+                            <h1><%= shows[i].name %></h1>
+                            <p>Fecha: <%= shows[1].date %></p>
+                            <a href="/product/product_detail">
+                                <button>COMPRAR</button>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="card">
-                    <img src="img\show4.jpg" alt="show">
-                    <div class="card-description">
-                        <h1>Mega Matine Bailable</h1>
-                        <p>Fecha: 25 de mayo</p>
-                        <a href="/product/product_detail">
-                            <button>COMPRAR</button>
-                        </a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="img\show5.jpg" alt="show">
-                    <div class="card-description">
-                        <h1>Mega Matine Bailable</h1>
-                        <p>Fecha: 25 de mayo</p>
-                        <a href="/product/product_detail">
-                            <button>COMPRAR</button>
-                        </a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="img\Show1.jpg" alt="show">
-                    <div class="card-description">
-                        <h1>Mega Matine Bailable</h1>
-                        <p>Fecha: 25 de mayo</p>
-                        <a href="/product/product_detail">
-                            <button>COMPRAR</button>
-                        </a>
-                    </div>
-                </div>
+                <% } %>                
             </div>
             
             <input type="checkbox" id="check">
