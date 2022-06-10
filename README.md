@@ -1,5 +1,7 @@
 # grupo_7_teamSelva
 
+- Enlace a la [App](https://ticket-selva.herokuapp.com).
+
 - Tema del sitio
 
 Nuestro proyecto será un e-commerce de ventas de entradas para espectáculos en vivo. En dicho sitio se podrá consultar por los shows a la venta
@@ -11,10 +13,10 @@ tiempo para hacer largas filas a la hora de comprar un ticket y prefieren la com
 [Luis Kislo](https://github.com/kislo-Luis): 31 años, trabajo en un multimedio de comunicación operando diferentes tipos cámaras de filmación y
 también grúa, soy futuro desarollador full stack, actualmente estudiando.
 
-[Uriel Perren](https://github.com/Urieluno): 18 años, estudio Mkt y Publicidad Digital y soy jugador de básquet. Disfruto de las series y las películas
+[Uriel Perren](https://github.com/Urieluno): 19 años, estudio Mkt y Publicidad Digital y soy jugador de básquet. Disfruto de las series y las películas
 de cultura como Donnie Darko. Soy amante del Sneaker Game y de la moda.
 
-[Walter Vegas](https://github.com/vegaswalter): 18 años, estudio técnico aeronáutico, programación y tengo bases en marketing digital. Me gusta
+[Walter Vegas](https://github.com/vegaswalter): 19 años, estudio técnico aeronáutico, programación y tengo bases en marketing digital. Me gusta
 coleccionar todo tipo de cosas.
 
 [Joaquin Villalba](https://github.com/villalbajoaquin): 20 años, Maestro mayor de obras, estudiante universitario y programador. Me gusta el futbol,
@@ -29,3 +31,9 @@ soy hincha de San Lorenzo. En mis ratos libres me interesa la historia.
 5. [IMAX del Conocimiento](https://imaxdelconocimiento.com/)
 
 - Enlace a los [Wireframes](https://wireframe.cc/pro/pp/d4703015a543399)
+
+- Tableros de trabajo (Trello):
+
+1. [Sprint 1](https://trello.com/b/oYjWGUhc/sprint-1-wireframes-y-boceto)
+2. [Sprint 2](https://trello.com/b/ntvjPsfD/sprint-2-html-y-css3)
+3. [Sprint 3](https://trello.com/b/lVUsiBQK/sprint-3-template-engines)

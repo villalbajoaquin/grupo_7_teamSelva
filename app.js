@@ -9,33 +9,15 @@ app.listen(port, () => {
     console.log(`http://localhost:${port}`);
 });
 
+// template engine
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, './src/views'));
+
+// urlencoded
+app.use(express.urlencoded({ extended: false }));
+
 // static
 app.use(express.static(path.join(__dirname, 'public')));
 
 // routes
-    // index
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views/index.html'));
-});
-
-    // product detail
-app.get('/product_detail', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views/productDetail.html'));
-});
-
-    // product cart
-app.get('/product_cart', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views/productCart.html'));
-});
-
-    // register
-app.get('/register', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views/register.html'));
-});
-
-    // login
-app.get('/login', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views/login.html'));
-});
-
-/* Hola */
+app.use('/', require('./src/routes/index.routes'));
