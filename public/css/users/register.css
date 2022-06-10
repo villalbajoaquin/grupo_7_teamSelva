@@ -6,6 +6,7 @@
 }
 header{
     background-color: white;
+   
 }
 
 
@@ -47,13 +48,17 @@ text-align: center;
     text-align: center;
 }
 
+p{
+margin-top: 10px;
+}
+
 .contenedor{
     width: 100%;
     padding: 15px;
 }
 
 .input-contenedor{
-margin-bottom: 5px;
+margin-bottom: 10px;
 border: 1px solid #132A13;
 border-radius: 5px;
 margin-left: 5%;
@@ -82,6 +87,8 @@ input[type="password"]{
 .button{
 border: none;
 border-radius: 5px;
+margin-top: 10px;
+margin-bottom: 10px;
 width: 200px;
 font-size: 20px;
 color: #132A13;
@@ -94,6 +101,8 @@ cursor: pointer;
     border: none;
     border-radius: 5px;
     width: 200px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     font-size: 20px;
     color: #132A13;
     background: white;
@@ -140,7 +149,7 @@ cursor: pointer;
 }
 
 @media(min-width:1024px){
-
+        
         input[type="text"],
         input[type="password"]{  
             

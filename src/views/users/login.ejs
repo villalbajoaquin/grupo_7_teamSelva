@@ -1,47 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <title>Login</title>
-      <script src="https://kit.fontawesome.com/5d58b48687.js" crossorigin="anonymous"></script>
-      <link rel="stylesheet" href="/css/styles.css">
-      <link rel="stylesheet" href="/css/users/register.css">
 
-      <link rel="shortcut icon" href="/img/favicon.ico">
-      
+    <%- include('../partials/head') %> 
+    <link rel="stylesheet" href="/css/users/register.css">
+    <script src="https://kit.fontawesome.com/5d58b48687.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
   <header>
-    <nav>
-      <div class="container">
-        <a href="/"><img src="\img\logo-prop2.png" alt="logo" class="logo"></a>
-      </div>
-      <input type="checkbox" id="check">
-      <label for="check" class="bar-btn">
-        <i class="bi bi-list"></i>
-      </label>
-      <ul class="nav-menu">
-        <li><a href="#">24 HS</a></li>
-        <li><a href="#">7 DIAS</a></li>
-        <li><a href="#">30 DIAS</a></li>
-        <li><a href="/user/login"><i class="bi bi-person-fill"></i> CUENTA</a></li>
-      </ul>
-  
-    </nav>
-  
-    <div class="search-cart">
-      <div class="search-box">
-        <input type="search" placeholder="Buscar...">
-        <i class="bi bi-search"></i>
-      </div>
-      <div class="btn-cart">
-        <a href="/product/product_cart">
-          <button><i class="bi bi-cart-fill"></i></button>
-        </a>
-      </div>
-    </div>
+
+    <%- include('../partials/topheader') %>
+
   </header>
   
     <form class="formulario">
@@ -56,6 +26,7 @@
       </div> 
              
         <input type="submit" value="Ingresar" class="button">
+
        <p>
          ¿No tienes una cuenta?<a class="link"  href="/user/register"> Registrate</a>
        </p>          
@@ -63,44 +34,9 @@
   </form>
   
   <footer>
-    <div class="footer">
-      <div class="footer-top">
-        <div class="logo-sobrenos">
-          <img src="\img\logo-prop2-modo-oscuro.png" alt="logo-footer" class="logo">
-          <h2>Sobre Nosotros</h2>
-          <p>Nuestro proyecto será un e-commerce de ventas de entradas para espectáculos en vivo. Principalmente
-            está dirigido para las personas que consuman eventos en vivo, que no disponen de tiempo para hacer
-            largas filas a la hora de comprar un ticket y prefieren la comodidad y rapidez de los pagos online.</p>
-        </div>
-        <div class="informations">
-          <h3>Contáctanos</h3>
-          <p><i class="bi bi-telephone-fill"></i> +54 3764 12-3456</p>
-          <h2>Información</h2>
-          <ul>
-            <li><a href="#">Sobre Nosotros</a></li>
-            <li><a href="#">Guía de Compra</a></li>
-            <li><a href="#">Preguntas Frecuentes</a></li>
-            <li><a href="#">Términos y Condiciones</a></li>
-          </ul>
-        </div>
-        <div class="nuestras-redes">
-          <h2>Nuestras Redes</h2>
-          <ul>
-            <li><a href="#"><i class="bi bi-facebook"></i> Facebook</a></li>
-            <li><a href="#"><i class="bi bi-instagram"></i> Instagram</a></li>
-            <li><a href="#"><i class="bi bi-linkedin"></i> LinkedIn</a></li>
-            <li><a href="#"><i class="bi bi-twitter"></i> Twitter</a></li>
-            <li><a href="https://github.com/villalbajoaquin/grupo_7_teamSelva"><i class="bi bi-github"></i> GitHub</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <div class="copyright">
-          <p>Copyright © 2022 Ticket-selva | Todos los derechos reservados.</p>
-        </div>
-      </div>
-    </div>
+
+     <%- include('../partials/footer') %>
+
   </footer>
 
 </body>
