@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include('./partials/head') %> 
+    
+    <link rel="stylesheet" href="/css/home.css">
+
+    <title>Inicio | ticket-selva</title>
+</head>
+
+<body>
+    <header>
+        <%- include('./partials/navbar') %>
+
+        <%- include('./partials/navSearch') %>
+    </header>
+
+<!-- Main -->
+
+    <main>
+        <div class="video">
+            <video src="img\vid-banner.mp4" muted autoplay loop></video>
+            <div class="banner">
+                <h1>Descubre una gran variedad de eventos desde un solo click</h1>
+                <h2>Con ticket-selva podés comprar tu entrada on-line, evitando las largas filas a la hora de comprar.</h2>
+            </div>
+        </div>
+        <div class="main">
+            <h1>Próximos eventos</h1>
+            <div class="cards">
+                <% for( let i = 0; i < 4; i++ ) { %>
+                    <div class="card">                    
+                        <img src= <%= shows[i].imgsrc %>  alt="deberia show">
+                        <div class="card-description">
+                            <h1><%= shows[i].name %></h1>
+                            <p>Fecha: <%= shows[1].date %></p>
+                            <a href="/product/product_detail">
+                                <button>COMPRAR</button>
+                            </a>
+                        </div>
+                    </div>
+                <% } %>
+            </div>
+            <div class="cards">
+                <% for( let i = 4; i < 8; i++ ) { %>
+                    <div class="card">                    
+                        <img src= <%= shows[i].imgsrc %>  alt="deberia show">
+                        <div class="card-description">
+                            <h1><%= shows[i].name %></h1>
+                            <p>Fecha: <%= shows[1].date %></p>
+                            <a href="/product/product_detail">
+                                <button>COMPRAR</button>
+                            </a>
+                        </div>
+                    </div>
+                <% } %>                
+            </div>
+            
+            <input type="checkbox" id="check">
+            <label for="check" class="mas-shows">
+                <h2>Más shows</h2>
+            </label>
+            <div class="cards-pop">
+                <div class="card">
+                    <img src="img\show3.jpg" alt="show">
+                    <div class="card-description">
+                        <h1>Mega Matine Bailable</h1>
+                        <p>Fecha: 25 de mayo</p>
+                        <a href="/product/product_detail">
+                            <button>COMPRAR</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="img\show4.jpg" alt="show">
+                    <div class="card-description">
+                        <h1>Mega Matine Bailable</h1>
+                        <p>Fecha: 25 de mayo</p>
+                        <a href="/product/product_detail">
+                            <button>COMPRAR</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="img\show5.jpg" alt="show">
+                    <div class="card-description">
+                        <h1>Mega Matine Bailable</h1>
+                        <p>Fecha: 25 de mayo</p>
+                        <a href="/product/product_detail">
+                            <button>COMPRAR</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="img\show9.jpg" alt="show">
+                    <div class="card-description">
+                        <h1>Mega Matine Bailable</h1>
+                        <p>Fecha: 25 de mayo</p>
+                        <a href="/product/product_detail">
+                            <button>COMPRAR</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="filter">
+
+            </div>
+        </div>
+    </main>
+
+<!-- Footer -->
+
+    <footer>
+        <%- include('./partials/footer') %>
+    </footer>
+</body>
+
+</html>

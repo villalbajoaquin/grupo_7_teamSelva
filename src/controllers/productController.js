@@ -2,11 +2,17 @@ const path = require("path");
 
 const productController = {
     product_detail: (req, res) => {
-        res.sendFile(path.join(__dirname, "../views/products/productDetail.html"));
+        res.render('products/productDetail');
     },
     product_cart: (req, res) => {
-        res.sendFile(path.join(__dirname, "../views/products/productCart.html"));
-    }
+        res.render('products/productCart');
+    },
+    product_create: (req, res) => {
+        res.render('products/productCreate');
+    },
+    product_edit: (req, res) => {
+        res.render('products/productEdit');
+    },
 };
 
 module.exports = productController; 

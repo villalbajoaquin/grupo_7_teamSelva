@@ -118,11 +118,12 @@ nav {
 
 .search-box {
     display: flex;
+    justify-self: left;
     align-items: center;
     border: 1px solid #132a136d;
     height: 30px;
     line-height: 15px;
-    width: 90%;
+    width: 100%;
 }
 
 .search-box input {
@@ -161,6 +162,7 @@ nav {
     border-top: 1px solid #132a1331;
     cursor: pointer;
     transition: all 500ms;
+    margin-left: 25%;
 }
 
 
@@ -294,6 +296,11 @@ footer .footer-bottom {
         font-size: 15px;
     }
 
+    .search-cart {
+        width: 90%;
+        max-width: 768px;
+    }
+
     .search-box {
         height: 35px;
     }
@@ -336,6 +343,10 @@ footer .footer-bottom {
 
     .nav-menu li a {
         font-size: 16px;
+    }
+
+    .search-cart {
+        max-width: 1024px;
     }
 
     footer .footer {

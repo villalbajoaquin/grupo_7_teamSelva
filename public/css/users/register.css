@@ -6,6 +6,7 @@
 }
 header{
     background-color: white;
+   
 }
 
 
@@ -26,7 +27,7 @@ h1{
 .formulario{
 background: #90A955 ;
 opacity: 0.89;
-margin-top: 200px;
+margin-top: 25%;
 margin-bottom: 200px;
 margin-left: 5%;
 margin-right: 5%;
@@ -38,13 +39,17 @@ text-align: center;
 .formulario1 {
     background: #90A955;
     opacity: 0.89;
-    margin-top: 25%;
-    margin-bottom: 25%;
+    margin-top: 15%;
+    margin-bottom: 15%;
     margin-left: 5%;
     margin-right: 5%;
     border-radius: 5px;
     padding: 3px;
     text-align: center;
+}
+
+p{
+margin-top: 10px;
 }
 
 .contenedor{
@@ -53,7 +58,7 @@ text-align: center;
 }
 
 .input-contenedor{
-margin-bottom: 5px;
+margin-bottom: 10px;
 border: 1px solid #132A13;
 border-radius: 5px;
 margin-left: 5%;
@@ -82,6 +87,8 @@ input[type="password"]{
 .button{
 border: none;
 border-radius: 5px;
+margin-top: 10px;
+margin-bottom: 10px;
 width: 200px;
 font-size: 20px;
 color: #132A13;
@@ -94,6 +101,8 @@ cursor: pointer;
     border: none;
     border-radius: 5px;
     width: 200px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     font-size: 20px;
     color: #132A13;
     background: white;
@@ -140,7 +149,7 @@ cursor: pointer;
 }
 
 @media(min-width:1024px){
-
+        
         input[type="text"],
         input[type="password"]{  
             
