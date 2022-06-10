@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+      <%- include('../partials/head') %> 
+      <link rel="stylesheet" href="/css/users/register.css">
+      <script src="https://kit.fontawesome.com/5d58b48687.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+    <header>
+        
+      <%- include('../partials/topheader') %>
+     
+    </header>
+
+    <main>
+        <form class="formulario1">
+
+            <h1>Registrate</h1>
+
+            <div class="contenedor">
+
+                <div class="input-contenedor">
+                    <i class="fa-solid fa-envelope icon"></i>
+                    <input type="text" name="email" placeholder="Indique su email" required>
+                </div>
+                
+                <div class="input-contenedor">
+                    <i class="fa-solid fa-circle-user icon"></i>
+                    <input type="text" name="nombre" placeholder="Indique su nombre" required id="nombre">
+                </div>
+                
+                <div class="input-contenedor">
+                    <i class="fa-solid fa-lock icon"></i>
+                    <input type="password" name="contraseña" placeholder="Indique su contraseña" required>
+                </div>
+                
+                <div class="input-contenedor">
+                    <i class="fa-solid fa-lock icon"></i>
+                    <input type="password" name="contraseña" placeholder="Indique nuevamente" required>
+                </div>
+
+                <div>
+                <i class="fa-solid fa-wheelchair"></i>
+                <label for="CUD">¿Posee alguna discapacidad?</label>
+                <i class="fa-solid fa-circle-info"></i>
+                </div>
+
+                <div class="com-ven">
+                    <input type="radio" name="perfil_usuario" id="perfil_usuario" value="comprador"><span>
+                        Si</span>
+                    <input type="radio" name="perfil_usuario" id="perfil_usuario" value="vender"><span> No</span>
+                </div>
+
+                    <input type="submit" value="Registrate" class="button1">
+                <p>Al registrarte, aceptas nuestras Condiciones de uso y Politica de privacidad.</p>
+                <p>¿Ya tienes una cuenta?<a class="link" href="/user/login">Iniciar Sesion </a></p>
+
+            </div>
+
+     </form> 
+    </main>  
+    <footer>
+           <%- include('../partials/footer') %>
+    </footer>
+</body>
+</html>

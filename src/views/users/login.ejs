@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <%- include('../partials/head') %> 
+    <link rel="stylesheet" href="/css/users/register.css">
+    <script src="https://kit.fontawesome.com/5d58b48687.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+  <header>
+
+    <%- include('../partials/topheader') %>
+
+  </header>
+  
+    <form class="formulario">
+      <h1>Ingresar</h1>
+      <div class="input-contenedor">
+        <i class="fa-solid fa-circle-user icon"></i>
+        <input class="input1" type="text" name="nombre" placeholder="Indique su nombre" required id="nombre">
+      </div>
+      <div class="input-contenedor">
+        <i class="fa-solid fa-lock icon"></i>
+        <input class="input1" type="password" name="contraseña" placeholder="Indique su contraseña">
+      </div> 
+             
+        <input type="submit" value="Ingresar" class="button">
+
+       <p>
+         ¿No tienes una cuenta?<a class="link"  href="/user/register"> Registrate</a>
+       </p>          
+  
+  </form>
+  
+  <footer>
+
+     <%- include('../partials/footer') %>
+
+  </footer>
+
+</body>
+</html>

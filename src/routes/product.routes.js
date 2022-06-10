@@ -8,5 +8,11 @@ const productController = require("../controllers/productController");
 
     // product cart
     productRoutes.get('/product_cart', productController.product_cart);
+    
+    // product create
+    productRoutes.get('/product_create', productController.product_create);
+    
+    // product edit
+    productRoutes.get('/product_edit', productController.product_edit);
 
 module.exports = productRoutes;

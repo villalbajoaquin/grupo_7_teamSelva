@@ -1,0 +1,64 @@
+main {
+    width: 100%;
+}
+
+.newEvent {
+    width: 80%;
+    margin: 0 auto;
+    height: 100%;
+    max-width: 1024px;
+    padding-top: 5%;
+    padding-bottom: 7%;
+    align-items: center;
+    border: #132A13 double 3px;
+    margin-bottom: 30px;
+}
+
+.newEvent h2{
+text-align: center;
+margin-bottom: 6%;
+font-size: 2em;
+color: #132A13;
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+}
+
+.container form .infoShow input{
+    width: 300px;
+    padding: 7px;
+    margin: 10px;
+    border-color: #132A13;
+   
+}
+
+.container form .infoShow button{
+    width: 300px;
+    padding: 7px;
+    margin: 10px;
+    border-color: #132A13;
+   
+}
+
+.container form .infoShow .button-send button{
+    background-color: #4F772D;
+}
+
+.standarImg{
+    border: solid black;
+    max-width: 350px;
+    max-height: 350px;
+}
+
+.standarImg img {
+    width: 100%;
+    height: 100%;
+}
+
+.container form .infoShow .button-reset button:hover {
+    background-color: #ECF39E;
+}

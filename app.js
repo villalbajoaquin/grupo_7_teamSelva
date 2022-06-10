@@ -9,6 +9,10 @@ app.listen(port, () => {
     console.log(`http://localhost:${port}`);
 });
 
+// template engine
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, './src/views'));
+
 // urlencoded
 app.use(express.urlencoded({ extended: false }));
 
