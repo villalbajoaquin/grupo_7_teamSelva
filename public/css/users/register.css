@@ -4,15 +4,13 @@
     font-family: 'Plus Jakarta Sans',
         sans-serif;
 }
+
 header{
-    background-color: white;
-   
+    background-color: rgb(255, 255, 255);
+    opacity: 0.9;
 }
 
-
-
 body{
-    
     background: url(/img/selva1.webp);
     background-size: cover;
     background-attachment: fixed;
@@ -126,11 +124,17 @@ cursor: pointer;
 }
 
 @media(min-width:768px){
+    
+    header{
+        width: 100%;
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
 
     body{
       background: url(/img/bajada.jpg);
-      background-attachment: fixed;
       background-size: cover;
+      background-attachment: fixed;
     }
 
     .formulario{
