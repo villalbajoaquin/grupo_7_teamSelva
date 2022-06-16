@@ -16,3 +16,5 @@ Por problemas en cuanto a lo personal y a nivel cursada, se vio afectado el rend
 * Uriel: Estilizo el Product Create y el Product Edit, faltan hacerlos funcionales.
 
 * Walter: Agrego input nuevo de CUD y ventana informativa de CUD, falta hacer funcional 
+
+* Luis: Creó formularios de crear productos y editar los mismos, faltan hacerlos funcionales. Personalmente me falta afianzar y avanzar en conceptos para no atrasar a los compañeros.
