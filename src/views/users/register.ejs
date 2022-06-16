@@ -1,78 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
+    <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/css/users/register.css" />
+    <script
+      src="https://kit.fontawesome.com/5d58b48687.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header><%- include('../partials/topheader') %></header>
 
-      <%- include('../partials/head') %> 
-      <link rel="stylesheet" href="/css/users/register.css">
-      <script src="https://kit.fontawesome.com/5d58b48687.js" crossorigin="anonymous"></script>
+    <form class="formulario1" >
+      <h1>Registrate</h1>
 
-</head>
-<body>
-
-    <header>
-        
-      <%- include('../partials/topheader') %>
-     
-    </header>
-
-    <main>
-        <form class="formulario1">
-
-            <h1>Registrate</h1>
-
-            <div class="contenedor">
-
-                <div class="input-contenedor">
-                    <i class="fa-solid fa-envelope icon"></i>
-                    <input type="text" name="email" placeholder="Indique su email" required>
-                </div>
-                
-                <div class="input-contenedor">
-                    <i class="fa-solid fa-circle-user icon"></i>
-                    <input type="text" name="nombre" placeholder="Indique su nombre" required id="nombre">
-                </div>
-                
-                <div class="input-contenedor">
-                    <i class="fa-solid fa-lock icon"></i>
-                    <input type="password" name="contraseña" placeholder="Indique su contraseña" required>
-                </div>
-                
-                <div class="input-contenedor">
-                    <i class="fa-solid fa-lock icon"></i>
-                    <input type="password" name="contraseña" placeholder="Indique nuevamente" required>
-                </div>
-
-                <div>
-                <i class="fa-solid fa-wheelchair"></i>
-                <label for="CUD">¿Posee alguna discapacidad?</label>
-                <i class="fa-solid fa-circle-info"></i>
-                </div>
-
-                <div class="com-ven">
-                    <input type="radio" name="perfil_usuario" id="perfil_usuario" value="comprador"><span>
-                        Si</span>
-                    <input type="radio" name="perfil_usuario" id="perfil_usuario" value="vender"><span> No</span>
-                </div>
-
-                    <input type="submit" value="Registrate" class="button1">
-                <p>Al registrarte, aceptas nuestras Condiciones de uso y Politica de privacidad.</p>
-                <p>¿Ya tienes una cuenta?<a class="link" href="/user/login">Iniciar Sesion </a></p>
-
-            </div>
-
-     </form> 
-    </main>  
-    <footer>
-<div class="footer">
-
-    <div class="footer-bottom">
-        <div class="copyright">
-            <p>Copyright © 2022 Ticket-selva | Todos los derechos reservados.</p>
+      <div class="contenedor">
+        <div class="input-contenedor">
+          <i class="fa-solid fa-envelope icon"></i>
+          <input
+            type="text"
+            name="email"
+            placeholder="Indique su email"
+            required
+          />
         </div>
-    </div> 
 
-</div>
+        <div class="input-contenedor">
+          <i class="fa-solid fa-circle-user icon"></i>
+          <input
+            type="text"
+            name="nombre"
+            placeholder="Indique su nombre"
+            required
+            id="nombre"
+          />
+        </div>
 
+        <div class="input-contenedor">
+          <i class="fa-solid fa-lock icon"></i>
+          <input
+            type="password"
+            name="contraseña"
+            placeholder="Indique su contraseña"
+            required
+          />
+        </div>
+
+        <div class="input-contenedor">
+          <i class="fa-solid fa-lock icon"></i>
+          <input
+            type="password"
+            name="contraseña"
+            placeholder="Indique nuevamente"
+            required
+          />
+        </div>
+
+        <div class="info">
+          <i class="fa-solid fa-wheelchair"></i>
+          <label for="CUD">¿Posee alguna discapacidad?</label
+          ><a href="#miModal"> <i class="fa-solid fa-circle-info"></i></a>
+          <div id="miModal" class="modal">
+            <div class="modal-contenido">
+              <a href="#">X</a>
+              <p>
+                El CUD es un documento que certifica la discapacidad de la
+                persona y le permite acceder a derechos y prestaciones que
+                brinda el Estado.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="com-ven">
+          <input
+            type="radio"
+            name="perfil_usuario"
+            id="perfil_usuario"
+            value="comprador"
+          /><span> Si</span>
+          <input
+            type="radio"
+            name="perfil_usuario"
+            id="perfil_usuario"
+            value="vender"
+          /><span> No</span>
+        </div>
+
+        <div class="input-contenedor">
+          <input
+            type="text"
+            name="contraseña"
+            placeholder="Indique su numero"
+            required
+          />
+        </div>
+
+        <input type="submit" value="Registrate" class="button1" />
+        <p>
+          Al registrarte, aceptas nuestras Condiciones de uso y Politica de
+          privacidad.
+        </p>
+        <p>
+          ¿Ya tienes una cuenta?<a class="link" href="/user/login"
+            >Iniciar Sesion
+          </a>
+        </p>
+      </div>
+    </form>
+
+    <footer>
+      <div class="footer">
+        <div class="footer-bottom">
+          <div class="copyright">
+            <p>
+              Copyright © 2022 Ticket-selva | Todos los derechos reservados.
+            </p>
+          </div>
+        </div>
+      </div>
     </footer>
-</body>
+  </body>
 </html>
