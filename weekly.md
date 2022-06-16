@@ -14,3 +14,5 @@ Por problemas en cuanto a lo personal y a nivel cursada, se vio afectado el rend
 * Joaquin: Adaptó la vista del home para mostrar los shows puestos en el controlador. Tambien trabajó sobre la implementacion de la vista predeterminada para el error 404. Personalmente le falta avanzar en conceptos puntuales sobre la parametrización en los controladores.
 
 * Uriel: Estilizo el Product Create y el Product Edit, faltan hacerlos funcionales.
+
+* Walter: Agrego input nuevo de CUD y ventana informativa de CUD, falta hacer funcional 
