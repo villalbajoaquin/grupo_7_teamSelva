@@ -34,8 +34,8 @@
                         <img src= <%= shows[i].imgsrc %>  alt="deberia show">
                         <div class="card-description">
                             <h1><%= shows[i].name %></h1>
-                            <p>Fecha: <%= shows[i].date %></p>
-                            <a href="/product/product_detail">
+                            <p>Fecha: <%= shows[i].date %>  <%= shows[i].time %></p>
+                            <a href="/product/<%= shows[i].id %> ">
                                 <button>COMPRAR</button>
                             </a>
                         </div>
@@ -48,7 +48,7 @@
                         <img src= <%= shows[i].imgsrc %>  alt="deberia show">
                         <div class="card-description">
                             <h1><%= shows[i].name %></h1>
-                            <p>Fecha: <%= shows[i].date %></p>
+                            <p>Fecha: <%= shows[i].date %>  <%= shows[i].time %></p>
                             <a href="/product/product_detail">
                                 <button>COMPRAR</button>
                             </a>
@@ -57,55 +57,11 @@
                 <% } %>                
             </div>
             
-            <input type="checkbox" id="check">
-            <label for="check" class="mas-shows">
+            <a href="/product">
                 <h2>Más shows</h2>
-            </label>
-            <div class="cards-pop">
-                <div class="card">
-                    <img src="img\show3.jpg" alt="show">
-                    <div class="card-description">
-                        <h1>Mega Matine Bailable</h1>
-                        <p>Fecha: 25 de mayo</p>
-                        <a href="/product/product_detail">
-                            <button>COMPRAR</button>
-                        </a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="img\show4.jpg" alt="show">
-                    <div class="card-description">
-                        <h1>Mega Matine Bailable</h1>
-                        <p>Fecha: 25 de mayo</p>
-                        <a href="/product/product_detail">
-                            <button>COMPRAR</button>
-                        </a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="img\show5.jpg" alt="show">
-                    <div class="card-description">
-                        <h1>Mega Matine Bailable</h1>
-                        <p>Fecha: 25 de mayo</p>
-                        <a href="/product/product_detail">
-                            <button>COMPRAR</button>
-                        </a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="img\show9.jpg" alt="show">
-                    <div class="card-description">
-                        <h1>Mega Matine Bailable</h1>
-                        <p>Fecha: 25 de mayo</p>
-                        <a href="/product/product_detail">
-                            <button>COMPRAR</button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="filter">
-
-            </div>
+            </a>
+            
+            
         </div>
     </main>
 

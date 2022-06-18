@@ -10,7 +10,7 @@
 
     <link rel="shortcut icon" href="/img/favicon.ico">
     <script src="https://kit.fontawesome.com/d160ea4c64.js" crossorigin="anonymous"></script>
-    <title>Inicio</title>
+    <title><%= show.name %>  | ticket-selva</title>
 </head>
 
 <body>
@@ -47,26 +47,26 @@
     <!--Product Detail version 1-->
     <main>
         <div class="border">
-            <h1 class="titulo-show">Mega Matine Bailable</h1>
+            <h1 class="titulo-show"><%= show.name %> </h1>
             <div class="description-product">
                 <div class="imagen-show">
-                    <img src="/img/show3.jpg" class="imagen-show" alt="Imagen del Show correspondiente">
+                    <img src= /<%= show.imgsrc %> class="imagen-show" alt="Imagen del Show correspondiente">
                 </div>
                 <div class="media">
-                    <h1 class="subtitulo">Entradas para mega matine bailable</h1>
+                    <h1 class="subtitulo">Entradas para <%= show.name %> </h1>
                     <h4 class="disponibilidad">Disponibilidad</h4>
                     <div class="check-correct">
                         <i class="fa-solid fa-square-check"></i>
                         <a class="stock">In Stock</a>
                     </div>
                     <div class="info-del-show">
-                        <h5>Fecha: Miercoles 25 de Mayo</h5>
-                        <h5>Horario: 18:00</h5>
+                        <h5>Fecha: <%= show.date %></h5>
+                        <h5>Horario: <%= show.time %></h5>
                         <h5>Para autorizar su ingreso debera mostrar el codigo que tendra en su correo electronico</h5>
                     </div>
                     <div class="caja-de-compra">
                         <div class="border-caja-compra">
-                            <p>1000 ARS</p>
+                            <p><%= show.price %>  ARS</p>
                             <div class="aniadir-al-carrito">
                                 <div class="cantidad-de-entradas">
                                     <h5 class="">Cantidad</h5>

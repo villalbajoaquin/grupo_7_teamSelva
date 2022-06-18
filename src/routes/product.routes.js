@@ -1,18 +1,34 @@
 const express = require("express");
 const productRoutes = express.Router();
 const productController = require("../controllers/productController");
+const path = require('path');
+
+// multer config
+const multer = require('multer');
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, './public/uploads');
+    },
+    filename: (req, file, cb) => {
+        cb(null, `${Date.now()}_pdt_${path.extname(file.originalname)}`);
+    }
+});
+const uploads = multer({ storage });
 
 // routes
-    // product detail
-    productRoutes.get('/product_detail', productController.product_detail);
+    // product list
+    productRoutes.get('/', productController.product_list); // Sprint 4
 
     // product cart
     productRoutes.get('/product_cart', productController.product_cart);
     
-    // product create
+    // product create (GET)
     productRoutes.get('/product_create', productController.product_create);
     
-    // product edit
+    // product edit (GET)
     productRoutes.get('/product_edit', productController.product_edit);
+    
+    // product detail
+    productRoutes.get('/:id', productController.product_detail);
 
 module.exports = productRoutes;
