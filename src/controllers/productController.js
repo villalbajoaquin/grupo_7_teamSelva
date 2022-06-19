@@ -27,6 +27,20 @@ const productController = {
     product_edit: (req, res) => {
         res.render('products/productEdit');
     },
+    product_delete: (req, res) =>{
+        let shows = productArray;
+        let id = req.params.id;
+        shows = shows.filter((item) => item.id != id);
+
+        fs.writeFileSync(
+            path.join(__dirname, "../data/products.json"),
+            JSON.stringify(shows, null, 4),
+            {
+                encoding: "utf-8",
+            }
+        );
+        res.render('products/productList', {shows});
+    }
 };
 
 module.exports = productController; 

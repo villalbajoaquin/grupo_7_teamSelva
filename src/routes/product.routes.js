@@ -28,6 +28,9 @@ const uploads = multer({ storage });
     // product edit (GET)
     productRoutes.get('/product_edit', productController.product_edit);
     
+    // product delete (DELETE)
+    productRoutes.delete('/:id', productController.product_delete);
+
     // product detail
     productRoutes.get('/:id', productController.product_detail);
 

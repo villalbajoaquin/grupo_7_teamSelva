@@ -130,19 +130,37 @@ margin-bottom: 10px
 }
 
 .add-to-cart {
-    margin-top: 10px;
-    margin-bottom: 20px;
+    margin-top: 5px;
+    margin-bottom: 10px;
     width: 100%;
     height: 30px;
 }
 
 .add-to-cart:hover {
     background-color: #009E09;
+    color: #ffffff;
 }
 
 .add-to-cart i {
     margin-right: 3px;
 }
+
+ .add-to-trash{
+    margin-top: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 30px;
+ }
+
+ .add-to-trash i{
+    margin-right: 3px;
+}
+
+.add-to-trash:hover {
+    background-color: red;
+    color: #ffffff;
+}
+
 
 .description-product {
     background-color: #ffffff;
