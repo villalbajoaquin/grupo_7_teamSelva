@@ -50,6 +50,10 @@ main{
    /* background-color: #90A955; */
 }
 
+.subtitulo h1 a button i{
+border: none;
+}
+
 .disponibilidad{
     font-size: 10px;
     width: 90%;

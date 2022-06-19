@@ -19,7 +19,7 @@
     <!--Product Detail version 1-->
     <main>
         <div class="border">
-            <h1 class="titulo-show"><%= show.name %> </h1>
+            <h1 class="titulo-show"><%= show.name %>  </h1>
             <div class="description-product">
                 <div class="imagen-show">
                     <img src= /<%= show.imgsrc %> class="imagen-show" alt="Imagen del Show correspondiente">
@@ -58,7 +58,11 @@
                                         <i class="fa-solid fa-trash"></i><span>Borrar show</span>
                                     </button>
                                 </form>
-                               
+                                <a href="/product/product_edit">
+                                    <button class="add-to-cart" data-button-action="add-to-cart">
+                                    <i class="fa-solid fa-pen-to-square"></i><span>Editar show</span>
+                                </button>
+                                </a>
                             </div>
                         </div>
                     </div>
