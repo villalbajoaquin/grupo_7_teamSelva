@@ -40,7 +40,7 @@ const productController = {
                 encoding: "utf-8",
             }
         );
-        res.render('products/productList', {shows});
+        res.render('/product/productList', {shows});
     }
 };
 
