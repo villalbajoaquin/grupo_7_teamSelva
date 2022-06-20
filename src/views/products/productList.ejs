@@ -6,7 +6,7 @@
     
     <link rel="stylesheet" href="/css/products/productList.css">
 
-    <title>Inicio | ticket-selva</title>
+    <title>Eventos | ticket-selva</title>
 </head>
 
 <body>
@@ -32,7 +32,7 @@
 
                 <% for( let i = 0; i < shows.length; i++ ) { %>
                     <div class="card">                    
-                        <img src= <%= shows[i].imgsrc %>  alt="deberia show">
+                        <img src= \<%= shows[i].imgsrc %>  alt="deberia show">
                         <div class="card-description">
                             <h1><%= shows[i].name %></h1>
                             <p>Fecha: <%= shows[i].date %> <%= shows[i].time %></p>
