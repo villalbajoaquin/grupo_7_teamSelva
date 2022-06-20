@@ -1,7 +1,6 @@
 const path = require("path");
 const fs = require('fs');
 const { json } = require('express');
-const methodOverride = require('method-override');
 
 const productArray = require('../data/products.json');
 //console.log(productArray);

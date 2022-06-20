@@ -16,8 +16,8 @@ app.set('views', path.join(__dirname, './src/views'));
 // static
 app.use(express.static(path.join(__dirname, 'public')));
 
-    // _method
-    app.use(methodOverride('_method'));
+// _method
+app.use(methodOverride('_method'));
 
 
 // routes
