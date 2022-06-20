@@ -13,6 +13,19 @@ const productController = {
         let shows = productArray;
         res.render('products/productList', { shows });
     },
+    product_search: (req, res) => {
+        let shows = productArray;
+        let input = req.query.search;
+        let filteredShows = [];
+
+        for (let i = 0; i < shows.length; i++) {
+            if (shows[i].name.includes(input)) {
+                filteredShows.push(shows[i]);
+            };
+        };
+
+        res.render('products/productList', { shows: filteredShows });
+    },
     product_detail: (req, res) => {
         let shows = productArray;
         let id = req.params.id;
