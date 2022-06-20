@@ -53,7 +53,7 @@ const productController = {
                 encoding: "utf-8",
             }
         );
-        res.render('/product/productList', {shows});
+        res.render('./products/productList', {shows});
     }
 };
 

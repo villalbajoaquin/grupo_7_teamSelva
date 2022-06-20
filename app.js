@@ -16,6 +16,10 @@ app.set('views', path.join(__dirname, './src/views'));
 // static
 app.use(express.static(path.join(__dirname, 'public')));
 
+    // _method
+    app.use(methodOverride('_method'));
+
+
 // routes
 app.use('/', require('./src/routes/index.routes'));
 
@@ -23,9 +27,6 @@ app.use('/', require('./src/routes/index.routes'));
     // json
     app.use(express.urlencoded({ extended: false }));
     app.use(express.json());
-
-    // _method
-    app.use(methodOverride('_method'));
 
     // 404
     app.use((req, res, next) => {
