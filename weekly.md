@@ -19,5 +19,5 @@ Por problemas en cuanto a lo personal y a nivel cursada, se vio afectado el rend
 
 * Luis: Creó formularios de crear productos y editar los mismos, faltan hacerlos funcionales. Personalmente me falta afianzar y avanzar en conceptos para no atrasar a los compañeros.
 
-**Fecha: Jueves 21/06**
+**Fecha: Martes 21/06**
 * Joaquin y Luis: Trabajamos juntos en la definicion de los campos del products.json, la lista de todos los productos, la parametrizacion de las rutas del detalle de producto y tambien la barra de busqueda. Impedimento principal: reforzar el trabajo con fechas en JavaScript (modulo Date()).
