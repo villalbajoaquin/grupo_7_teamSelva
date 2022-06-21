@@ -13,8 +13,6 @@ const productRoutes = express.Router();
     // product create (GET)
     productRoutes.get('/product_create', productController.product_create);
   
-    //PRODUCT EDIT
-
     // product edit (GET)
     productRoutes.get('/product_edit/:id', productController.product_editA);
     
