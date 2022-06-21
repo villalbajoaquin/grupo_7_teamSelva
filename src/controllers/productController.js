@@ -93,12 +93,13 @@ const productController = {
     product_editB: (req, res) => {
         let id = req.params.id
         let shows = productArray;
-        const { name, date, tickets, price, imgsrc } = req.body;
+        const { name, date, tickets, price, imgsrc, time, } = req.body;
         shows = shows.filter((item) => item.id != id);
         shows.forEach(item => {
             if(item.id == id)
             item.name = name;
             item.date = date;
+            item.time = time;
             item.tickets = tickets;
             item.price = price;
             item.imgsrc = imgsrc;         
