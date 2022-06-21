@@ -16,10 +16,10 @@ const productRoutes = express.Router();
     //PRODUCT EDIT
 
     // product edit (GET)
-productRoutes.get('/product_edit/:id', productController.product_editA);
+    productRoutes.get('/product_edit/:id', productController.product_editA);
     
     // product edit (PUT)
-productRoutes.put("product_edit/:id", productController.product_editB)
+    productRoutes.put("product_edit/:id", productController.product_editB)
 
     // product search
     productRoutes.get('/search', productController.product_search); // Sprint 4

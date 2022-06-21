@@ -18,9 +18,6 @@ const productController = {
     product_create: (req, res) => {
         res.render('products/productCreate');
     },
-    product_edit: (req, res) => {
-        res.render('products/productEdit');
-    },
     product_search: (req, res) => {
         let shows = productArray;
         let input = req.query.search;
