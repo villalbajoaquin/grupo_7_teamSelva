@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <%- include('../partials/navbar') %>
+        <%- include('../partials/topheader') %>
     </header>
     <main>
         <div class="new-event">
@@ -19,31 +19,31 @@
             </div>
 
             <div class="container">
-                <div class="standar-img"> <img src="/img/show3.jpg" > </div>
-                <form action="/" method="get">
+                <div class="standar-img"> <img src="/<%=shows.imgsrc%>" > </div>
+                <form action="/product/product_edit/<%=show.id%>?_method=PUT" method="POST">
                     <section class="info-show">
                         
                         <div>
-                            <input id="e-i-show-name" type="text" name="show-name" placeholder="Nombre del show" required>
+                            <input id="e-i-show-name" type="text" value="<%=shows.name%>" name="show-name" placeholder="Nombre del show" required>
                         </div>
 
                       
                         <div>
-                            <input id="e-i-show-date" type="datetime-local" name="show-date" placeholder="Fecha y hora del show" required>
+                            <input id="e-i-show-date" type="datetime-local" value="<%=shows.date%>" name="show-date" placeholder="Fecha y hora del show" required>
                         </div>
 
                         
                         <div>
-                            <input id="e-i-show-n-tickets" type="number" name="show-n-tickets" placeholder="Cantidad de tickets" required>
+                            <input id="e-i-show-n-tickets" type="number" value="<%=shows.tickets%>" name="show-n-tickets" placeholder="Cantidad de tickets" required>
                         </div>
 
 
                         <div>
-                            <input id="i-show-price" type="text" name="show-price" placeholder="Precio del show" required>
+                            <input id="i-show-price" type="text" value="<%=shows.price%>" name="show-price" placeholder="Precio del show" required>
                         </div>
 
                         <div>
-                            <input id="e-i-show-file" type="file" name="show-file" placeholder="Imagen del show" required>
+                            <input id="e-i-show-file" type="file" value="<%=shows.imgsrc%>" name="show-file" placeholder="Imagen del show" required>
                         </div>
 
                         <div class="button-send">
@@ -66,7 +66,7 @@
 
     
     <footer>
-        <%- include('../partials/footer') %>
+        <%- include('../partials/bottomfooter') %>
     </footer>
 </body>
 </html>

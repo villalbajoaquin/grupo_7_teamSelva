@@ -37,9 +37,36 @@ const productController = {
     product_create: (req, res) => {
         res.render('products/productCreate');
     },
-    product_edit: (req, res) => {
-        res.render('products/productEdit');
+    product_editA: (req, res) => {
+        let id = req.params.id
+        let shows = productArray;
+        let product_edit = shows.find((item) => item.id == id);
+        res.render('./products/productEdit', { shows:product_edit });
     },
+
+    product_editB: (req, res) => {
+        let id = req.params.id
+        let shows = productArray;
+        const { name, date, tickets, price, imgsrc } = req.body;
+        shows = shows.filter((item) => item.id != id);
+        shows.forEach(item => {
+            if(item.id == id)
+            item.name = name;
+            item.date = date;
+            item.tickets = tickets;
+            item.price = price;
+            item.imgsrc = imgsrc;         
+        });
+        fs.writeFileSync(
+            path.join(__dirname, "../data/products.json"),
+            JSON.stringify(shows, null, 4),
+            {
+                encoding: "utf-8",
+            }
+        );
+        res.render('./products/productEdit', {shows});
+    },
+
     product_delete: (req, res) =>{
         let shows = productArray;
         let id = req.params.id;
