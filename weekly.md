@@ -23,3 +23,5 @@ Por problemas en cuanto a lo personal y a nivel cursada, se vio afectado el rend
 * Joaquin y Luis: Trabajamos juntos en la definicion de los campos del products.json, la lista de todos los productos, la parametrizacion de las rutas del detalle de producto y tambien la barra de busqueda. Impedimento principal: reforzar el trabajo con fechas en JavaScript (modulo Date()).
 
 * Walter: Trabaje en conjunto con Uriel en el metodo DELETE, optimice los header y footer y implemente el metodo PUT.
+
+* Uriel: Implementacion del metodo DELETE, trabajo en conjunto con Walter para implementar el PUT.

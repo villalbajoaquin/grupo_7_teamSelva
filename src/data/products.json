@@ -9,15 +9,6 @@
         "price": 1000
     },
     {
-        "id": 2,
-        "imgsrc": "img/show4.jpg",
-        "name": "Show Matías Valdez",
-        "date": "28/05/22",
-        "time": "22:00",
-        "tickets": 550,
-        "price": 750
-    },
-    {
         "id": 3,
         "imgsrc": "img/show5.jpg",
         "name": "Kolombo en UMMA",
@@ -25,6 +16,15 @@
         "time": "21:00",
         "tickets": 550,
         "price": 800
+    },
+    {
+        "id": 2,
+        "imgsrc": "img/show4.jpg",
+        "name": "Show Matías Valdez",
+        "date": "28/05/22",
+        "time": "22:00",
+        "tickets": 550,
+        "price": 750
     },
     {
         "id": 4,

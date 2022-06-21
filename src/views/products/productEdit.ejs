@@ -20,7 +20,7 @@
 
             <div class="container">
                 <div class="standar-img"> <img src="/<%=shows.imgsrc%>" > </div>
-                <form action="/product/product_edit/<%=show.id%>?_method=PUT" method="POST">
+                <form action="/product/product_edit/<%=shows.id%>?_method=PUT" method="POST">
                     <section class="info-show">
                         
                         <div>
@@ -29,10 +29,13 @@
 
                       
                         <div>
-                            <input id="e-i-show-date" type="datetime-local" value="<%=shows.date%>" name="show-date" placeholder="Fecha y hora del show" required>
+                            <input id="e-i-show-date" type="datetime-local" value="<%=shows.date%>" name="show-date" placeholder="Fecha del show" required>
                         </div>
 
-                        
+                        <div>
+                            <input id="e-i-show-time" type="time" value="<%=shows.time%>" name="show-time" placeholder="Hora del show" required>
+                        </div>
+
                         <div>
                             <input id="e-i-show-n-tickets" type="number" value="<%=shows.tickets%>" name="show-n-tickets" placeholder="Cantidad de tickets" required>
                         </div>
