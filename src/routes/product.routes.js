@@ -23,6 +23,16 @@ productRoutes.put("product_edit/:id", productController.product_editB)
 
     // product search
     productRoutes.get('/search', productController.product_search); // Sprint 4
+
+    // product time filters
+        // 24h
+        productRoutes.get('/twenty-four', productController.twenty_four);
+
+        // 7d
+        productRoutes.get('/seven', productController.seven);
+
+        // 30d
+        productRoutes.get('/thirty', productController.thirty);
     
     // product delete (DELETE)
     productRoutes.delete('/:id', productController.product_delete); // Sprint 4

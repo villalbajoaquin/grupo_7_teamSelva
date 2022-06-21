@@ -12,6 +12,15 @@ const productController = {
         let shows = productArray;
         res.render('products/productList', { shows });
     },
+    product_cart: (req, res) => {
+        res.render('products/productCart');
+    },
+    product_create: (req, res) => {
+        res.render('products/productCreate');
+    },
+    product_edit: (req, res) => {
+        res.render('products/productEdit');
+    },
     product_search: (req, res) => {
         let shows = productArray;
         let input = req.query.search;
@@ -25,25 +34,65 @@ const productController = {
 
         res.render('products/productList', { shows: filteredShows });
     },
-    product_detail: (req, res) => {
+    //product time filters
+    twenty_four: (req, res) => {
         let shows = productArray;
-        let id = req.params.id;
-        let show = shows.find((item) => item.id == id);
-        res.render('products/productDetail', { show });
+        const today = new Date();
+        const tomorrow = new Date(today);
+        tomorrow.setDate(today.getDate() + 1);
+
+        let filteredShows = [];
+
+        for (let i = 0; i < shows.length; i++) {
+            let showDate = new Date(shows[i].date);
+            if (showDate < tomorrow) {
+                filteredShows.push(shows[i]);
+            };
+        };
+
+        res.render('products/productList', { shows: filteredShows });
     },
-    product_cart: (req, res) => {
-        res.render('products/productCart');
+    seven: (req, res) => {
+        let shows = productArray;
+        const today = new Date();
+        const tomorrow = new Date(today);
+        tomorrow.setDate(today.getDate() + 7);
+
+        let filteredShows = [];
+
+        for (let i = 0; i < shows.length; i++) {
+            let showDate = new Date(shows[i].date);
+            if (showDate < tomorrow) {
+                filteredShows.push(shows[i]);
+            };
+        };
+
+        res.render('products/productList', { shows: filteredShows });
     },
-    product_create: (req, res) => {
-        res.render('products/productCreate');
+    thirty: (req, res) => {
+        let shows = productArray;
+        const today = new Date();
+        const tomorrow = new Date(today);
+        tomorrow.setDate(today.getDate() + 30);
+
+        let filteredShows = [];
+
+        for (let i = 0; i < shows.length; i++) {
+            let showDate = new Date(shows[i].date);
+            if (showDate < tomorrow) {
+                filteredShows.push(shows[i]);
+            };
+        };
+
+        res.render('products/productList', { shows: filteredShows });
     },
+    //product time filters
     product_editA: (req, res) => {
         let id = req.params.id
         let shows = productArray;
         let product_edit = shows.find((item) => item.id == id);
         res.render('./products/productEdit', { shows:product_edit });
     },
-
     product_editB: (req, res) => {
         let id = req.params.id
         let shows = productArray;
@@ -66,7 +115,6 @@ const productController = {
         );
         res.render('./products/productEdit', {shows});
     },
-
     product_delete: (req, res) =>{
         let shows = productArray;
         let id = req.params.id;
@@ -80,6 +128,12 @@ const productController = {
             }
         );
         res.render('./products/productList', {shows});
+    },
+    product_detail: (req, res) => {
+        let shows = productArray;
+        let id = req.params.id;
+        let show = shows.find((item) => item.id == id);
+        res.render('products/productDetail', { show });
     }
 };
 
