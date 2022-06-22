@@ -15,8 +15,29 @@ const productController = {
     product_cart: (req, res) => {
         res.render('products/productCart');
     },
-    product_create: (req, res) => {
+    product_createA: (req, res) => {
         res.render('products/productCreate');
+    },
+    product_createB: (req, res) => {
+        let shows = productArray;
+        const newId = shows[(shows.length - 1)].id + 1;
+        let newShow = {
+            id: newId,
+            name: req.body.name,
+            date: req.body.date,
+            time: req.body.time,
+            tickets: req.body.tickets,
+            price: req.body.price,
+        }
+        shows.push(newShow)
+        fs.writeFileSync(
+            path.join(__dirname, "../data/products.json"),
+            JSON.stringify(shows, null, 4),
+            {
+                encoding: "utf-8",
+            }
+        );
+        res.render('./products/productList', {shows});
     },
     product_search: (req, res) => {
         let shows = productArray;
@@ -96,13 +117,14 @@ const productController = {
         const { name, date, tickets, price, imgsrc, time, } = req.body;
         shows = shows.filter((item) => item.id != id);
         shows.forEach(item => {
-            if(item.id == id)
+            if(item.id == id){
             item.name = name;
             item.date = date;
             item.time = time;
             item.tickets = tickets;
             item.price = price;
-            item.imgsrc = imgsrc;         
+            item.imgsrc = imgsrc;
+            }     
         });
         fs.writeFileSync(
             path.join(__dirname, "../data/products.json"),

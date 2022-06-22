@@ -11,8 +11,11 @@ const productRoutes = express.Router();
     productRoutes.get('/product_cart', productController.product_cart);
     
     // product create (GET)
-    productRoutes.get('/product_create', productController.product_create);
-  
+    productRoutes.get('/product_create', productController.product_createA);
+
+    // product create (POST)
+    productRoutes.post('/product_create', productController.product_createB);
+
     // product edit (GET)
     productRoutes.get('/product_edit/:id', productController.product_editA);
     
