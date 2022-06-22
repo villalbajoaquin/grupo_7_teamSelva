@@ -23,74 +23,55 @@
 
             <div class="container">
                 <div class="standar-img"> <img src="/img/img-predet.png" > </div>
-                <form action="/" method="get">
+                <form action="/product/product_create" method="POST">
                     <section class="info-show">
 
+                        <div>
+                            <input type="text" name="name" placeholder="Nombre del show" required>
+                        </div>
+
+                        <div>
+                            <input type="date" name="date" placeholder="Fecha show" required>
+                        </div>
+
+                        <div>
+                            <input type="time" name="time" placeholder="Hora del show" required>
+                        </div>
+
+                        <div>
+                            <input type="number" name="tickets" placeholder="Cantidad de tickets" required>
+                        </div>
+
+                        <div>
+                            <input type="text" name="price" placeholder="Precio del show" required>
+                        </div>
                         
-                        <div>
-                            <input id="i-show-name" type="text" name="show-name" placeholder="Nombre del show" required>
-                        </div>
-
-                      
-                        <div>
-                            <input id="i-show-date" type="datetime-local" name="show-date" placeholder="Fecha y hora del show" required>
-                        </div>
-
-                        
-                        <div>
-                            <input id="i-show-n-tickets" type="number" name="show-n-tickets" placeholder="Cantidad de tickets" required>
-                        </div>
-
-                        <div>
-                            <input id="i-show-price" type="text" name="show-price" placeholder="Precio del show" required>
-                        </div>
-                        
-
-                        <div>
+                      <!--  <div>
                             <input id="i-show-file" type="file" name="show-file" placeholder="Imagen del show" required>
-                        </div>
+                        </div> -->
 
                         <div class="button-send">
-                            <button onclick="alert('Los datos fueron subidos exitosamente');" href="/" type="send">Enviar</button>
+                            <button type="submit">Enviar</button>
                         </div>    
 
                         <div class="button-reset">
                             <button type="reset">Borrar campos</button>
                         </div>
 
-
-
-
                     </section>
-
-
-
-
-
-
 
                 </form>
 
-
-
             </div>
-
-
-
-
-
 
         </div>
 
-
-
-
     </main>
-
 
     <footer>
         <%- include('../partials/footer') %>
     </footer>
+
 </body>
 
 </html>
