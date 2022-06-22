@@ -117,14 +117,14 @@ const productController = {
         const { name, date, tickets, price, imgsrc, time, } = req.body;
         shows = shows.filter((item) => item.id != id);
         shows.forEach(item => {
-            if(item.id == id){
-            item.name = name;
-            item.date = date;
-            item.time = time;
-            item.tickets = tickets;
-            item.price = price;
-            item.imgsrc = imgsrc;
-            }     
+            if(item.id == id) {
+                item.name = name;
+                item.date = date;
+                item.time = time;
+                item.tickets = tickets;
+                item.price = price;
+                item.imgsrc = imgsrc;         
+            }
         });
         fs.writeFileSync(
             path.join(__dirname, "../data/products.json"),

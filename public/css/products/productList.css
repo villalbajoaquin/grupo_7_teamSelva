@@ -43,9 +43,11 @@ main {
     font-weight: 800;
     font-size: 15px;
     cursor: pointer;
+    transition: all 300ms;
 }
 
 .create button:hover {
+    border-radius: 5px;
     color: #4F772D;
 }
 
@@ -96,9 +98,11 @@ main {
     color: #132A13;
     font-weight: 800;
     cursor: pointer;
+    transition: all 300ms;
 }
 
 .card .card-description button:hover {
+    border-radius: 5px;
     color: #4F772D;
 }
 
