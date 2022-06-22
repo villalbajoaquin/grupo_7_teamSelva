@@ -24,33 +24,31 @@
                     <section class="info-show">
                         
                         <div>
-                            <input id="e-i-show-name" type="text" value="<%=shows.name%>" name="show-name" placeholder="Nombre del show" required>
+                            <input type="text" value="<%=shows.name%>" name="show-name" placeholder="Nombre del show" required>
                         </div>
-
                       
                         <div>
-                            <input id="e-i-show-date" type="datetime-local" value="<%=shows.date%>" name="show-date" placeholder="Fecha del show" required>
+                            <input type="datetime-local" value="<%=shows.date%>" name="show-date" placeholder="Fecha del show" required>
                         </div>
 
                         <div>
-                            <input id="e-i-show-time" type="time" value="<%=shows.time%>" name="show-time" placeholder="Hora del show" required>
+                            <input type="time" value="<%=shows.time%>" name="show-time" placeholder="Hora del show" required>
                         </div>
 
                         <div>
-                            <input id="e-i-show-n-tickets" type="number" value="<%=shows.tickets%>" name="show-n-tickets" placeholder="Cantidad de tickets" required>
-                        </div>
-
-
-                        <div>
-                            <input id="i-show-price" type="text" value="<%=shows.price%>" name="show-price" placeholder="Precio del show" required>
+                            <input type="number" value="<%=shows.tickets%>" name="show-n-tickets" placeholder="Cantidad de tickets" required>
                         </div>
 
                         <div>
-                            <input id="e-i-show-file" type="file" value="<%=shows.imgsrc%>" name="show-file" placeholder="Imagen del show" required>
+                            <input type="text" value="<%=shows.price%>" name="show-price" placeholder="Precio del show" required>
+                        </div>
+
+                        <div>
+                            <input type="file" value="<%=shows.imgsrc%>" name="show-file" placeholder="Imagen del show" required>
                         </div>
 
                         <div class="button-send">
-                            <button onclick="alert('Los datos fueron editados exitosamente');" href="/" type="send">Enviar</button>
+                            <button  href="/" type="submit">Enviar</button>
                         </div>    
 
                         <div class="button-reset">
