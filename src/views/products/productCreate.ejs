@@ -23,7 +23,7 @@
 
             <div class="container">
                 <div class="standar-img"> <img src="/img/img-predet.png" > </div>
-                <form action="/product/product_create" method="POST">
+                <form action="/product/product_create" method="POST" enctype="multipart/form-data">
                     <section class="info-show">
 
                         <div>
@@ -46,9 +46,9 @@
                             <input type="text" name="price" placeholder="Precio del show" required>
                         </div>
                         
-                      <!--  <div>
-                            <input id="i-show-file" type="file" name="show-file" placeholder="Imagen del show" required>
-                        </div> -->
+                        <div>
+                            <input type="file" name="imgsrc" placeholder="Imagen del show" required>
+                        </div>
 
                         <div class="button-send">
                             <button type="submit">Enviar</button>

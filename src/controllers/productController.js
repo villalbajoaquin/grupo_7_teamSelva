@@ -21,8 +21,11 @@ const productController = {
     product_createB: (req, res) => {
         let shows = productArray;
         const newId = shows[(shows.length - 1)].id + 1;
+        let file = req.file;
+        console.log(file.filename);
         let newShow = {
             id: newId,
+            imgsrc: `img/uploads/${file.filename}`,
             name: req.body.name,
             date: req.body.date,
             time: req.body.time,
@@ -114,6 +117,7 @@ const productController = {
     product_editB: (req, res) => {
         let id = req.params.id
         let shows = productArray;
+        let file = req.file;
         const { name, date, tickets, price, imgsrc, time, } = req.body;
         shows = shows.filter((item) => item.id != id);
         shows.forEach(item => {
@@ -123,7 +127,7 @@ const productController = {
                 item.time = time;
                 item.tickets = tickets;
                 item.price = price;
-                item.imgsrc = imgsrc;         
+                item.imgsrc = `img/uploads/${file.filename}`;        
             }
         });
         fs.writeFileSync(

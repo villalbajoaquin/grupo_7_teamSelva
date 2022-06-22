@@ -9,15 +9,6 @@
         "price": 1000
     },
     {
-        "id": 3,
-        "imgsrc": "img/show5.jpg",
-        "name": "Kolombo en UMMA",
-        "date": "10/06/22",
-        "time": "21:00",
-        "tickets": 550,
-        "price": 800
-    },
-    {
         "id": 2,
         "imgsrc": "img/show4.jpg",
         "name": "Show Matías Valdez",
@@ -25,6 +16,15 @@
         "time": "22:00",
         "tickets": 550,
         "price": 750
+    },
+    {
+        "id": 3,
+        "imgsrc": "img/show5.jpg",
+        "name": "Kolombo en UMMA",
+        "date": "10/06/22",
+        "time": "21:00",
+        "tickets": 550,
+        "price": 800
     },
     {
         "id": 4,
@@ -88,5 +88,14 @@
         "time": "21:00",
         "tickets": 550,
         "price": 750
+    },
+    {
+        "id": 11,
+        "imgsrc": "img/uploads/1655873983623_pdt_.jpg",
+        "name": "Una Noche en el Hotel",
+        "date": "2022-07-31",
+        "time": "20:00",
+        "tickets": "650",
+        "price": "3000"
     }
 ]

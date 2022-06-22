@@ -20,35 +20,35 @@
 
             <div class="container">
                 <div class="standar-img"> <img src="/<%=shows.imgsrc%>" > </div>
-                <form action="/product/product_edit/<%=shows.id%>?_method=PUT" method="POST">
+                <form action="/product/product_edit/<%=shows.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
                     <section class="info-show">
                         
                         <div>
-                            <input type="text" value="<%=shows.name%>" name="show-name" placeholder="Nombre del show" required>
+                            <input type="text" value="<%=shows.name%>" name="name" placeholder="Nombre del show" required>
                         </div>
                       
                         <div>
-                            <input type="datetime-local" value="<%=shows.date%>" name="show-date" placeholder="Fecha del show" required>
+                            <input type="date" value="<%=shows.date%>" name="date" placeholder="Fecha del show" required>
                         </div>
 
                         <div>
-                            <input type="time" value="<%=shows.time%>" name="show-time" placeholder="Hora del show" required>
+                            <input type="time" value="<%=shows.time%>" name="time" placeholder="Hora del show" required>
                         </div>
 
                         <div>
-                            <input type="number" value="<%=shows.tickets%>" name="show-n-tickets" placeholder="Cantidad de tickets" required>
+                            <input type="number" value="<%=shows.tickets%>" name="tickets" placeholder="Cantidad de tickets" required>
                         </div>
 
                         <div>
-                            <input type="text" value="<%=shows.price%>" name="show-price" placeholder="Precio del show" required>
+                            <input type="text" value="<%=shows.price%>" name="price" placeholder="Precio del show" required>
                         </div>
 
                         <div>
-                            <input type="file" value="<%=shows.imgsrc%>" name="show-file" placeholder="Imagen del show" required>
+                            <input type="file" value="<%=shows.imgsrc%>" name="imgsrc" placeholder="Imagen del show" required>
                         </div>
 
                         <div class="button-send">
-                            <button  href="/" type="submit">Enviar</button>
+                            <button type="submit">Enviar</button>
                         </div>    
 
                         <div class="button-reset">

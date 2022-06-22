@@ -19,14 +19,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 // _method
 app.use(methodOverride('_method'));
 
+// json
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
 // routes
 app.use('/', require('./src/routes/index.routes'));
 
 // HTTP methods & json
-    // json
-    app.use(express.urlencoded({ extended: false }));
-    app.use(express.json());
 
     // 404
     app.use((req, res, next) => {
