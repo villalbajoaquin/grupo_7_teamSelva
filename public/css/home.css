@@ -63,6 +63,25 @@ main {
     display: none;
 }
 
+.video .banner a button {
+    width: 100px;
+    padding: 7px 0px;
+    margin-top: 50px;
+    border: none;
+    background-color: #132a13dd;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 300ms;
+}
+
+.video .banner a button:hover {
+    border-radius: 5px;
+    background-color: #31572C;
+    color: #ECF39E;
+}
+
 /* Main content */
 .main {
     margin: 0 auto;
@@ -122,11 +141,13 @@ main {
     border: none;
     background-color: #132a1331;
     color: #132A13;
-    font-weight: 700;
+    font-weight: 800;
     cursor: pointer;
+    transition: all 300ms;
 }
 
 .card .card-description button:hover {
+    border-radius: 5px;
     color: #4F772D;
 }
 
@@ -139,6 +160,21 @@ main {
 /* Cards pop */
 .cards-pop {
     display: none;
+}
+
+main a {
+    color: #132a13;
+    font-size: 22px;
+    font-weight: 800;
+    transition: all 300ms;
+}
+
+main a:hover {
+    color: #4F772D;
+}
+
+main a h2 {
+    margin-top: 25px;
 }
 
 @media screen and (min-width: 768px) {
@@ -166,6 +202,12 @@ main {
         margin: 0 auto;
         width: 75%;
         font-size: 20px;
+    }
+
+    .video .banner a button {
+        width: 120px;
+        padding: 8px 0px;
+        font-size: 18px;
     }
 
     .main {
@@ -200,6 +242,12 @@ main {
 
     .video .banner h2 {
         font-size: 25px;
+    }
+
+    .video .banner a button {
+        width: 150px;
+        padding: 10px 0px;
+        font-size: 20px;
     }
 
     .main {

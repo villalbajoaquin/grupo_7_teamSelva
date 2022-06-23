@@ -126,7 +126,13 @@ nav {
     width: 100%;
 }
 
-.search-box input {
+.search-box form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.search-box form input {
     border: none;
     outline: none;
     background-color: #ffffff;
@@ -136,13 +142,23 @@ nav {
     width: 100%;
 }
 
-.search-box i {
+.search-box form button {
+    height: 100%;
+    background-color: #ffffff;
+    border: #ffffff;
+    cursor: pointer;
+}
+
+.search-box form button i {
     color: #132a13;
     font-size: 15px;
-    background-color: #ffffff;
-    height: 100%;
     padding: 8px;
     cursor: pointer;
+    z-index: -3;
+}
+
+.search-box form button i:hover {
+    color: #4F772D;
 }
 
 /* Shopping cart button */

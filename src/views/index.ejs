@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-    <%- include('./partials/head') %> 
+    <%- include('./partials/head') %>
     
     <link rel="stylesheet" href="/css/home.css">
 
@@ -24,95 +24,70 @@
             <div class="banner">
                 <h1>Descubre una gran variedad de eventos desde un solo click</h1>
                 <h2>Con ticket-selva podés comprar tu entrada on-line, evitando las largas filas a la hora de comprar.</h2>
+                <a href="/product">
+                    <button>VER MAS</button>
+                </a>
             </div>
         </div>
         <div class="main">
             <h1>Próximos eventos</h1>
             <div class="cards">
-                <% for( let i = 0; i < 4; i++ ) { %>
-                    <div class="card">                    
-                        <img src= <%= shows[i].imgsrc %>  alt="deberia show">
-                        <div class="card-description">
-                            <h1><%= shows[i].name %></h1>
-                            <p>Fecha: <%= shows[1].date %></p>
-                            <a href="/product/product_detail">
-                                <button>COMPRAR</button>
-                            </a>
+                <% if (shows.length > 8) { %>
+                    <% for( let i = 0; i < 8; i++ ) { %>
+                        <div class="card">                    
+                            <img src= <%= shows[i].imgsrc %>  alt="deberia show">
+                            <div class="card-description">
+                                <h1><%= shows[i].name %></h1>
+                                <p>Fecha: <%= shows[i].date %>  <%= shows[i].time %></p>
+                                <a href="/product/<%= shows[i].id %> ">
+                                    <button>COMPRAR</button>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                <% } %>
-            </div>
-            <div class="cards">
-                <% for( let i = 4; i < 8; i++ ) { %>
-                    <div class="card">                    
-                        <img src= <%= shows[i].imgsrc %>  alt="deberia show">
-                        <div class="card-description">
-                            <h1><%= shows[i].name %></h1>
-                            <p>Fecha: <%= shows[1].date %></p>
-                            <a href="/product/product_detail">
-                                <button>COMPRAR</button>
-                            </a>
+                    <% } %>
+                <% } else if (shows.length > 4) { %>
+                    <% for( let i = 0; i < 4; i++ ) { %>
+                        <div class="card">                    
+                            <img src= <%= shows[i].imgsrc %>  alt="deberia show">
+                            <div class="card-description">
+                                <h1><%= shows[i].name %></h1>
+                                <p>Fecha: <%= shows[i].date %>  <%= shows[i].time %></p>
+                                <a href="/product/<%= shows[i].id %> ">
+                                    <button>COMPRAR</button>
+                                </a>
+                            </div>
                         </div>
-                    </div>
+                    <% } %>
+                <% } else { %>
+                    <% for( let i = 0; i < shows.length; i++ ) { %>
+                        <div class="card">                    
+                            <img src= <%= shows[i].imgsrc %>  alt="deberia show">
+                            <div class="card-description">
+                                <h1><%= shows[i].name %></h1>
+                                <p>Fecha: <%= shows[i].date %>  <%= shows[i].time %></p>
+                                <a href="/product/<%= shows[i].id %> ">
+                                    <button>COMPRAR</button>
+                                </a>
+                            </div>
+                        </div>
+                    <% } %>
                 <% } %>                
             </div>
             
-            <input type="checkbox" id="check">
-            <label for="check" class="mas-shows">
+            <a href="/product">
                 <h2>Más shows</h2>
-            </label>
-            <div class="cards-pop">
-                <div class="card">
-                    <img src="img\show3.jpg" alt="show">
-                    <div class="card-description">
-                        <h1>Mega Matine Bailable</h1>
-                        <p>Fecha: 25 de mayo</p>
-                        <a href="/product/product_detail">
-                            <button>COMPRAR</button>
-                        </a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="img\show4.jpg" alt="show">
-                    <div class="card-description">
-                        <h1>Mega Matine Bailable</h1>
-                        <p>Fecha: 25 de mayo</p>
-                        <a href="/product/product_detail">
-                            <button>COMPRAR</button>
-                        </a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="img\show5.jpg" alt="show">
-                    <div class="card-description">
-                        <h1>Mega Matine Bailable</h1>
-                        <p>Fecha: 25 de mayo</p>
-                        <a href="/product/product_detail">
-                            <button>COMPRAR</button>
-                        </a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="img\show9.jpg" alt="show">
-                    <div class="card-description">
-                        <h1>Mega Matine Bailable</h1>
-                        <p>Fecha: 25 de mayo</p>
-                        <a href="/product/product_detail">
-                            <button>COMPRAR</button>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="filter">
-
-            </div>
+            </a>
+            
+            
         </div>
     </main>
 
 <!-- Footer -->
 
-    <footer>
+    <footer> 
+        
         <%- include('./partials/footer') %>
+       
     </footer>
 </body>
 

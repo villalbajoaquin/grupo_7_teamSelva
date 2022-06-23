@@ -1,0 +1,169 @@
+/*  
+    Coolors palette:
+        Negro: #000000,
+        Verde oscuro: #132A13,
+        Verde: #31572C,
+        Verde claro: #4F772D,
+        Marfil verdoso: #90A955,
+        Marfil: #ECF39E,
+        Blanco: #ffffff,
+*/
+
+/* Main */
+main {
+    width: 100%;
+    text-align: center;
+    margin-top: 2%;
+}
+
+/* Main content */
+.main {
+    margin: 0 auto;
+    padding-bottom: 7%;
+    width: 80%;
+    background-color: #132a1331;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+
+.main h1 {
+    font-size: 25px;
+    padding: 25px 0 20px;
+}
+
+.create {
+    margin-bottom: 1%;
+}
+
+.create button {
+    max-width: 100%;
+    padding: 8px 20px;
+    border: none;
+    background-color: #132a1331;
+    color: #132A13;
+    font-weight: 800;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 300ms;
+}
+
+.create button:hover {
+    border-radius: 5px;
+    color: #4F772D;
+}
+
+.cards {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card {
+    flex: 1 1 100%;
+    max-width: 220px;
+    padding: 10px;
+    background-color: #ffffff;
+    margin: 20px 10px;
+    position: relative;
+    left: 5%;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.card-description {
+    display: flex;
+    flex-direction: column;
+}
+
+.card .card-description h1 {
+    padding: 10px 0;
+    font-size: 18px;    
+    align-self: flex-start;
+    color: #132A13;
+}
+
+.card .card-description p {
+    padding: 5px 0 15px;
+    font-size: 12px;
+    align-self: flex-start;
+}
+
+.card .card-description button {
+    width: 100%;
+    padding: 5px 8px;
+    border: none;
+    background-color: #132a1331;
+    color: #132A13;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 300ms;
+}
+
+.card .card-description button:hover {
+    border-radius: 5px;
+    color: #4F772D;
+}
+
+/* Image */
+.card img {
+    max-width: 200px;
+    max-height: 200px;
+}
+
+/* Cards pop */
+.cards-pop {
+    display: none;
+}
+
+main a {
+    color: #132a13;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+main a:hover {
+    color: #4F772D;
+    transition: .3s;
+}
+
+main a h2 {
+    margin-top: 25px;
+}
+
+@media screen and (min-width: 768px) {
+    .main {
+        padding-bottom: 5%;
+        width: 90%;
+        max-width: 768px;
+    }
+
+    .main h1 {
+        font-size: 32px;
+        padding: 20px 0;
+    }
+
+    .card {
+        flex: 0 1 calc(50% - 1em);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .main {
+        width: 90%;
+        max-width: 1024px;
+    }
+
+    .cards {
+        width: 100%;
+    }
+
+    .card {
+        flex: 0 0 calc(20% - 1em);
+        max-width: 25%;
+        position: relative;
+        left: 0;
+        margin: 20px 0;
+    }
+}
