@@ -137,7 +137,7 @@ const productController = {
                 encoding: "utf-8",
             }
         );
-        res.render('./products/productEdit', {shows});
+        res.render('./products/productList', {shows});
     },
     product_delete: (req, res) =>{
         let shows = productArray;
