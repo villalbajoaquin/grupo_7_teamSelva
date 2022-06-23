@@ -1,93 +1,93 @@
 [
     {
         "id": 1,
-        "imgsrc": "img/show3.jpg",
+        "imgsrc": "img/uploads/1656008842628_pdt_.jpg",
         "name": "Mega Matine Bailable",
-        "date": "25/05/22",
+        "date": "2022-05-25",
         "time": "20:00",
-        "tickets": 600,
-        "price": 1000
+        "tickets": "650",
+        "price": "1000"
     },
     {
         "id": 2,
-        "imgsrc": "img/show4.jpg",
+        "imgsrc": "img/uploads/1656008058524_pdt_.jpg",
         "name": "Show Matías Valdez",
-        "date": "28/05/22",
+        "date": "2022-05-28",
         "time": "22:00",
-        "tickets": 550,
-        "price": 750
+        "tickets": "550",
+        "price": "750"
     },
     {
         "id": 3,
-        "imgsrc": "img/show5.jpg",
+        "imgsrc": "img/uploads/1656008088468_pdt_.jpg",
         "name": "Kolombo en UMMA",
-        "date": "10/06/22",
+        "date": "2022-06-10",
         "time": "21:00",
-        "tickets": 550,
-        "price": 800
+        "tickets": "550",
+        "price": "800"
     },
     {
         "id": 4,
-        "imgsrc": "img/show6.jpg",
+        "imgsrc": "img/uploads/1656008136836_pdt_.jpg",
         "name": "Noche Retro en UMMA",
-        "date": "11/06/22",
+        "date": "2022-06-11",
         "time": "21:00",
-        "tickets": 550,
-        "price": 800
+        "tickets": "550",
+        "price": "800"
     },
     {
         "id": 5,
-        "imgsrc": "img/show7.jpg",
+        "imgsrc": "img/uploads/1656008217554_pdt_.jpg",
         "name": "Los Hijos de los Barrios",
-        "date": "18/06/22",
+        "date": "2022-06-18",
         "time": "21:00",
-        "tickets": 350,
-        "price": 750
+        "tickets": "350",
+        "price": "750"
     },
     {
         "id": 6,
-        "imgsrc": "img/show8.jpg",
+        "imgsrc": "img/uploads/1656008293278_pdt_.jpg",
         "name": "Atómicos: Tributo a Divididos",
-        "date": "19/06/22",
+        "date": "2022-06-19",
         "time": "22:00",
-        "tickets": 350,
-        "price": 1000
+        "tickets": "350",
+        "price": "1000"
     },
     {
         "id": 7,
-        "imgsrc": "img/show9.jpg",
+        "imgsrc": "img/uploads/1656008472546_pdt_.jpg",
         "name": "NTVG en UMMA",
-        "date": "07/07/22",
+        "date": "2022-07-07",
         "time": "21:00",
-        "tickets": 550,
-        "price": 800
+        "tickets": "550",
+        "price": "800"
     },
     {
         "id": 8,
-        "imgsrc": "img/show10.jpg",
+        "imgsrc": "img/uploads/1656008505459_pdt_.jpg",
         "name": "Charla del 'Pela' Romero",
-        "date": "07/07/22",
+        "date": "2022-07-07",
         "time": "21:30",
-        "tickets": 350,
-        "price": 750
+        "tickets": "350",
+        "price": "750"
     },
     {
         "id": 9,
-        "imgsrc": "img/show11.jpg",
+        "imgsrc": "img/uploads/1656008447140_pdt_.jpg",
         "name": "Un Show de Otro Planeta",
-        "date": "16/07/22",
+        "date": "2022-07-16",
         "time": "16:30",
-        "tickets": 1200,
-        "price": 500
+        "tickets": "1200",
+        "price": "500"
     },
     {
         "id": 10,
-        "imgsrc": "img/show12.jpg",
+        "imgsrc": "img/uploads/1656008378761_pdt_.jpg",
         "name": "Las Manos de Filippi",
-        "date": "03/09/22",
+        "date": "2022-09-03",
         "time": "21:00",
-        "tickets": 550,
-        "price": 750
+        "tickets": "550",
+        "price": "750"
     },
     {
         "id": 11,
