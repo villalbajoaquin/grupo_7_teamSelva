@@ -55,16 +55,18 @@
                                 <button class="add-to-cart" data-button-action="add-to-cart" type="submit">
                                     <i class="fa-solid fa-cart-shopping"></i><span>Añadir al carrito</span>
                                 </button>
-                                <form method="POST" action="/product/<%=show.id%>?_method=DELETE">
-                                    <button class="add-to-trash" data-button-action="add-to-cart" type="submit">
-                                        <i class="fa-solid fa-trash"></i><span>Borrar show</span>
-                                    </button>
-                                </form>
+                            
                                 <a href="/product/product_edit/<%=show.id%>">
                                     <button class="add-to-cart" data-button-action="add-to-cart">
                                     <i class="fa-solid fa-pen-to-square"></i><span>Editar show</span>
                                 </button>
                                 </a>
+
+                                  <form method="POST" action="/product/<%=show.id%>?_method=DELETE">
+                                    <button class="add-to-trash" data-button-action="add-to-cart" type="submit">
+                                        <i class="fa-solid fa-trash"></i><span>Borrar show</span>
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     </div>

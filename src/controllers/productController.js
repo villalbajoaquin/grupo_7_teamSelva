@@ -119,7 +119,6 @@ const productController = {
         let shows = productArray;
         let file = req.file;
         const { name, date, tickets, price, imgsrc, time, } = req.body;
-        shows = shows.filter((item) => item.id != id);
         shows.forEach(item => {
             if(item.id == id) {
                 item.name = name;
