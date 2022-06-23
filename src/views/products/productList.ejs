@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <%- include('../partials/head') %>
+    
+    <link rel="stylesheet" href="/css/products/productList.css">
+
+    <title>Eventos | ticket-selva</title>
+</head>
+
+<body>
+    <header>
+        <%- include('../partials/navbar') %>
+
+        <%- include('../partials/navSearch') %>
+    </header>
+
+<!-- Main -->
+
+    <main>
+        <div class="main">
+            <h1>Encuentra tu evento</h1>
+
+            <div class="create">
+                <a href="/product/product_create">
+                    <button>NUEVO PRODUCTO</button>
+                </a>
+            </div>
+
+            <div class="cards">
+
+                <% for( let i = 0; i < shows.length; i++ ) { %>
+                    <div class="card">                    
+                        <img src= \<%= shows[i].imgsrc %>  alt="deberia show">
+                        <div class="card-description">
+                            <h1><%= shows[i].name %></h1>
+                            <p>Fecha: <%= shows[i].date %> <%= shows[i].time %></p>
+                            <a href="/product/<%= shows[i].id %> ">
+                                <button>COMPRAR</button>
+                            </a>
+                        </div>
+                    </div>
+                <% } %>
+            
+            
+        </div>
+    </main>
+
+<!-- Footer -->
+
+    <footer>
+        <%- include('../partials/footer') %>
+    </footer>
+</body>
+
+</html>

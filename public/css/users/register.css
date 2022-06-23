@@ -4,15 +4,13 @@
     font-family: 'Plus Jakarta Sans',
         sans-serif;
 }
+
 header{
-    background-color: white;
-   
+    background-color: rgb(255, 255, 255);
+    opacity: 0.9;
 }
 
-
-
 body{
-    
     background: url(/img/selva1.webp);
     background-size: cover;
     background-attachment: fixed;
@@ -24,11 +22,38 @@ h1{
     font-size: 40px;
 }
 
+
+.modal-contenido {
+    background-color: rgb(171, 169, 169);  
+    opacity: 0.97;
+    border: solid 1px black;
+    border-radius: 5px;
+    width: 200px;
+    padding: 10px 20px;
+    margin: 20% auto;
+    position: relative;
+}
+
+.modal {
+   position: fixed;
+    top: 45;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 1s;
+}
+
+#miModal:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
 .formulario{
 background: #90A955 ;
 opacity: 0.89;
 margin-top: 25%;
-margin-bottom: 200px;
 margin-left: 5%;
 margin-right: 5%;
 border-radius: 5px;
@@ -49,7 +74,7 @@ text-align: center;
 }
 
 p{
-margin-top: 10px;
+margin-top: 9px;
 }
 
 .contenedor{
@@ -126,11 +151,17 @@ cursor: pointer;
 }
 
 @media(min-width:768px){
+    
+    header{
+        width: 100%;
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
 
     body{
       background: url(/img/bajada.jpg);
-      background-attachment: fixed;
       background-size: cover;
+      background-attachment: fixed;
     }
 
     .formulario{
@@ -158,7 +189,7 @@ cursor: pointer;
         }
 
             p{
-              font-size: 17px;
+              font-size: 13px;
              }
 
         .formulario {

@@ -2,7 +2,7 @@ main {
     width: 100%;
 }
 
-.newEvent {
+.new-event {
     width: 80%;
     margin: 0 auto;
     height: 100%;
@@ -14,7 +14,7 @@ main {
     margin-bottom: 30px;
 }
 
-.newEvent h2{
+.new-event h2{
 text-align: center;
 margin-bottom: 6%;
 font-size: 2em;
@@ -28,7 +28,7 @@ color: #132A13;
 
 }
 
-.container form .infoShow input{
+.container form .info-show input{
     width: 300px;
     padding: 7px;
     margin: 10px;
@@ -36,7 +36,7 @@ color: #132A13;
    
 }
 
-.container form .infoShow button{
+.container form .info-show button{
     width: 300px;
     padding: 7px;
     margin: 10px;
@@ -44,21 +44,21 @@ color: #132A13;
    
 }
 
-.container form .infoShow .button-send button{
+.container form .info-show .button-send button{
     background-color: #4F772D;
 }
 
-.standarImg{
+.standar-img{
     border: solid black;
     max-width: 350px;
     max-height: 350px;
 }
 
-.standarImg img {
+.standar-img img {
     width: 100%;
     height: 100%;
 }
 
-.container form .infoShow .button-reset button:hover {
+.container form .info-show .button-reset button:hover {
     background-color: #ECF39E;
 }
