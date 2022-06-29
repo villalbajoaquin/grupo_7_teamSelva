@@ -44,12 +44,17 @@ const productController = {
     },
     product_search: (req, res) => {
         let shows = productArray;
+        let showsPerDay = shows.sort((a, b) => {
+            let da = new Date(a.date);
+            let db = new Date(b.date);
+            return da - db;
+        });
         let input = req.query.search;
         let filteredShows = [];
 
-        for (let i = 0; i < shows.length; i++) {
-            if (shows[i].name.includes(input)) {
-                filteredShows.push(shows[i]);
+        for (let i = 0; i < showsPerDay.length; i++) {
+            if (showsPerDay[i].name.includes(input)) {
+                filteredShows.push(showsPerDay[i]);
             };
         };
 
@@ -58,16 +63,21 @@ const productController = {
     //product time filters
     twenty_four: (req, res) => {
         let shows = productArray;
+        let showsPerDay = shows.sort((a, b) => {
+            let da = new Date(a.date);
+            let db = new Date(b.date);
+            return da - db;
+        });
         const today = new Date();
         const tomorrow = new Date(today);
         tomorrow.setDate(today.getDate() + 1);
 
         let filteredShows = [];
 
-        for (let i = 0; i < shows.length; i++) {
-            let showDate = new Date(shows[i].date);
+        for (let i = 0; i < showsPerDay.length; i++) {
+            let showDate = new Date(showsPerDay[i].date);
             if (showDate < tomorrow) {
-                filteredShows.push(shows[i]);
+                filteredShows.push(showsPerDay[i]);
             };
         };
 
@@ -75,16 +85,21 @@ const productController = {
     },
     seven: (req, res) => {
         let shows = productArray;
+        let showsPerDay = shows.sort((a, b) => {
+            let da = new Date(a.date);
+            let db = new Date(b.date);
+            return da - db;
+        });
         const today = new Date();
         const tomorrow = new Date(today);
         tomorrow.setDate(today.getDate() + 7);
 
         let filteredShows = [];
 
-        for (let i = 0; i < shows.length; i++) {
-            let showDate = new Date(shows[i].date);
+        for (let i = 0; i < showsPerDay.length; i++) {
+            let showDate = new Date(showsPerDay[i].date);
             if (showDate < tomorrow) {
-                filteredShows.push(shows[i]);
+                filteredShows.push(showsPerDay[i]);
             };
         };
 
@@ -92,16 +107,21 @@ const productController = {
     },
     thirty: (req, res) => {
         let shows = productArray;
+        let showsPerDay = shows.sort((a, b) => {
+            let da = new Date(a.date);
+            let db = new Date(b.date);
+            return da - db;
+        });
         const today = new Date();
         const tomorrow = new Date(today);
         tomorrow.setDate(today.getDate() + 30);
 
         let filteredShows = [];
 
-        for (let i = 0; i < shows.length; i++) {
-            let showDate = new Date(shows[i].date);
+        for (let i = 0; i < showsPerDay.length; i++) {
+            let showDate = new Date(showsPerDay[i].date);
             if (showDate < tomorrow) {
-                filteredShows.push(shows[i]);
+                filteredShows.push(showsPerDay[i]);
             };
         };
 
