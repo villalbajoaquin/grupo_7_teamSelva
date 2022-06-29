@@ -25,3 +25,6 @@ Por problemas en cuanto a lo personal y a nivel cursada, se vio afectado el rend
 * Walter: Trabaje en conjunto con Uriel en el metodo DELETE, optimice los header y footer y implemente el metodo PUT.
 
 * Uriel: Implementacion del metodo DELETE, trabajo en conjunto con Walter para implementar el PUT.
+
+**Fecha: Martes 28/06**
+* Joaquin: Trabajó en la funcionalidad de la creación de productos, también ordenó las listas de los productos, para que éstas se muestren en orden cronológico (primero los eventos más próximos). Impedimento principal: inconvenientes personales y tratar de reforzar el trabajo con imagenes.
