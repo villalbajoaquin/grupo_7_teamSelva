@@ -10,7 +10,12 @@ const productArray = require('../data/products.json');
 const productController = {
     product_list: (req, res) => {
         let shows = productArray;
-        res.render('products/productList', { shows });
+        let showsPerDay = shows.sort((a, b) => {
+            let da = new Date(a.date);
+            let db = new Date(b.date);
+            return da - db;
+        });
+        res.render('products/productList', { shows: showsPerDay });
     },
     product_cart: (req, res) => {
         res.render('products/productCart');
@@ -20,7 +25,7 @@ const productController = {
     },
     product_createB: (req, res) => {
         let shows = productArray;
-        const newId = shows[(shows.length - 1)].id + 1;
+        const newId = Math.max(...shows.map(item => item.id)) + 1;
         let file = req.file;
         console.log(file.filename);
         let newShow = {

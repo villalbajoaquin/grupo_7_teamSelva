@@ -97,5 +97,23 @@
         "time": "21:00",
         "tickets": "550",
         "price": "750"
+    },
+    {
+        "id": 13,
+        "imgsrc": "img/uploads/1656744844590_pdt_.jpg",
+        "name": "Lio Fest en UMMA",
+        "date": "2022-07-19",
+        "time": "23:30",
+        "tickets": "550",
+        "price": "1500"
+    },
+    {
+        "id": 14,
+        "imgsrc": "img/uploads/1656745615585_pdt_.jpg",
+        "name": "Big Apple en UMMA",
+        "date": "2022-07-09",
+        "time": "00:00",
+        "tickets": "550",
+        "price": "1500"
     }
 ]
