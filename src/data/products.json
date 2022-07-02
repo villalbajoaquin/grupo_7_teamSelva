@@ -81,15 +81,6 @@
         "price": "500"
     },
     {
-        "id": 10,
-        "imgsrc": "img/uploads/1656008378761_pdt_.jpg",
-        "name": "Las Manos de Filippi",
-        "date": "2022-09-03",
-        "time": "21:00",
-        "tickets": "550",
-        "price": "750"
-    },
-    {
         "id": 11,
         "imgsrc": "img/uploads/1656311219383_pdt_.jpg",
         "name": "Hernán Piquín en el Montoya",
@@ -97,5 +88,14 @@
         "time": "21:30",
         "tickets": "650",
         "price": "3000"
+    },
+    {
+        "id": 10,
+        "imgsrc": "img/uploads/1656008378761_pdt_.jpg",
+        "name": "Las Manos de Filippi",
+        "date": "2022-09-03",
+        "time": "21:00",
+        "tickets": "550",
+        "price": "750"
     }
 ]

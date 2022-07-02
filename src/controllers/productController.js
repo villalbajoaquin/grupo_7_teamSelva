@@ -161,8 +161,14 @@ const productController = {
     product_delete: (req, res) =>{
         let shows = productArray;
         let id = req.params.id;
-        shows = shows.filter((item) => item.id != id);
+        // delete image from public/img/
+        let showIdentified = shows.find((item) => item.id == id);
+        let showPhoto = path.join(__dirname, "../../public/" + showIdentified.imgsrc);
+        if (fs.existsSync(showPhoto)) {
+            fs.unlinkSync(showPhoto);
+        };
 
+        shows = shows.filter((item) => item.id != id);
         fs.writeFileSync(
             path.join(__dirname, "../data/products.json"),
             JSON.stringify(shows, null, 4),
