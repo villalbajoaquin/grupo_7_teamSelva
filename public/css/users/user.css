@@ -53,6 +53,7 @@ h1{
 .formulario{
 background: #90A955 ;
 opacity: 0.89;
+margin-bottom: 15%;
 margin-top: 25%;
 margin-left: 5%;
 margin-right: 5%;
@@ -148,6 +149,20 @@ cursor: pointer;
 
 .link:hover{
     color: cadetblue;
+}
+
+footer .footer1 {
+    width: 90%;
+    margin: 0 auto;
+}
+
+footer .footer-bottom1 {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 10px;
+    height: 100px;
+    align-items: center;
 }
 
 @media(min-width:768px){
