@@ -32,3 +32,6 @@ Por problemas en cuanto a lo personal y a nivel cursada, se vio afectado el rend
 * Uriel: Trabajo en la creación de productos, ayudo a crear la edicion de productos.
 
 * Walter:Trabajo en nombrar input con label en el edit y algunas correcciones y ajustes.
+
+**Fecha: Martes 28/06**
+* Joaquin: Agregó carpetas acorde a la subida de los avatares de usuarios, actualmente trabajando en las rutas. Impedimento principal: agenda personal.
