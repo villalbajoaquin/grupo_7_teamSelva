@@ -33,3 +33,22 @@
 
 * Hacer una llamada el fin de semana con el fin de poner en práctica la metodología de los *weekly standups*
 * Consultar mas entre nosotros cuando tengamos un problema con el proyecto
+
+# Retro Martes 14/07
+
+**Nos funciona**
+
+* Mantener actualizado el *trello*
+* Asignar tareas individuales
+
+**Para mejorar:**
+
+* Estar mas al día con el proyecto
+* Dividir objetivos generales/mayores en tareas particulares/menores
+* No dejar pendientes tareas o agregados de sprints anteriores
+
+**Para empezar a hacer:**
+
+* Llamadas los fines de semana
+* Mantener a los integrantes del proyecto al tanto de lo aplicado en el proyecto
+* Individualmente interpretar el codigo aplicado.
