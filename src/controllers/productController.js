@@ -45,7 +45,8 @@ const productController = {
                 encoding: "utf-8",
             }
         );
-        res.render('./products/productList', {shows});
+        res.redirect('/product');
+        //res.render('./products/productList', {shows});
     },
     product_search: (req, res) => {
         let shows = productArray;
@@ -151,7 +152,9 @@ const productController = {
                 item.time = time;
                 item.tickets = tickets;
                 item.price = price;
-                item.imgsrc = `img/uploads/${file.filename}`;        
+                if(file){
+                    item.imgsrc = `img/uploads/${file.filename}`;
+                }
             }
         });
         fs.writeFileSync(
@@ -161,7 +164,8 @@ const productController = {
                 encoding: "utf-8",
             }
         );
-        res.render('./products/productList', {shows});
+        res.redirect('/product');
+        //res.render('./products/productList', {shows});
     },
     product_delete: (req, res) =>{
         let shows = productArray;
@@ -181,7 +185,8 @@ const productController = {
                 encoding: "utf-8",
             }
         );
-        res.render('./products/productList', {shows});
+        res.redirect('/product');
+        //res.render('./products/productList', {shows});
     },
     product_detail: (req, res) => {
         let shows = productArray;
