@@ -1,7 +1,7 @@
 const path = require("path");
 const fs = require('fs');
 const { json } = require('express');
-const bcrypt = require('bcryptjs');
+const bcrypt = require('bcrypt');
 
 const usersArray = require('../data/users.json');
 const { validationResult } = require("express-validator");
@@ -52,6 +52,7 @@ const userController = {
             if (users[i].email == req.body.email) {
                 if(bcrypt.compareSync(req.body.password, users[i].password)) {
                     let usuarioaALoguearse = users[i];
+                    req.session.usuarioLogueado = usuarioaALoguearse;
                     break
                 }
             }
@@ -63,9 +64,9 @@ const userController = {
             }
 
             req.session.usuarioLogueado = usuarioaALoguearse;
-            res.render('/');
-     } else {
-         return res.render('login', {errors: errors.errors});
+            res.redirect('/');
+        }} else {  //no cerraba el for
+         return res.render('users/login', {errors: errors.errors});
      }
     },
 };

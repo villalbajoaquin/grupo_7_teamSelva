@@ -2,8 +2,8 @@ const express = require("express");
 const userRoutes = express.Router();
 const userController = require("../controllers/userController");
 const fs = require('fs');
-const bcrypt = require('bcryptjs');
-const {validationResult} = require('express-validator');
+const bcrypt = require('bcrypt'); //modulo bycrypt
+const {check} = require('express-validator'); //pedia check
 
 // routes
     // register (GET)

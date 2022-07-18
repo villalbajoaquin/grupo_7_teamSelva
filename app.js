@@ -29,8 +29,11 @@ app.use(express.json());
 app.use('/', require('./src/routes/index.routes'));
 
 // session
-
-app.use(session({secret: 'secret'}));  
+app.use(session({
+    secret: 'secret',
+    resave: false,
+    saveUninitialized: true
+}));  
 
 // HTTP methods & json
 
