@@ -31,4 +31,4 @@ app.use('/', require('./src/routes/index.routes'));
     // 404
     app.use((req, res, next) => {
         res.status(404).render('not-found');
-    });
+        });

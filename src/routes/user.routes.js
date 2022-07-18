@@ -3,11 +3,11 @@ const userRoutes = express.Router();
 const userController = require("../controllers/userController");
 
 // routes
-    // register
-    userRoutes.get('/register', userController.register);
+    // register (GET)
+    userRoutes.get('/register', userController. register_createA);
 
-    // register POST
-    userRoutes.post('/register', userController.register);
+    // register (POST)
+    userRoutes.post('/register', userController.register_createB);
 
     // login
     userRoutes.get('/login', userController.login);

@@ -11,28 +11,37 @@
   <body>
     <header><%- include('../partials/topheader') %></header>
 
-    <form class="formulario1" >
+    <form class="formulario1" action="/users/register" method="POST" enctype="multipart/form-data">
       <h1>Registrate</h1>
 
       <div class="contenedor">
+
+          <div class="input-contenedor">
+          <i class="fa-solid fa-circle-user icon"></i>
+          <input
+            type="text"
+            name="firstname"
+            placeholder="Indique su nombre"
+            required
+           
+          />
+        </div>
+
+         <div class="input-contenedor">
+          <i class="fa-solid fa-circle-user icon"></i>
+          <input
+            type="text"
+            name="lastname"
+            placeholder="Indique su apellido"
+          />
+        </div>
+
         <div class="input-contenedor">
           <i class="fa-solid fa-envelope icon"></i>
           <input
             type="text"
             name="email"
-            placeholder="Indique su email"
-            required
-          />
-        </div>
-
-        <div class="input-contenedor">
-          <i class="fa-solid fa-circle-user icon"></i>
-          <input
-            type="text"
-            name="nombre"
-            placeholder="Indique su nombre"
-            required
-            id="nombre"
+            placeholder="Indique su email"   
           />
         </div>
 
@@ -40,9 +49,8 @@
           <i class="fa-solid fa-lock icon"></i>
           <input
             type="password"
-            name="contraseña"
-            placeholder="Indique su contraseña"
-            required
+            name="password"
+            placeholder="Indique su contraseña"       
           />
         </div>
 
@@ -52,7 +60,7 @@
             type="password"
             name="contraseña"
             placeholder="Indique nuevamente"
-            required
+            
           />
         </div>
 
