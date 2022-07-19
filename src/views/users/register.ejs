@@ -11,7 +11,7 @@
   <body>
     <header><%- include('../partials/topheader') %></header>
 
-    <form class="formulario1" action="/users/register" method="POST" enctype="multipart/form-data">
+    <form class="formulario1" action="/user/register" method="POST" enctype="multipart/form-data">
       <h1>Registrate</h1>
 
       <div class="contenedor">
@@ -22,8 +22,6 @@
             type="text"
             name="firstname"
             placeholder="Indique su nombre"
-            
-           
           />
         </div>
 
@@ -58,9 +56,8 @@
           <i class="fa-solid fa-lock icon"></i>
           <input
             type="password"
-            name="contraseña"
-            placeholder="Indique nuevamente"
-            
+            name="passwordRe"
+            placeholder="Indique nuevamente su contraseña"            
           />
         </div>
 

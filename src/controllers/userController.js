@@ -15,12 +15,13 @@ const userController = {
         const newId = Math.max(...users.map(item => item.id)) + 1;
         let file = req.file;
         console.log(file.filename);
+        
         let newUser = {
             id: newId,
             firstname: req.body.firstname,
             lastname: req.body.lastname,
             email: req.body.email,
-            password:req.body.password,
+            password: req.body.password,
             cud: req.body.cud,
            // imgsrc: `img/users/${file.filename}`,
         }
