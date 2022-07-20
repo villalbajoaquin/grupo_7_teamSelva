@@ -1,6 +1,7 @@
 const express = require("express");
 const productController = require("../controllers/productController");
 const upload = require('../middlewares/multerMid'); // multer config
+const validations = require('../middlewares/productsMid'); // product edit & create
 const productRoutes = express.Router();
 
 // routes
@@ -14,7 +15,7 @@ const productRoutes = express.Router();
     productRoutes.get('/product_create', productController.product_createA);
 
     // product create (POST)
-    productRoutes.post('/product_create', upload.single("imgsrc"), productController.product_createB);
+    productRoutes.post('/product_create', upload.single("imgsrc"), validations.create, productController.product_createB);
 
     // product edit (GET)
     productRoutes.get('/product_edit/:id', productController.product_editA);

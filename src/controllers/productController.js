@@ -1,9 +1,8 @@
 const path = require("path");
 const fs = require('fs');
-const { json } = require('express');
+const { validationResult } = require('express-validator');
 
 const productArray = require('../data/products.json');
-//console.log(productArray);
 
 
 // controller
@@ -24,29 +23,38 @@ const productController = {
         res.render('products/productCreate');
     },
     product_createB: (req, res) => {
+        let errors = validationResult(req);
+
         let shows = productArray;
         const newId = Math.max(...shows.map(item => item.id)) + 1;
-        let file = req.file;
-        console.log(file.filename);
-        let newShow = {
-            id: newId,
-            imgsrc: `img/uploads/${file.filename}`,
-            name: req.body.name,
-            date: req.body.date,
-            time: req.body.time,
-            tickets: req.body.tickets,
-            price: req.body.price,
+        if(req.file){
+            let file = req.file;
+            console.log(file.filename);
         }
-        shows.push(newShow)
-        fs.writeFileSync(
-            path.join(__dirname, "../data/products.json"),
-            JSON.stringify(shows, null, 4),
-            {
-                encoding: "utf-8",
-            }
-        );
-        res.redirect('/product');
-        //res.render('./products/productList', {shows});
+        if(errors.isEmpty()){
+        let newShow = {
+                id: newId,
+                imgsrc: `img/uploads/${file.filename}`,
+                name: req.body.name,
+                date: req.body.date,
+                time: req.body.time,
+                tickets: req.body.tickets,
+                price: req.body.price,
+            };
+            shows.push(newShow)
+            fs.writeFileSync(
+                path.join(__dirname, "../data/products.json"),
+                JSON.stringify(shows, null, 4),{ encoding: "utf-8", }
+            );
+            res.redirect('/product');
+        } else {
+            if (req.file) {
+                fs.unlinkSync(
+                    path.join(__dirname, "../../public/img/uploads/", req.file.filename)
+                );
+            };
+            res.render('products/productCreate', { errors: errors.mapped(), old: req.body });
+        };
     },
     product_search: (req, res) => {
         let shows = productArray;

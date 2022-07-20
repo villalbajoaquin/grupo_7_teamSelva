@@ -1,121 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <%- include('../partials/head') %>
+
+<head>
+  <%- include('../partials/head') %>
     <link rel="stylesheet" href="/css/users/user.css" />
-    <script
-      src="https://kit.fontawesome.com/5d58b48687.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
-    <header><%- include('../partials/topheader') %></header>
+    <script src="https://kit.fontawesome.com/5d58b48687.js" crossorigin="anonymous"></script>
+</head>
 
-    <form class="formulario1" action="/user/register" method="POST" enctype="multipart/form-data">
-      <h1>Registrate</h1>
+<body>
+  <header>
+    <%- include('../partials/topheader') %>
+  </header>
 
-      <div class="contenedor">
+  <form class="formulario1" action="/user/register" method="POST" enctype="multipart/form-data">
+    <h1>Registrate</h1>
 
-          <div class="input-contenedor">
-          <i class="fa-solid fa-circle-user icon"></i>
-          <input
-            type="text"
-            name="firstname"
-            placeholder="Indique su nombre"
-          />
-        </div>
+    <div class="contenedor">
 
-         <div class="input-contenedor">
-          <i class="fa-solid fa-circle-user icon"></i>
-          <input
-            type="text"
-            name="lastname"
-            placeholder="Indique su apellido"
-          />
-        </div>
+      <div class="input-contenedor">
+        <i class="fa-solid fa-circle-user icon"></i>
+        <input type="text" name="firstname" placeholder="Indique su nombre"/>
+      </div>
 
-        <div class="input-contenedor">
-          <i class="fa-solid fa-envelope icon"></i>
-          <input
-            type="text"
-            name="email"
-            placeholder="Indique su email"   
-          />
-        </div>
+      <div class="input-contenedor">
+        <i class="fa-solid fa-circle-user icon"></i>
+        <input type="text" name="lastname" placeholder="Indique su apellido" />
+      </div>
 
-        <div class="input-contenedor">
-          <i class="fa-solid fa-lock icon"></i>
-          <input
-            type="password"
-            name="password"
-            placeholder="Indique su contraseña"       
-          />
-        </div>
+      <div class="input-contenedor">
+        <i class="fa-solid fa-envelope icon"></i>
+        <input type="text" name="email" placeholder="Indique su email" />
+      </div>
 
-        <div class="input-contenedor">
-          <i class="fa-solid fa-lock icon"></i>
-          <input
-            type="password"
-            name="passwordRe"
-            placeholder="Indique nuevamente su contraseña"            
-          />
-        </div>
+      <div class="input-contenedor">
+        <i class="fa-solid fa-lock icon"></i>
+        <input type="password" name="password" placeholder="Indique su contraseña" />
+      </div>
 
-        <div class="info">
-          <i class="fa-solid fa-wheelchair"></i>
-          <label for="CUD">¿Posee alguna discapacidad?</label
-          ><a href="#miModal"> <i class="fa-solid fa-circle-info"></i></a>
-          <div id="miModal" class="modal">
-            <div class="modal-contenido">
-              <a href="#">X</a>
-              <p>
-                El CUD es un documento que certifica la discapacidad de la
-                persona y le permite acceder a derechos y prestaciones que
-                brinda el Estado.
-              </p>
-            </div>
+      <div class="input-contenedor">
+        <i class="fa-solid fa-lock icon"></i>
+        <input type="password" name="passwordRe" placeholder="Indique nuevamente su contraseña" />
+      </div>
+
+      <div class="info">
+        <i class="fa-solid fa-wheelchair"></i>
+        <label for="CUD">¿Posee alguna discapacidad?</label><a href="#miModal"> <i
+            class="fa-solid fa-circle-info"></i></a>
+        <div id="miModal" class="modal">
+          <div class="modal-contenido">
+            <a href="#">X</a>
+            <p>
+              El CUD es un documento que certifica la discapacidad de la
+              persona y le permite acceder a derechos y prestaciones que
+              brinda el Estado.
+            </p>
           </div>
         </div>
-
-        <div class="com-ven">
-          <input
-            type="radio"
-            name="perfil_usuario"
-            id="perfil_usuario"
-            value="comprador"
-          /><span> Si</span>
-          <input
-            type="radio"
-            name="perfil_usuario"
-            id="perfil_usuario"
-            value="vender"
-          /><span> No</span>
-        </div>
-
-        <div class="input-contenedor">
-          <input
-            type="text"
-            name="contraseña"
-            placeholder="Indique su numero"
-          />
-        </div>
-
-        <input type="submit" value="Registrate" class="button1" />
-        <p>
-          Al registrarte, aceptas nuestras Condiciones de uso y Politica de
-          privacidad.
-        </p>
-        <p>
-          ¿Ya tienes una cuenta?<a class="link" href="/user/login"
-            >Iniciar Sesion
-          </a>
-        </p>
       </div>
-    </form>
 
-<footer>
- <%- include('../partials/bottomfooter') %>
-</footer>
-    
-  </body>
+      <div class="com-ven">
+        <input type="radio" name="perfil_usuario" id="perfil_usuario" value="comprador" /><span> Si</span>
+        <input type="radio" name="perfil_usuario" id="perfil_usuario" value="vender" /><span> No</span>
+      </div>
+
+      <div class="input-contenedor">
+        <input type="text" name="contraseña" placeholder="Indique su numero" />
+      </div>
+
+      <input type="submit" value="Registrate" class="button1" />
+      <p>
+        Al registrarte, aceptas nuestras Condiciones de uso y Politica de
+        privacidad.
+      </p>
+      <p>
+        ¿Ya tienes una cuenta?<a class="link" href="/user/login">Iniciar Sesion
+        </a>
+      </p>
+    </div>
+  </form>
+
+  <footer>
+    <%- include('../partials/bottomfooter') %>
+  </footer>
+
+</body>
+
 </html>
