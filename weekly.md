@@ -33,5 +33,8 @@ Por problemas en cuanto a lo personal y a nivel cursada, se vio afectado el rend
 
 * Walter:Trabajo en nombrar input con label en el edit y algunas correcciones y ajustes.
 
-**Fecha: Martes 28/06**
+**Fecha: Martes 12/07**
 * Joaquin: Agregó carpetas acorde a la subida de los avatares de usuarios, actualmente trabajando en las rutas. Impedimento principal: agenda personal.
+
+**Fecha: Martes 19/07**
+* Joaquin: Trabajó en la creación de middlewares. Impedimento principal: revisar contenidos anteriormente dados.
