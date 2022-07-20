@@ -133,5 +133,14 @@
         "time": "21:00",
         "tickets": "550",
         "price": "2300"
+    },
+    {
+        "id": 17,
+        "imgsrc": "img/uploads/1658300320143_pdt_.jpg",
+        "name": " Pedro Aznar en el Montoya",
+        "date": "2022-08-06",
+        "time": "09:30",
+        "tickets": " 550",
+        "price": "4000"
     }
 ]

@@ -31,29 +31,29 @@ const productController = {
             let file = req.file;
             console.log(file.filename);
         }
-        if(errors.isEmpty()){
-        let newShow = {
-                id: newId,
-                imgsrc: `img/uploads/${file.filename}`,
-                name: req.body.name,
-                date: req.body.date,
-                time: req.body.time,
-                tickets: req.body.tickets,
-                price: req.body.price,
-            };
-            shows.push(newShow)
-            fs.writeFileSync(
-                path.join(__dirname, "../data/products.json"),
-                JSON.stringify(shows, null, 4),{ encoding: "utf-8", }
-            );
-            res.redirect('/product');
-        } else {
+        if(errors.length > 0){
             if (req.file) {
                 fs.unlinkSync(
                     path.join(__dirname, "../../public/img/uploads/", req.file.filename)
                 );
             };
             res.render('products/productCreate', { errors: errors.mapped(), old: req.body });
+        } else {
+            let newShow = {
+                    id: newId,
+                    imgsrc: `img/uploads/${req.file.filename}`,
+                    name: req.body.name,
+                    date: req.body.date,
+                    time: req.body.time,
+                    tickets: req.body.tickets,
+                    price: req.body.price,
+                };
+            shows.push(newShow)
+            fs.writeFileSync(
+                 path.join(__dirname, "../data/products.json"),
+                JSON.stringify(shows, null, 4),{ encoding: "utf-8", }
+            );
+            res.redirect('/product');
         };
     },
     product_search: (req, res) => {
