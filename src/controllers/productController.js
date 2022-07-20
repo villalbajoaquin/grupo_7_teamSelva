@@ -149,31 +149,41 @@ const productController = {
         res.render('./products/productEdit', { shows:product_edit });
     },
     product_editB: (req, res) => {
+        let errors = validationResult(req);
+
         let id = req.params.id
         let shows = productArray;
-        let file = req.file;
-        const { name, date, tickets, price, imgsrc, time, } = req.body;
-        shows.forEach(item => {
-            if(item.id == id) {
-                item.name = name;
-                item.date = date;
-                item.time = time;
-                item.tickets = tickets;
-                item.price = price;
-                if(file){
-                    item.imgsrc = `img/uploads/${file.filename}`;
+        if(req.file){
+            let file = req.file;
+            console.log(file.filename);
+        };
+        
+        if(errors.length > 0){
+            let product_edit = shows.find((item) => item.id == id);
+            res.render('products/productEdit', { errors: errors.mapped(), old: req.body, shows:product_edit });
+        } else {
+            const { name, date, tickets, price, time, } = req.body;
+            shows.forEach(item => {
+                if(item.id == id) {
+                    item.name = name;
+                    item.date = date;
+                    item.time = time;
+                    item.tickets = tickets;
+                    item.price = price;
+                    if(req.file){
+                        item.imgsrc = `img/uploads/${req.file.filename}`;
+                    }
                 }
-            }
-        });
-        fs.writeFileSync(
-            path.join(__dirname, "../data/products.json"),
-            JSON.stringify(shows, null, 4),
-            {
-                encoding: "utf-8",
-            }
-        );
-        res.redirect('/product');
-        //res.render('./products/productList', {shows});
+            });
+            fs.writeFileSync(
+                path.join(__dirname, "../data/products.json"),
+                JSON.stringify(shows, null, 4),
+                {
+                    encoding: "utf-8",
+                }
+            );
+            res.redirect('/product');
+        };
     },
     product_delete: (req, res) =>{
         let shows = productArray;

@@ -37,7 +37,7 @@ main {
 }
 
 .container form .info-show input {
-    width: 240px;
+    width: 80%;
     padding: 7px;
     margin: 5px;
     border-color: #132A13;
@@ -57,7 +57,7 @@ main {
 }
 
 .container form .info-show button {
-    width: 240px;
+    width: 80%;
     padding: 7px;
     margin: 10px;
     border-color: #132A13;

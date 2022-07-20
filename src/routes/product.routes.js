@@ -6,7 +6,7 @@ const productRoutes = express.Router();
 
 // routes
     // product list
-    productRoutes.get('/', productController.product_list); // Sprint 4
+    productRoutes.get('/', productController.product_list);
 
     // product cart
     productRoutes.get('/product_cart', productController.product_cart);
@@ -21,10 +21,10 @@ const productRoutes = express.Router();
     productRoutes.get('/product_edit/:id', productController.product_editA);
     
     // product edit (PUT)
-    productRoutes.put("/product_list/:id", upload.single("imgsrc"), productController.product_editB)
+    productRoutes.put("/product_list/:id", validations.edit, upload.single("imgsrc"), productController.product_editB)
 
     // product search
-    productRoutes.get('/search', productController.product_search); // Sprint 4
+    productRoutes.get('/search', productController.product_search);
 
     // product time filters
         // 24h
@@ -37,9 +37,9 @@ const productRoutes = express.Router();
         productRoutes.get('/thirty', productController.thirty);
     
     // product delete (DELETE)
-    productRoutes.delete('/:id', productController.product_delete); // Sprint 4
+    productRoutes.delete('/:id', productController.product_delete);
 
     // product detail
-    productRoutes.get('/:id', productController.product_detail); // Sprint 4
+    productRoutes.get('/:id', productController.product_detail);
 
 module.exports = productRoutes;
