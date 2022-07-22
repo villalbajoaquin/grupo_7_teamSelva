@@ -8,10 +8,10 @@ const validations = require("../middlewares/usersMid");
 
 // routes
     // register (GET)
-    userRoutes.get('/register', userController. register_createA);
+    userRoutes.get('/register', userController.registerView);
 
     // register (POST)
-    userRoutes.post('/register', validations.register, userController.register_createB);
+    userRoutes.post('/register', validations.register, userController.register);
 
     // login
     userRoutes.get('/login', userController.login);

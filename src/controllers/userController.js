@@ -1,40 +1,47 @@
 const path = require("path");
 const fs = require('fs');
 const { json } = require('express');
-const bcryptjs = require('bcryptjs');
+const bcrypt = require('bcryptjs');
 
 const usersArray = require('../data/users.json');
 const { validationResult } = require("express-validator");
 
 const userController = {
-    register_createA: (req, res) => {
+    registerView: (req, res) => {
         res.render('users/register');
     },
-    register_createB: (req, res) => {
+    register: (req, res) => {
+        let errors = validationResult(req);
         let users = usersArray;
-        const newId = Math.max(...users.map(item => item.id)) + 1;
-        let file = req.file;
-        console.log(file.filename);
+        if (errors.length > 0) {
+            if (req.file) {
+                fs.unlinkSync(path.join(__dirname, "../../public/img/users/", req.file.filename));
+            }   
+            res.render("./users/register", { errors: errors.mapped(), old: req.body });      
+        } else {
+            
+            let generadorId;
+            users.length === 0? generadorId = users.length : generadorId = (users.at(-1).id)+1
 
-        let newUser = {
-            id: newId,
+            let formDataUser = {
+            id: generadorId,
             firstname: req.body.firstname,
             lastname: req.body.lastname,
             email: req.body.email,
-            password: req.body.password,
+            password: bcrypt.hashSync(req.body.password, 8),
+            category: "user",
             cud: req.body.cud,
-            // imgsrc: `img/users/${file.filename}`,
-        }
-        users.push(newUser)
-        fs.writeFileSync(
-            path.join(__dirname, "../data/users.json"),
-            JSON.stringify(users, null, 4),
-            {
-                encoding: "utf-8",
+            avatar: req.file.filename,
+            
+                
             }
-        );
-        res.redirect('users/login');
+             users.push(formDataUser)  
+        let newDataUsers = JSON.stringify(users, null, 4);
+        fs.writeFileSync(path.join(__dirname, "../data/users.json"), newDataUsers);
 
+        res.redirect('users/login');
+        }
+      
     },
     login: (req, res) => {
         res.render('users/login');

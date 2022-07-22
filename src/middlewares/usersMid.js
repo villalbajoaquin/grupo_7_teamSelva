@@ -24,8 +24,9 @@ const register = [
                 throw new Error('Las contraseñas no coinciden.');
             }
             return true;
-        })//, para las fotos!!
-  /*body('profilePicture').custom((value, { req }) => {
+        }),
+    
+  body('avatar').custom((value, { req }) => {
         let file = req.file;
         let extensionesPermitidas = ['.png', '.jpg', '.jpeg', '.gif', '.svg', '.jfif'];
         let fileExtension = path.extname(file.originalname);
@@ -37,7 +38,7 @@ const register = [
             }
         }
         return true;
-    })*/
+    })
 ];
 const validationsLogin = [
     body('email')

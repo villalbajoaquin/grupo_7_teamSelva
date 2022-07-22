@@ -89,7 +89,6 @@ border: 1px solid #132A13;
 border-radius: 5px;
 margin-left: 5%;
 margin-right: 5%;
-
 }
 
  .icon{
@@ -97,8 +96,9 @@ color: rgb(0, 0, 0);
  }
 
 
-input[type="text"],
-input[type="password"]{
+input[type="email"],
+input[type="password"],
+input[type="text"]{
     padding: 10px;
     background-color: #90A955;
     font-size: 15px;
@@ -202,8 +202,9 @@ footer .footer-bottom1 {
 
 @media(min-width:1024px){
         
-        input[type="text"],
-        input[type="password"]{  
+        input[type="email"],
+        input[type="password"],
+        input[type="text"]{  
             
             font-size: 18px;
          
