@@ -9,9 +9,13 @@ const register = [
     body('email')
         .notEmpty().withMessage('Por favor ingresa tu correo').bail()
         .isEmail().withMessage('Por favor ingresa un correo válido'),
-    body('password').notEmpty().withMessage('No olvides tu contraseña'),
+    body('password').notEmpty().withMessage('No olvides tu contraseña')
+    .isLength({ min: 8 })
+    .withMessage("La contraseña debe de tener como mínimo 8 caracteres"),
     body('passwordRe')
         .notEmpty().withMessage('Por favor repite tu contraseña.').bail()
+        .isLength({ min: 8 })
+        .withMessage("La contraseña debe de tener como mínimo 8 caracteres")
         .custom((value, { req }) => {
             let passOriginal = req.body.password;
             let nuevaPass = req.body.passwordRe;
