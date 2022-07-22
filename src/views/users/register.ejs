@@ -16,30 +16,45 @@
     <h1>Registrate</h1>
 
     <div class="contenedor">
-
+       
       <div class="input-contenedor">
         <i class="fa-solid fa-circle-user icon"></i>
         <input type="text" name="firstname" placeholder="Indique su nombre"/>
+          <% if(locals.errors && errors.firstname) { %> 
+            <p class="error-msg"> <%= errors.firstname.msg %> </p>
+          <%}%> 
       </div>
 
       <div class="input-contenedor">
         <i class="fa-solid fa-circle-user icon"></i>
         <input type="text" name="lastname" placeholder="Indique su apellido" />
+          <% if(locals.errors && errors.lastname) { %> 
+            <p class="error-msg"> <%= errors.lastname.msg %> </p>
+          <%}%> 
       </div>
 
       <div class="input-contenedor">
         <i class="fa-solid fa-envelope icon"></i>
-        <input type="text" name="email" placeholder="Indique su email" />
+        <input type="email" name="email" value="<%= (locals.old && old.email ? old.email : '') %>" placeholder="Indique su email" />   
+        <% if(locals.errors && errors.email) { %> 
+            <p class="error-msg"> <%= errors.email.msg %> </p>
+          <%}%> 
       </div>
 
       <div class="input-contenedor">
         <i class="fa-solid fa-lock icon"></i>
         <input type="password" name="password" placeholder="Indique su contraseña" />
+        <% if(locals.errors && errors.password) { %> 
+          <p class="error-msg"> <%= errors.password.msg %> </p>
+        <%}%> 
       </div>
 
       <div class="input-contenedor">
         <i class="fa-solid fa-lock icon"></i>
         <input type="password" name="passwordRe" placeholder="Indique nuevamente su contraseña" />
+        <% if(locals.errors && errors.passwordRe) { %> 
+          <p class="error-msg"> <%= errors.passwordRe.msg %> </p>
+        <%}%> 
       </div>
 
       <div class="info">
@@ -65,6 +80,14 @@
 
       <div class="input-contenedor">
         <input type="text" name="contraseña" placeholder="Indique su numero" />
+      </div>
+      
+      <div >
+        <label for="">Foto de Avatar</label>
+        <input type="file" name="avatar" />
+        <% if(locals.errors && errors.avatar) { %> 
+          <p class="error-msg"> <%= errors.avatar.msg %> </p>
+        <%}%> 
       </div>
 
       <input type="submit" value="Registrate" class="button1" />
