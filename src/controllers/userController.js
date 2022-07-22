@@ -53,19 +53,23 @@ const userController = {
         } else {
 
             //comparing database
+
             let userMatch = users.find((user) => {
                 return user.email === req.body.email && bcrypt.compareSync(req.body.password, user.password);
             });
             // Aca vemos si el usuario existe, y sino mostramos un mensaje de error
+
             if (userMatch) {
-                if (userMatch.permisos == 'admin') {
+                if (userMatch.category == 'admin') {
                     req.session.isAdmin = true;
                 }
             
             //delete userMatch.password;
+
             req.session.userLogged = userMatch;
 
             //si esta tildado el checkbox recordame //si no esta tildado viene como undefined
+
             if(req.body.recordarme != undefined) {
                 res.cookie('recordarme', userMatch.email, { maxAge: 3600000 })
              }
