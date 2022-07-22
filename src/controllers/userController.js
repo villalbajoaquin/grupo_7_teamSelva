@@ -12,6 +12,7 @@ const userController = {
     },
     register: (req, res) => {
         let errors = validationResult(req);
+        
         let users = usersArray;
         if (errors.length > 0) {
             if (req.file) {
@@ -27,19 +28,16 @@ const userController = {
             id: generadorId,
             firstname: req.body.firstname,
             lastname: req.body.lastname,
-            email: req.body.email,
-            password: bcrypt.hashSync(req.body.password, 8),
+            email: req.body.email,           
             category: "user",
             cud: req.body.cud,
-            avatar: req.file.filename,
-            
-                
+            avatar: `img/users/${req.file.filename}`,
             }
              users.push(formDataUser)  
         let newDataUsers = JSON.stringify(users, null, 4);
         fs.writeFileSync(path.join(__dirname, "../data/users.json"), newDataUsers);
 
-        res.redirect('users/login');
+        res.redirect('/login');
         }
       
     },

@@ -5,6 +5,8 @@ const port = process.env.PORT || 8080;
 const methodOverride = require('method-override');
 const session = require('express-session');
 const cookies = require('cookie-parser');
+const bcrypt = require("bcryptjs");
+
 
 // port & server
 app.listen(port, () => {
