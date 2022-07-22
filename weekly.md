@@ -38,3 +38,5 @@ Por problemas en cuanto a lo personal y a nivel cursada, se vio afectado el rend
 
 **Fecha: Martes 19/07**
 * Joaquin: Trabajó en la creación de middlewares. Impedimento principal: revisar contenidos anteriormente dados.
+
+* Uriel: Trabajó en las validaciones del login y en la implementacion del login funcional. 
