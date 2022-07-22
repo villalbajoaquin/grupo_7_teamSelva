@@ -13,10 +13,18 @@ const validations = require("../middlewares/usersMid");
     // register (POST)
     userRoutes.post('/register', validations.register, userController.register);
 
-    // login
+    // login GET
     userRoutes.get('/login', userController.login);
 
     // login POST
     userRoutes.post('/login', validations.validationsLogin,userController.loginProcess);
+
+    // profile GET
+
+    userRoutes.get('/profile')
+
+    // profile POST
+
+    userRoutes.post('/profile',userController.profile)
 
 module.exports = userRoutes;
