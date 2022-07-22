@@ -110,6 +110,12 @@ input[type="password"]{
     color: #132A13;
 }
 
+ .error-msg {
+    font-size: 12px;
+    color: #FF452C;
+    text-align: center;
+}
+
 .button{
 border: none;
 border-radius: 5px;

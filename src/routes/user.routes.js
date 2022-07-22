@@ -2,7 +2,7 @@ const express = require("express");
 const userRoutes = express.Router();
 const userController = require("../controllers/userController");
 const fs = require('fs');
-const bcrypt = require('bcrypt');
+const bcryptjs = require('bcryptjs');
 const {check} = require('express-validator');
 const validations = require("../middlewares/usersMid");
 
@@ -17,9 +17,6 @@ const validations = require("../middlewares/usersMid");
     userRoutes.get('/login', userController.login);
 
     // login POST
-    userRoutes.post('/login', [
-        check('email').isEmail().withMessage('Email Invalido'),
-        check('password').isLength({min: 8}).withMessage('La contraseña debe tener minimo 8 caracteres')
-    ] ,userController.processLogin);
+    userRoutes.post('/login', validations.validationsLogin,userController.loginProcess);
 
 module.exports = userRoutes;
