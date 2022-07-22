@@ -4,7 +4,7 @@ const app = express();
 const port = process.env.PORT || 8080;
 const methodOverride = require('method-override');
 const session = require('express-session');
-
+const cookies = require('cookie-parser');
 
 // port & server
 app.listen(port, () => {
@@ -34,6 +34,9 @@ app.use(session({
     resave: false,
     saveUninitialized: true
 }));  
+
+// cookies
+app.use(cookies());
 
 // HTTP methods & json
 
