@@ -3,6 +3,8 @@ const path = require('path');
 const app = express();
 const port = process.env.PORT || 8080;
 const methodOverride = require('method-override');
+const session = require('express-session');
+const cookies = require('cookie-parser');
 
 // port & server
 app.listen(port, () => {
@@ -26,9 +28,19 @@ app.use(express.json());
 // routes
 app.use('/', require('./src/routes/index.routes'));
 
+// session
+app.use(session({
+    secret: 'secret',
+    resave: false,
+    saveUninitialized: true
+}));  
+
+// cookies
+app.use(cookies());
+
 // HTTP methods & json
 
     // 404
     app.use((req, res, next) => {
         res.status(404).render('not-found');
-    });
+        });

@@ -13,8 +13,8 @@
         "imgsrc": "img/uploads/1656008058524_pdt_.jpg",
         "name": "Show Matías Valdez",
         "date": "2022-05-28",
-        "time": "22:00",
-        "tickets": "550",
+        "time": "23:00",
+        "tickets": "555",
         "price": "750"
     },
     {
@@ -51,7 +51,7 @@
         "date": "2022-06-19",
         "time": "22:00",
         "tickets": "350",
-        "price": "1000"
+        "price": "1500"
     },
     {
         "id": 7,
@@ -72,6 +72,15 @@
         "price": "750"
     },
     {
+        "id": 14,
+        "imgsrc": "img/uploads/1656745615585_pdt_.jpg",
+        "name": "Big Apple en UMMA",
+        "date": "2022-07-09",
+        "time": "00:00",
+        "tickets": "550",
+        "price": "1500"
+    },
+    {
         "id": 9,
         "imgsrc": "img/uploads/1656008447140_pdt_.jpg",
         "name": "Un Show de Otro Planeta",
@@ -79,6 +88,42 @@
         "time": "16:30",
         "tickets": "1200",
         "price": "500"
+    },
+    {
+        "id": 13,
+        "imgsrc": "img/uploads/1656744844590_pdt_.jpg",
+        "name": "Lio Fest en UMMA",
+        "date": "2022-07-19",
+        "time": "23:30",
+        "tickets": "550",
+        "price": "1500"
+    },
+    {
+        "id": 11,
+        "imgsrc": "img/uploads/1656311219383_pdt_.jpg",
+        "name": "Hernán Piquín en el Montoya",
+        "date": "2022-07-23",
+        "time": "21:30",
+        "tickets": "650",
+        "price": "3000"
+    },
+    {
+        "id": 15,
+        "imgsrc": "img/uploads/1658020424826_pdt_.jpg",
+        "name": "Una Noche en el Hotel",
+        "date": "2022-07-31",
+        "time": "20:00",
+        "tickets": "500",
+        "price": "3000"
+    },
+    {
+        "id": 17,
+        "imgsrc": "img/uploads/1658300320143_pdt_.jpg",
+        "name": " Pedro Aznar en el Montoya",
+        "date": "2022-08-06",
+        "time": "09:30",
+        "tickets": " 550",
+        "price": "4000"
     },
     {
         "id": 10,
@@ -90,12 +135,12 @@
         "price": "750"
     },
     {
-        "id": 11,
-        "imgsrc": "img/uploads/1656311219383_pdt_.jpg",
-        "name": "Hernán Piquín en el Montoya",
-        "date": "2022-07-23",
-        "time": "21:30",
-        "tickets": "650",
-        "price": "3000"
+        "id": 16,
+        "imgsrc": "img/uploads/1658355824758_pdt_.jpg",
+        "name": "Soy Rada en el Montoya",
+        "date": "2022-10-23",
+        "time": "21:00",
+        "tickets": "550",
+        "price": "5000"
     }
 ]

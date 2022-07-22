@@ -14,41 +14,61 @@ main {
     margin-bottom: 30px;
 }
 
-.new-event h2{
-text-align: center;
-margin-bottom: 6%;
-font-size: 2em;
-color: #132A13;
+.new-event h2 {
+    text-align: center;
+    margin-bottom: 6%;
+    font-size: 2em;
+    color: #132A13;
 }
 
-.container{
+.container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
 
 }
 
-.container form .info-show input{
-    width: 300px;
+.container form .info-show div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container form .info-show input {
+    width: 80%;
+    padding: 7px;
+    margin: 5px;
+    border-color: #132A13;
+}
+
+.container form .info-show label {
+    font-size: 12px;
+    padding-top: 7px;
+    margin: 5px;
+    border-color: #132A13;
+}
+
+.container form .info-show .error-msg {
+    font-size: 12px;
+    color: #FF452C;
+    text-align: center;
+}
+
+.container form .info-show button {
+    width: 80%;
     padding: 7px;
     margin: 10px;
     border-color: #132A13;
-   
+
 }
 
-.container form .info-show button{
-    width: 300px;
-    padding: 7px;
-    margin: 10px;
-    border-color: #132A13;
-   
-}
-
-.container form .info-show .button-send button{
+.container form .info-show .button-send button {
     background-color: #4F772D;
 }
 
-.standar-img{
+.standar-img {
     border: solid black;
     max-width: 350px;
     max-height: 350px;

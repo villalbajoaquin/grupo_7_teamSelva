@@ -27,27 +27,51 @@
                     <section class="info-show">
 
                         <div>
-                            <input type="text" name="name" placeholder="Nombre del show" required>
+                            <label for="name">Nombre del show</label>
+                            <input type="text" id="name" name="name" placeholder="Nombre del show" value="<%= locals.old && old.name ? old.name : '' %> ">
+                            <% if (locals.errors && errors.name) { %>
+                              <p class="error-msg"> <%= errors.name.msg %> </p>
+                            <% } %>
                         </div>
 
                         <div>
-                            <input type="date" name="date" placeholder="Fecha show" required>
+                            <label for="date">Fecha show</label>
+                            <input type="date" id="date" name="date" placeholder="Fecha show" value="<%= locals.old && old.date ? old.date : '' %> ">
+                            <% if (locals.errors && errors.date) { %>
+                              <p class="error-msg"> <%= errors.date.msg %> </p>
+                            <% } %>
                         </div>
 
                         <div>
-                            <input type="time" name="time" placeholder="Hora del show" required>
+                            <label for="time">Hora del show</label>
+                            <input type="time" id="time" name="time" placeholder="Hora del show" value="<%= locals.old && old.time ? old.time : '' %> ">
+                            <% if (locals.errors && errors.time) { %>
+                              <p class="error-msg"> <%= errors.time.msg %> </p>
+                            <% } %>
                         </div>
 
                         <div>
-                            <input type="number" name="tickets" placeholder="Cantidad de tickets" required>
+                            <label for="tickets">Cantidad de tickets</label>
+                            <input type="text" id="tickets" name="tickets" placeholder="Cantidad de tickets" value="<%= locals.old && old.tickets ? old.tickets : '' %> ">
+                            <% if (locals.errors && errors.tickets) { %>
+                              <p class="error-msg"> <%= errors.tickets.msg %> </p>
+                            <% } %>
                         </div>
 
                         <div>
-                            <input type="text" name="price" placeholder="Precio del show" required>
+                            <label for="price">Precio del show</label>
+                            <input type="text" id="price" name="price" placeholder="Precio del show" value="<%= locals.old && old.price ? old.price : '' %> ">
+                            <% if (locals.errors && errors.price) { %>
+                              <p class="error-msg"> <%= errors.price.msg %> </p>
+                            <% } %>
                         </div>
                         
                         <div>
-                            <input type="file" name="imgsrc" placeholder="Imagen del show" required>
+                            <label for="imgsrc">Imagen del show</label>
+                            <input type="file" id="imgsrc" name="imgsrc" placeholder="Imagen del show" value="<%= locals.old && old.imgsrc ? old.imgsrc : '' %> ">
+                            <% if (locals.errors && errors.imgsrc) { %>
+                              <p class="error-msg"> <%= errors.imgsrc.msg %> </p>
+                            <% } %> 
                         </div>
 
                         <div class="button-send">
