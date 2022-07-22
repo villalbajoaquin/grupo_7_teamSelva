@@ -1,22 +1,22 @@
 const path = require("path");
 const fs = require('fs');
 const { json } = require('express');
-const bcryptjs = require('bcryptjs');
+const bcrypt = require('bcryptjs');
 
 const usersArray = require('../data/users.json');
 const { validationResult } = require("express-validator");
 
 const userController = {
     registerView: (req, res) => {
-        res.render(path.join(__dirname, 'users/register'));
+        res.render('users/register');
     },
     register: (req, res) => {
         let errors = validationResult(req);
-
-        if (!errors.isEmpty()) {
+        let users = usersArray;
+        if (errors.length > 0) {
             if (req.file) {
-                fs.unlinkSync(path.join(__dirname, "../public/img/users", req.file.filename));
-            }
+                fs.unlinkSync(path.join(__dirname, "../../public/img/users/", req.file.filename));
+            }   
             res.render("./users/register", { errors: errors.mapped(), old: req.body });      
         } else {
             
@@ -28,19 +28,20 @@ const userController = {
             firstname: req.body.firstname,
             lastname: req.body.lastname,
             email: req.body.email,
-            password: bcrypt.hashSync(req.body.password, 10),
+            password: bcrypt.hashSync(req.body.password, 8),
             category: "user",
             cud: req.body.cud,
             avatar: req.file.filename,
-        }
-        }
-      
-        users.push(formDataUser)  
+            
+                
+            }
+             users.push(formDataUser)  
         let newDataUsers = JSON.stringify(users, null, 4);
         fs.writeFileSync(path.join(__dirname, "../data/users.json"), newDataUsers);
 
         res.redirect('users/login');
-
+        }
+      
     },
     login: (req, res) => {
         res.render('users/login');
