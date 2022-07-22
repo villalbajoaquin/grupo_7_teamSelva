@@ -12,7 +12,7 @@ const mainController = {
             let db = new Date(b.date);
             return da - db;
         });
-        res.render('index', {shows: shows});
+        res.render('index', {shows: showsPerDay});
     }
 }
 

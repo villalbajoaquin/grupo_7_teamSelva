@@ -25,31 +25,46 @@
                         
                         <div>
                             <label>Nombre:</label>
-                            <input type="text" value="<%=shows.name%>" name="name" placeholder="Nombre del show" required>
+                            <input type="text" name="name" value="<%= shows.name %>" placeholder="Nombre del show">
+                            <% if (locals.errors && errors.name) { %>
+                                <p class="error-msg"> <%= errors.name.msg %> </p>
+                            <% } %> 
                         </div>
                       
                         <div>
                             <label>Fecha:</label>
-                            <input type="date" value="<%=shows.date%>" name="date" placeholder="Fecha del show" required>
+                            <input type="date" value="<%= shows.date %>" name="date" placeholder="Fecha del show">
+                            <% if (locals.errors && errors.date) { %>
+                                <p class="error-msg"> <%= errors.date.msg %> </p>
+                            <% } %> 
                         </div>
 
                         <div>
                             <label>Hora:</label>
-                            <input type="time" value="<%=shows.time%>" name="time" placeholder="Hora del show" required>
+                            <input type="time" value="<%= shows.time %>" name="time" placeholder="Hora del show">
+                            <% if (locals.errors && errors.time) { %>
+                                <p class="error-msg"> <%= errors.time.msg %> </p>
+                            <% } %> 
                         </div>
 
                         <div>
                             <label>Tickets:</label>
-                            <input type="number" value="<%=shows.tickets%>" name="tickets" placeholder="Cantidad de tickets" required>
+                            <input type="number" value="<%= shows.tickets %>" name="tickets" placeholder="Cantidad de tickets">
+                            <% if (locals.errors && errors.tickets) { %>
+                                <p class="error-msg"> <%= errors.tickets.msg %> </p>
+                            <% } %>
                         </div>
 
                         <div>
                             <label>Precio:</label>
-                            <input type="text" value="<%=shows.price%>" name="price" placeholder="Precio del show" required>
+                            <input type="text" value="<%= shows.price %>" name="price" placeholder="Precio del show">
+                            <% if (locals.errors && errors.price) { %>
+                                <p class="error-msg"> <%= errors.price.msg %> </p>
+                            <% } %>
                         </div>
 
                         <div>
-                            <input type="file" value="<%=shows.imgsrc%>" name="imgsrc" placeholder="Imagen del show" required>
+                            <input type="file" value="<%= shows.imgsrc %>" name="imgsrc" placeholder="Imagen del show">
                         </div>
 
                         <div class="button-send">
