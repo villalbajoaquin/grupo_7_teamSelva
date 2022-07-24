@@ -26,7 +26,6 @@ const userController = {
             users.length === 0 ? generadorId = users.length : generadorId = (users.at(-1).id) + 1
 
             let formDataUser = {
-<<<<<<< HEAD
             id: generadorId,
             firstname: req.body.firstname,
             lastname: req.body.lastname,
@@ -34,36 +33,22 @@ const userController = {
             category: "user",
             cud: req.body.cud,
             avatar: `img/users/${req.file.filename}`,
-=======
-                id: generadorId,
-                firstname: req.body.firstname,
-                lastname: req.body.lastname,
-                email: req.body.email,
-                password: bcrypt.hashSync(req.body.password, 10),
-                category: "user",
-                cud: req.body.cud,
-                avatar: req.file.filename,
->>>>>>> a9f13522ad0ac9f53567300503ec725ded733de4
             }
-        }
-
-        users.push(formDataUser)
+             users.push(formDataUser)
         let newDataUsers = JSON.stringify(users, null, 4);
         fs.writeFileSync(path.join(__dirname, "../data/users.json"), newDataUsers);
 
-<<<<<<< HEAD
         res.redirect('/login');
-        }
+        
+        }    
       
-=======
-        res.redirect('users/login');
->>>>>>> a9f13522ad0ac9f53567300503ec725ded733de4
     },
 
     login: (req, res) => {
         res.render('users/login');
     },
-loginProcess: (req, res) => {
+
+    loginProcess: (req, res) => {
     let users = usersArray;
     let errors = validationResult(req);
     if (!errors.length > 0) {
@@ -105,5 +90,4 @@ loginProcess: (req, res) => {
         res.send('users/profile')
     }
 };
-
 module.exports = userController; 

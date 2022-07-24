@@ -116,31 +116,25 @@ input[type="text"]{
     text-align: center;
 }
 
-.button{
-border: none;
-border-radius: 5px;
-margin-top: 10px;
-margin-bottom: 10px;
-width: 200px;
-font-size: 20px;
-color: #132A13;
-background: white;
-padding: 20px 15px;
-cursor: pointer;
-}
+
 
 .button {
    position: relative;
    width: 70px;  
    height: 40px;
    font-size: 10px;
-   background-color: #5e5e5e;
+   background-color: #747474;
    color: #fff;
    border: none;
    border-radius: 4px;
    cursor: pointer;
    transition: width .5s, 
    border-radius .5s;
+}
+
+.button input{
+    border: none;
+    background-color: #747474;
 }
 
 .button *{
@@ -157,7 +151,7 @@ cursor: pointer;
 
 .button:focus{
     width: 30px;
-    background-color: #90A955;
+    background-color: #000000;
     border-radius: 50%;
 }
 
@@ -169,11 +163,6 @@ cursor: pointer;
     opacity: 1;
     transition-delay: .5s;
 }
-
-.button:hover{
-    background: cadetblue;
-}
-
 
 .link{
     text-decoration: none;
