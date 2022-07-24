@@ -4,7 +4,9 @@ const app = express();
 const port = process.env.PORT || 8080;
 const methodOverride = require('method-override');
 const session = require('express-session');
-const cookies = require('cookie-parser');
+const bcrypt = require("bcryptjs");
+const cookie = require('cookie-parser');
+
 
 // port & server
 app.listen(port, () => {
@@ -36,7 +38,7 @@ app.use(session({
 }));  
 
 // cookies
-app.use(cookies());
+app.use(cookie());
 
 // HTTP methods & json
 
