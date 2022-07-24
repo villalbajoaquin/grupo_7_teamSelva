@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require('path');
 
 
-const register = [
+const validationsRegister = [
     body('firstname').notEmpty().withMessage('Por favor ingresa tu nombre'),
     body('lastname').notEmpty().withMessage('Es necesario que completes tu apellido'),
     body('email')
@@ -61,4 +61,4 @@ const validationsLogin = [
 
 
 
-module.exports = {register, validationsLogin};
+module.exports = {validationsRegister, validationsLogin};
