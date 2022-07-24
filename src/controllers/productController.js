@@ -27,33 +27,33 @@ const productController = {
 
         let shows = productArray;
         const newId = Math.max(...shows.map(item => item.id)) + 1;
-        if(req.file){
+        if (req.file) {
             let file = req.file;
             console.log(file.filename);
-        }
-        if(errors.length > 0){
+        };
+        if (errors.length = 0) {
+            let newShow = {
+                id: newId,
+                imgsrc: `img/uploads/${req.file.filename}`,
+                name: req.body.name,
+                date: req.body.date,
+                time: req.body.time,
+                tickets: req.body.tickets,
+                price: req.body.price,
+            };
+            shows.push(newShow);
+            fs.writeFileSync(
+                path.join(__dirname, "../data/products.json"),
+                JSON.stringify(shows, null, 4), { encoding: "utf-8", }
+            );
+            res.redirect('/product');
+        } else {
             if (req.file) {
                 fs.unlinkSync(
                     path.join(__dirname, "../../public/img/uploads/", req.file.filename)
                 );
             };
             res.render('products/productCreate', { errors: errors.mapped(), old: req.body });
-        } else {
-            let newShow = {
-                    id: newId,
-                    imgsrc: `img/uploads/${req.file.filename}`,
-                    name: req.body.name,
-                    date: req.body.date,
-                    time: req.body.time,
-                    tickets: req.body.tickets,
-                    price: req.body.price,
-                };
-            shows.push(newShow)
-            fs.writeFileSync(
-                 path.join(__dirname, "../data/products.json"),
-                JSON.stringify(shows, null, 4),{ encoding: "utf-8", }
-            );
-            res.redirect('/product');
         };
     },
     product_search: (req, res) => {
@@ -146,31 +146,31 @@ const productController = {
         let id = req.params.id
         let shows = productArray;
         let product_edit = shows.find((item) => item.id == id);
-        res.render('./products/productEdit', { shows:product_edit });
+        res.render('./products/productEdit', { shows: product_edit });
     },
     product_editB: (req, res) => {
         let errors = validationResult(req);
 
         let id = req.params.id
         let shows = productArray;
-        if(req.file){
+        if (req.file) {
             let file = req.file;
             console.log(file.filename);
         };
-        
-        if(errors.length > 0){
+
+        if (errors.length > 0) {
             let product_edit = shows.find((item) => item.id == id);
-            res.render('products/productEdit', { errors: errors.mapped(), old: req.body, shows:product_edit });
+            res.render('products/productEdit', { errors: errors.mapped(), old: req.body, shows: product_edit });
         } else {
             const { name, date, tickets, price, time, } = req.body;
             shows.forEach(item => {
-                if(item.id == id) {
+                if (item.id == id) {
                     item.name = name;
                     item.date = date;
                     item.time = time;
                     item.tickets = tickets;
                     item.price = price;
-                    if(req.file){
+                    if (req.file) {
                         item.imgsrc = `img/uploads/${req.file.filename}`;
                     }
                 }
@@ -185,7 +185,7 @@ const productController = {
             res.redirect('/product');
         };
     },
-    product_delete: (req, res) =>{
+    product_delete: (req, res) => {
         let shows = productArray;
         let id = req.params.id;
         // delete image from public/img/
