@@ -40,3 +40,9 @@ create table users (
     cud int null,
     primary key (id)
 );
+drop table if exists categories;
+create table categories (
+	id int auto_increment,
+    firstName varchar(55) not null,
+    primary key (id)
+);
