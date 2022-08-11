@@ -1,7 +1,6 @@
 const path = require("path");
 const fs = require('fs');
 const { validationResult } = require('express-validator');
-//const productArray = require('../data/products.json');
 const db = require('../database/models');
 const OP = db.Sequelize.Op;
 
@@ -9,17 +8,11 @@ const OP = db.Sequelize.Op;
 // controller
 const productController = {
     product_list: (req, res) => {
-        /*let shows = productArray;
-        let showsPerDay = shows.sort((a, b) => {
-            let da = new Date(a.date);
-            let db = new Date(b.date);
-            return da - db;
-        });*/
         db.Product.findAll()
-            .then( shows => {
-                res.render('products/productList', { shows })                
+            .then( (shows) => {
+                res.render('products/productList', { shows });              
             }).catch(err => {
-                res.send(err)
+                res.send(err);
             });
     },
     product_cart: (req, res) => {
