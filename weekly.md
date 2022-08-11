@@ -43,5 +43,8 @@ Por problemas en cuanto a lo personal y a nivel cursada, se vio afectado el rend
 
 * Walter: Trabajo en los guardados del registro en formato JSON, falta solucion de las validaciones. 
 
-**Fecha: Martes 19/07**
+**Fecha: Martes 26/07**
 * Joaquin: Trabajó en la implementación de sequelize, instaló los módulos sequelize, sequelize-cli y mysql2.
+
+**Fecha: Martes 09/07**
+* Joaquin: Empezó con el modelo de Producto, también con la conformación del data.sql.
