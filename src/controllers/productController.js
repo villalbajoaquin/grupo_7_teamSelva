@@ -8,12 +8,16 @@ const OP = db.Sequelize.Op;
 // controller
 const productController = {
     product_list: (req, res) => {
-        db.Product.findAll()
-            .then( (shows) => {
-                res.render('products/productList', { shows });              
-            }).catch(err => {
-                res.send(err);
-            });
+        db.Product.findAll({
+            order: [
+                ['date', 'ASC'],
+                ['time', 'ASC']
+            ]
+        }).then((shows) => {
+            res.render('products/productList', { shows });
+        }).catch(err => {
+            res.send(err);
+        });
     },
     product_cart: (req, res) => {
         res.render('products/productCart');
