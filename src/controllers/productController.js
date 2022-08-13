@@ -2,18 +2,19 @@ const path = require("path");
 const fs = require('fs');
 const { validationResult } = require('express-validator');
 const db = require('../database/models');
-const OP = db.Sequelize.Op;
+const Op = db.Sequelize.Op;
 
 
 // controller
 const productController = {
     product_list: (req, res) => {
+
         db.Product.findAll({
             order: [
                 ['date', 'ASC'],
                 ['time', 'ASC']
             ]
-        }).then((shows) => {
+        }).then( shows => {
             res.render('products/productList', { shows });
         }).catch(err => {
             res.send(err);
@@ -60,22 +61,19 @@ const productController = {
         };
     },
     product_search: (req, res) => {
-        let shows = productArray;
-        let showsPerDay = shows.sort((a, b) => {
-            let da = new Date(a.date);
-            let db = new Date(b.date);
-            return da - db;
-        });
         let input = req.query.search;
-        let filteredShows = [];
 
-        for (let i = 0; i < showsPerDay.length; i++) {
-            if (showsPerDay[i].name.includes(input)) {
-                filteredShows.push(showsPerDay[i]);
-            };
-        };
-
-        res.render('products/productList', { shows: filteredShows });
+        db.Product.findAll({
+            where: {
+                name: {
+                    [Op.like]: `%${input}%`
+                }
+            }
+        }).then( shows => {
+            res.render('products/productList', { shows });
+        }).catch(err => {
+            res.send(err);
+        });
     },
     //product time filters
     twenty_four: (req, res) => {
@@ -210,10 +208,13 @@ const productController = {
         //res.render('./products/productList', {shows});
     },
     product_detail: (req, res) => {
-        let shows = productArray;
-        let id = req.params.id;
-        let show = shows.find((item) => item.id == id);
-        res.render('products/productDetail', { show });
+
+        db.Product.findByPk(req.params.id)
+            .then( show => {
+                res.render('products/productDetail', { show });
+            }).catch(err => {
+                res.send(err);
+            });
     }
 };
 
