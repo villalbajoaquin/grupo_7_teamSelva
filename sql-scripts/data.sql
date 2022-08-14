@@ -112,5 +112,12 @@ values
 		"21:00",
 		"550",
 		"5000"
+	),
+    ("San Marino en La Fábrica",
+		"img/uploads/1660407831380_pdt_.jpg",
+		"2022-10-01",
+		"21:00",
+		"600",
+		"1500"
 	);
 select * from products;

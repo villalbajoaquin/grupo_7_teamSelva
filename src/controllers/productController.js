@@ -14,7 +14,7 @@ const productController = {
                 ['date', 'ASC'],
                 ['time', 'ASC']
             ]
-        }).then( shows => {
+        }).then(shows => {
             res.render('products/productList', { shows });
         }).catch(err => {
             res.send(err);
@@ -27,30 +27,42 @@ const productController = {
         res.render('products/productCreate');
     },
     product_createB: (req, res) => {
-        let errors = validationResult(req);
+        db.Product.create(
+            {
+                name: req.body.name,
+                imgsrc: `img/uploads/${req.file.filename}`,
+                date: req.body.date,
+                time: req.body.time,
+                tickets: req.body.tickets,
+                price: req.body.price
+            }
+        ).then(() => {
+            res.redirect('/product');
+        }).catch(err => {
+            res.send(err);
+        });
+        /*let errors = validationResult(req);
 
-        let shows = productArray;
-        const newId = Math.max(...shows.map(item => item.id)) + 1;
         if (req.file) {
             let file = req.file;
             console.log(file.filename);
         };
         if (errors.length = 0) {
-            let newShow = {
-                id: newId,
-                imgsrc: `img/uploads/${req.file.filename}`,
-                name: req.body.name,
-                date: req.body.date,
-                time: req.body.time,
-                tickets: req.body.tickets,
-                price: req.body.price,
-            };
-            shows.push(newShow);
-            fs.writeFileSync(
-                path.join(__dirname, "../data/products.json"),
-                JSON.stringify(shows, null, 4), { encoding: "utf-8", }
-            );
-            res.redirect('/product');
+            db.Product.create(
+                {
+                    name: req.body.name,
+                    imgsrc: `img/uploads/${req.file.filename}`,
+                    date: req.body.date,
+                    time: req.body.time,
+                    tickets: req.body.tickets,
+                    price: req.body.price
+                }
+            ).then(() => {
+                res.redirect('/product');
+            }).catch(err => {
+                res.send(err);
+            });
+
         } else {
             if (req.file) {
                 fs.unlinkSync(
@@ -58,7 +70,7 @@ const productController = {
                 );
             };
             res.render('products/productCreate', { errors: errors.mapped(), old: req.body });
-        };
+        };*/
     },
     product_search: (req, res) => {
         let input = req.query.search;
@@ -68,8 +80,12 @@ const productController = {
                 name: {
                     [Op.like]: `%${input}%`
                 }
-            }
-        }).then( shows => {
+            },
+            order: [
+                ['date', 'ASC'],
+                ['time', 'ASC']
+            ]
+        }).then(shows => {
             res.render('products/productList', { shows });
         }).catch(err => {
             res.send(err);
@@ -77,88 +93,72 @@ const productController = {
     },
     //product time filters
     twenty_four: (req, res) => {
-        let shows = productArray;
-        let showsPerDay = shows.sort((a, b) => {
-            let da = new Date(a.date);
-            let db = new Date(b.date);
-            return da - db;
+        db.Product.findAll({
+            where: {
+                date: {
+                    [Op.lte]: new Date(new Date() + 24 * 60 * 60 * 1000)
+                }
+            },
+            order: [
+                ['date', 'ASC'],
+                ['time', 'ASC']
+            ]
+        }).then(shows => {
+            res.render('products/productList', { shows });
+        }).catch(err => {
+            res.send(err);
         });
-        const today = new Date();
-        const tomorrow = new Date(today);
-        tomorrow.setDate(today.getDate() + 1);
-
-        let filteredShows = [];
-
-        for (let i = 0; i < showsPerDay.length; i++) {
-            let showDate = new Date(showsPerDay[i].date);
-            if (showDate < tomorrow) {
-                filteredShows.push(showsPerDay[i]);
-            };
-        };
-
-        res.render('products/productList', { shows: filteredShows });
     },
     seven: (req, res) => {
-        let shows = productArray;
-        let showsPerDay = shows.sort((a, b) => {
-            let da = new Date(a.date);
-            let db = new Date(b.date);
-            return da - db;
+        db.Product.findAll({
+            where: {
+                date: {
+                    [Op.lte]: new Date(new Date() + 7 * 24 * 60 * 60 * 1000)
+                }
+            },
+            order: [
+                ['date', 'ASC'],
+                ['time', 'ASC']
+            ]
+        }).then(shows => {
+            res.render('products/productList', { shows });
+        }).catch(err => {
+            res.send(err);
         });
-        const today = new Date();
-        const tomorrow = new Date(today);
-        tomorrow.setDate(today.getDate() + 7);
-
-        let filteredShows = [];
-
-        for (let i = 0; i < showsPerDay.length; i++) {
-            let showDate = new Date(showsPerDay[i].date);
-            if (showDate < tomorrow) {
-                filteredShows.push(showsPerDay[i]);
-            };
-        };
-
-        res.render('products/productList', { shows: filteredShows });
     },
     thirty: (req, res) => {
-        let shows = productArray;
-        let showsPerDay = shows.sort((a, b) => {
-            let da = new Date(a.date);
-            let db = new Date(b.date);
-            return da - db;
+        db.Product.findAll({
+            where: {
+                date: {
+                    [Op.lte]: new Date(new Date() + 30 * 24 * 60 * 60 * 1000)
+                }
+            },
+            order: [
+                ['date', 'ASC'],
+                ['time', 'ASC']
+            ]
+        }).then(shows => {
+            res.render('products/productList', { shows });
+        }).catch(err => {
+            res.send(err);
         });
-        const today = new Date();
-        const tomorrow = new Date(today);
-        tomorrow.setDate(today.getDate() + 30);
-
-        let filteredShows = [];
-
-        for (let i = 0; i < showsPerDay.length; i++) {
-            let showDate = new Date(showsPerDay[i].date);
-            if (showDate < tomorrow) {
-                filteredShows.push(showsPerDay[i]);
-            };
-        };
-
-        res.render('products/productList', { shows: filteredShows });
     },
     //product time filters
     product_editA: (req, res) => {
-        let id = req.params.id
-        let shows = productArray;
-        let product_edit = shows.find((item) => item.id == id);
-        res.render('./products/productEdit', { shows: product_edit });
+        db.Product.findByPk(req.params.id)
+            .then(shows => {
+                res.render('products/productEdit', { shows });
+            }).catch(err => {
+                res.send(err);
+            });
     },
     product_editB: (req, res) => {
-        let errors = validationResult(req);
-
-        let id = req.params.id
-        let shows = productArray;
+        /*let errors = validationResult(req);
+        let id = req.params.id;
         if (req.file) {
             let file = req.file;
             console.log(file.filename);
         };
-
         if (errors.length > 0) {
             let product_edit = shows.find((item) => item.id == id);
             res.render('products/productEdit', { errors: errors.mapped(), old: req.body, shows: product_edit });
@@ -184,7 +184,23 @@ const productController = {
                 }
             );
             res.redirect('/product');
-        };
+        };*/
+        if(req.file){
+        db.Product.update(
+            {
+                name: req.body.name,
+                imgsrc: `img/uploads/${req.file.filename}`,
+                date: req.body.date,
+                time: req.body.time,
+                tickets: req.body.tickets,
+                price: req.body.price
+            },
+            {
+                where: {
+                    id: req.params.id
+                }
+            }
+        )}
     },
     product_delete: (req, res) => {
         let shows = productArray;
@@ -208,9 +224,8 @@ const productController = {
         //res.render('./products/productList', {shows});
     },
     product_detail: (req, res) => {
-
         db.Product.findByPk(req.params.id)
-            .then( show => {
+            .then(show => {
                 res.render('products/productDetail', { show });
             }).catch(err => {
                 res.send(err);
