@@ -52,3 +52,21 @@
 * Llamadas los fines de semana
 * Mantener a los integrantes del proyecto al tanto de lo aplicado en el proyecto
 * Individualmente interpretar el codigo aplicado.
+
+# Retro Martes 09/08
+
+**Nos funciona**
+
+* Mantener actualizado el *trello*
+* Dividir grandes objetivos.
+
+**Para mejorar:**
+
+* Estar mas al día con el proyecto
+* Interconectarse con el grupo
+* No dejar pendientes tareas o agregados de sprints anteriores
+
+**Para empezar a hacer:**
+
+* Mantener a los integrantes del proyecto al tanto de lo aplicado en el proyecto
+* Individualmente interpretar el codigo aplicado.
