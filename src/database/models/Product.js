@@ -6,11 +6,26 @@ module.exports = (sequelize, dataTypes) => {
                 type: dataTypes.STRING(55),
                 allowNull: false
             },
-            imgsrc: dataTypes.STRING(55),
-            date: dataTypes.DATE,
-            time: dataTypes.TIME,
-            tickets: dataTypes.INTEGER.UNSIGNED,
-            price: dataTypes.INTEGER.UNSIGNED
+            imgsrc: {
+                type: dataTypes.STRING(55),
+                allowNull: false
+            },
+            date: {
+                type: dataTypes.DATE,
+                allowNull: false
+            },
+            time: {
+                type: dataTypes.TIME,
+                allowNull: false
+            },
+            tickets: {
+                type: dataTypes.INTEGER.UNSIGNED,
+                allowNull: false
+            },
+            price: {
+                type: dataTypes.INTEGER.UNSIGNED,
+                allowNull: false
+            }
         },
         {
             tableName: 'products',
