@@ -1,3 +1,4 @@
+drop database if exists dbSelva;
 create database if not exists dbSelva;
 use dbSelva;
 drop table if exists products;

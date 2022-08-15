@@ -91,7 +91,7 @@ const productController = {
             res.send(err);
         });
     },
-    //product time filters
+    //product time filters---------------------------------------------
     twenty_four: (req, res) => {
         db.Product.findAll({
             where: {
@@ -143,7 +143,7 @@ const productController = {
             res.send(err);
         });
     },
-    //product time filters
+    //product time filters---------------------------------------------
     product_editA: (req, res) => {
         db.Product.findByPk(req.params.id)
             .then(shows => {
@@ -176,52 +176,72 @@ const productController = {
                     }
                 }
             });
-            fs.writeFileSync(
-                path.join(__dirname, "../data/products.json"),
-                JSON.stringify(shows, null, 4),
-                {
-                    encoding: "utf-8",
-                }
-            );
             res.redirect('/product');
         };*/
-        if(req.file){
-        db.Product.update(
-            {
-                name: req.body.name,
-                imgsrc: `img/uploads/${req.file.filename}`,
-                date: req.body.date,
-                time: req.body.time,
-                tickets: req.body.tickets,
-                price: req.body.price
-            },
+        if (req.file) {
+            db.Product.update(
+                {
+                    name: req.body.name,
+                    imgsrc: `img/uploads/${req.file.filename}`,
+                    date: req.body.date,
+                    time: req.body.time,
+                    tickets: req.body.tickets,
+                    price: req.body.price
+                },
+                {
+                    where: {
+                        id: req.params.id
+                    }
+                }
+            ).then(() => {
+                res.redirect('/product');
+            }).catch(err => {
+                res.send(err);
+            })
+        } else {
+            db.Product.update(
+                {
+                    name: req.body.name,
+                    date: req.body.date,
+                    time: req.body.time,
+                    tickets: req.body.tickets,
+                    price: req.body.price
+                },
+                {
+                    where: {
+                        id: req.params.id
+                    }
+                }
+            ).then(() => {
+                res.redirect('/product');
+            }).catch(err => {
+                res.send(err);
+            })
+        }
+    },
+    product_delete: (req, res) => {        
+        db.Product.findByPk(req.params.id)
+            .then(show => {
+                let imgPath = path.join(__dirname, "../../public/" + show.imgsrc);
+                if (fs.existsSync(imgPath)) {
+                    fs.unlinkSync(imgPath);
+                };
+            }).catch(err => {
+                res.send(err);
+            });
+
+        db.Product.destroy(
             {
                 where: {
                     id: req.params.id
-                }
+                },
+                force: true
             }
-        )}
-    },
-    product_delete: (req, res) => {
-        let shows = productArray;
-        let id = req.params.id;
-        // delete image from public/img/
-        let showIdentified = shows.find((item) => item.id == id);
-        let showPhoto = path.join(__dirname, "../../public/" + showIdentified.imgsrc);
-        if (fs.existsSync(showPhoto)) {
-            fs.unlinkSync(showPhoto);
-        };
-
-        shows = shows.filter((item) => item.id != id);
-        fs.writeFileSync(
-            path.join(__dirname, "../data/products.json"),
-            JSON.stringify(shows, null, 4),
-            {
-                encoding: "utf-8",
-            }
-        );
-        res.redirect('/product');
-        //res.render('./products/productList', {shows});
+        ).then(() => {
+            res.redirect('/product');
+        }).catch(err => {
+            res.send(err);
+        });
     },
     product_detail: (req, res) => {
         db.Product.findByPk(req.params.id)

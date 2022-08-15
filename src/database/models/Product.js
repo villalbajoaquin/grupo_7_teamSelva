@@ -13,7 +13,8 @@ module.exports = (sequelize, dataTypes) => {
             price: dataTypes.INTEGER.UNSIGNED
         },
         {
-            tableName: 'products'
+            tableName: 'products',
+            timestamps: false
         }
     );
     return Product;
