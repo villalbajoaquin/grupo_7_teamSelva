@@ -24,5 +24,13 @@ module.exports = (sequelize, dataTypes) => {
             timestamps: false
         }
     );
+
+    ProductCart.associate = (models) => {
+        ProductCart.belongsTo(models.ProductCart, {
+            as: "products",
+            foreignKey: 'productId'
+        })
+    };
+
     return ProductCart;
 };
