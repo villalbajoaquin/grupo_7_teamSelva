@@ -1,4 +1,4 @@
-const path = require("path");
+/*const path = require("path");
 const fs = require('fs');
 const { json } = require('express');
 const bcrypt = require('bcryptjs');
@@ -90,4 +90,5 @@ const userController = {
         res.send('users/profile')
     }
 };
-module.exports = userController; 
+
+module.exports = userController;*/
