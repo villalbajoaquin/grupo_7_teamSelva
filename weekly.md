@@ -42,3 +42,9 @@ Por problemas en cuanto a lo personal y a nivel cursada, se vio afectado el rend
 * Uriel: Trabajó en las validaciones del login y en la implementacion del login funcional. 
 
 * Walter: Trabajo en los guardados del registro en formato JSON, falta solucion de las validaciones. 
+
+**Fecha: Martes 26/07**
+* Joaquin: Trabajó en la implementación de sequelize, instaló los módulos sequelize, sequelize-cli y mysql2.
+
+**Fecha: Martes 09/07**
+* Joaquin: Empezó con el modelo de Producto, también con la conformación del data.sql.
