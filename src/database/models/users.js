@@ -1,4 +1,4 @@
-module.exports = (sequelize, DataTypes)=>{
+module.exports = (sequelize, DataTypes) => {
 
     //Definicion del modelo usuario
 
@@ -6,50 +6,51 @@ module.exports = (sequelize, DataTypes)=>{
         id: {
             autoIncrement: true,
             primaryKey: true,
-            type:DataTypes.INTEGER
+            type: DataTypes.INTEGER
         },
-        firstname:{
+        firstname: {
             allowNull: false,
             type: DataTypes.STRING
         },
-        lastname:{
+        lastname: {
             allowNull: false,
             type: DataTypes.STRING
         },
-        email:{
+        email: {
             allowNull: false,
             unique: true,
             type: DataTypes.STRING
         },
-        category:{
+        category: {
             allowNull: false,
             type: DataTypes.INTEGER
         },
-        password:{
+        password: {
             allowNull: false,
             unique: true,
             type: DataTypes.STRING
         },
-        avatar:{
+        avatar: {
             allowNull: false,
             type: DataTypes.STRING
         }
-     }, 
+    },
         {
-        tableName: "users",
-        paranoid:true,
-        deletedAt: 'softDelete',
-        createdAt: 'createAt',
-        updatedAt: 'modifiedAt'
-    });
+            tableName: "users",
+            paranoid: true,
+            deletedAt: 'softDelete',
+            createdAt: 'createAt',
+            updatedAt: 'modifiedAt'
+        });
 
-    User.associate = (models) =>{
+    User.associate = (models) => {
 
-        User.belongsTo(models.userCategory, 
+        User.belongsTo(models.userCategory,
             {
                 as: "category",
                 foreignKey: "idUserCategory"
             }
         );
-        return User;
+    }
+    return User;
 }
