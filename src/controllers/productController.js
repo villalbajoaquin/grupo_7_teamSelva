@@ -27,27 +27,16 @@ const productController = {
         res.render('products/productCreate');
     },
     product_createB: (req, res) => {
-        db.Product.create(
-            {
-                name: req.body.name,
-                imgsrc: `img/uploads/${req.file.filename}`,
-                date: req.body.date,
-                time: req.body.time,
-                tickets: req.body.tickets,
-                price: req.body.price
-            }
-        ).then(() => {
-            res.redirect('/product');
-        }).catch(err => {
-            res.send(err);
-        });
-        /*let errors = validationResult(req);
+        let errors = validationResult(req);
 
-        if (req.file) {
-            let file = req.file;
-            console.log(file.filename);
-        };
-        if (errors.length = 0) {
+        if (!errors.isEmpty()){
+            if (req.file){
+                fs.unlinkSync(
+                    path.join(__dirname, "../../public/img/uploads/", req.file.filename)
+                );
+            }
+            return res.render('products/productCreate', { errors: errors.mapped(), old: req.body });
+        } else {
             db.Product.create(
                 {
                     name: req.body.name,
@@ -62,15 +51,7 @@ const productController = {
             }).catch(err => {
                 res.send(err);
             });
-
-        } else {
-            if (req.file) {
-                fs.unlinkSync(
-                    path.join(__dirname, "../../public/img/uploads/", req.file.filename)
-                );
-            };
-            res.render('products/productCreate', { errors: errors.mapped(), old: req.body });
-        };*/
+        };
     },
     product_search: (req, res) => {
         let input = req.query.search;
