@@ -46,5 +46,11 @@ Por problemas en cuanto a lo personal y a nivel cursada, se vio afectado el rend
 **Fecha: Martes 26/07**
 * Joaquin: Trabajó en la implementación de sequelize, instaló los módulos sequelize, sequelize-cli y mysql2.
 
-**Fecha: Martes 09/07**
+**Fecha: Martes 09/08**
 * Joaquin: Empezó con el modelo de Producto, también con la conformación del data.sql.
+
+**Fecha: Martes 23/08**
+* Joaquin: Trabajo con CRUD de productos, y asociaciones entre modelos.
+
+**Fecha: Martes 30/08**
+* Joaquin: Trabajo con Validaciones Back-end para creacion y modificacion de productos.

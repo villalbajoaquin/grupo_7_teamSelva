@@ -49,7 +49,7 @@
 
                         <div>
                             <label>Tickets:</label>
-                            <input type="number" value="<%= shows.tickets %>" name="tickets" placeholder="Cantidad de tickets">
+                            <input type="text" value="<%= shows.tickets %>" name="tickets" placeholder="Cantidad de tickets">
                             <% if (locals.errors && errors.tickets) { %>
                                 <p class="error-msg"> <%= errors.tickets.msg %> </p>
                             <% } %>

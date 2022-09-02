@@ -70,3 +70,22 @@
 
 * Mantener a los integrantes del proyecto al tanto de lo aplicado en el proyecto
 * Individualmente interpretar el codigo aplicado.
+
+# Retro Martes 25/08
+
+**Nos funciona**
+
+* Mantener actualizado el *trello*
+* Dividir grandes objetivos.
+* Comunicación constante.
+
+**Para mejorar:**
+
+* Estar sincronizados entre los contenidos dados y lo aplicado en el proyecto.
+* No dejar pendientes tareas o agregados de sprints anteriores.
+
+**Para empezar a hacer:**
+
+* Mantener a los integrantes del proyecto al tanto de lo aplicado en el proyecto
+* Individualmente interpretar el codigo aplicado.
+* Comentar código propio para hacerse entender.

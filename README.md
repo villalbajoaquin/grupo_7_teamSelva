@@ -40,3 +40,4 @@ soy hincha de San Lorenzo. En mis ratos libres me interesa la historia.
 4. [Sprint 4](https://trello.com/b/z8PqATNS/sprint-4-json-y-http)
 5. [Sprint 5](https://trello.com/b/lNIto8wx/sprint-5-middlewares-y-auth)
 6. [Sprint 6](https://trello.com/b/IrYxXduL/sprint-6-bases-de-datos)
+7. [Sprint 7](https://trello.com/b/8S7XDMo0/sprint-7-validaciones-back-front)
