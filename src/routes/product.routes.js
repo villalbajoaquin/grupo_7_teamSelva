@@ -21,7 +21,7 @@ const productRoutes = express.Router();
     productRoutes.get('/product_edit/:id', productController.product_editA);
     
     // product edit (PUT)
-    productRoutes.put("/product_list/:id", validations.edit, upload.single("imgsrc"), productController.product_editB)
+    productRoutes.put("/product_list/:id", upload.single("imgsrc"), validations.edit, productController.product_editB)
 
     // product search
     productRoutes.get('/search', productController.product_search);

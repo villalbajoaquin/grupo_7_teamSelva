@@ -3,8 +3,8 @@ const fs = require('fs');
 const { json } = require('express');
 const bcrypt = require('bcryptjs');
 const cookie = require('cookie-parser')
-
-const usersArray = require('../data/users.json');
+const db = require('../database/models');
+const Op = db.Sequelize.Op;
 const { validationResult } = require("express-validator");
 
 const userController = {

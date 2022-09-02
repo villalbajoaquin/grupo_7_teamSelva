@@ -27,27 +27,17 @@ const productController = {
         res.render('products/productCreate');
     },
     product_createB: (req, res) => {
-        db.Product.create(
-            {
-                name: req.body.name,
-                imgsrc: `img/uploads/${req.file.filename}`,
-                date: req.body.date,
-                time: req.body.time,
-                tickets: req.body.tickets,
-                price: req.body.price
-            }
-        ).then(() => {
-            res.redirect('/product');
-        }).catch(err => {
-            res.send(err);
-        });
-        /*let errors = validationResult(req);
+        let errors = validationResult(req);
+        console.log(errors);
 
-        if (req.file) {
-            let file = req.file;
-            console.log(file.filename);
-        };
-        if (errors.length = 0) {
+        if (!errors.isEmpty()) {
+            if (req.file) {
+                fs.unlinkSync(
+                    path.join(__dirname, "../../public/img/uploads/", req.file.filename)
+                );
+            }
+            return res.render('products/productCreate', { errors: errors.mapped(), old: req.body });
+        } else {
             db.Product.create(
                 {
                     name: req.body.name,
@@ -62,15 +52,7 @@ const productController = {
             }).catch(err => {
                 res.send(err);
             });
-
-        } else {
-            if (req.file) {
-                fs.unlinkSync(
-                    path.join(__dirname, "../../public/img/uploads/", req.file.filename)
-                );
-            };
-            res.render('products/productCreate', { errors: errors.mapped(), old: req.body });
-        };*/
+        };
     },
     product_search: (req, res) => {
         let input = req.query.search;
@@ -153,73 +135,67 @@ const productController = {
             });
     },
     product_editB: (req, res) => {
-        /*let errors = validationResult(req);
-        let id = req.params.id;
-        if (req.file) {
-            let file = req.file;
-            console.log(file.filename);
-        };
-        if (errors.length > 0) {
-            let product_edit = shows.find((item) => item.id == id);
-            res.render('products/productEdit', { errors: errors.mapped(), old: req.body, shows: product_edit });
+        
+        let errors = validationResult(req);
+        console.log(errors);
+
+        if (!errors.isEmpty()) {
+            if (req.file) {
+                fs.unlinkSync(
+                    path.join(__dirname, "../../public/img/uploads/", req.file.filename)
+                );
+            };
+            db.Product.findByPk(req.params.id)
+                .then(shows => {
+                    res.render('products/productEdit', { errors: errors.mapped(), old: req.body, shows: shows });
+                }).catch(err => {
+                    res.send(err);
+                });
         } else {
-            const { name, date, tickets, price, time, } = req.body;
-            shows.forEach(item => {
-                if (item.id == id) {
-                    item.name = name;
-                    item.date = date;
-                    item.time = time;
-                    item.tickets = tickets;
-                    item.price = price;
-                    if (req.file) {
-                        item.imgsrc = `img/uploads/${req.file.filename}`;
+            if (req.file) {
+                db.Product.update(
+                    {
+                        name: req.body.name,
+                        imgsrc: `img/uploads/${req.file.filename}`,
+                        date: req.body.date,
+                        time: req.body.time,
+                        tickets: req.body.tickets,
+                        price: req.body.price
+                    },
+                    {
+                        where: {
+                            id: req.params.id
+                        }
                     }
-                }
-            });
-            res.redirect('/product');
-        };*/
-        if (req.file) {
-            db.Product.update(
-                {
-                    name: req.body.name,
-                    imgsrc: `img/uploads/${req.file.filename}`,
-                    date: req.body.date,
-                    time: req.body.time,
-                    tickets: req.body.tickets,
-                    price: req.body.price
-                },
-                {
-                    where: {
-                        id: req.params.id
+                ).then(() => {
+                    res.redirect('/product');
+                }).catch(err => {
+                    res.send(err);
+                })
+            } else {
+                db.Product.update(
+                    {
+                        name: req.body.name,
+                        date: req.body.date,
+                        time: req.body.time,
+                        tickets: req.body.tickets,
+                        price: req.body.price
+                    },
+                    {
+                        where: {
+                            id: req.params.id
+                        }
                     }
-                }
-            ).then(() => {
-                res.redirect('/product');
-            }).catch(err => {
-                res.send(err);
-            })
-        } else {
-            db.Product.update(
-                {
-                    name: req.body.name,
-                    date: req.body.date,
-                    time: req.body.time,
-                    tickets: req.body.tickets,
-                    price: req.body.price
-                },
-                {
-                    where: {
-                        id: req.params.id
-                    }
-                }
-            ).then(() => {
-                res.redirect('/product');
-            }).catch(err => {
-                res.send(err);
-            })
+                ).then(() => {
+                    res.redirect('/product');
+                }).catch(err => {
+                    res.send(err);
+                })
+            }
         }
+
     },
-    product_delete: (req, res) => {        
+    product_delete: (req, res) => {
         db.Product.findByPk(req.params.id)
             .then(show => {
                 let imgPath = path.join(__dirname, "../../public/" + show.imgsrc);
