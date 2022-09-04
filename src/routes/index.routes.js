@@ -9,6 +9,6 @@ const routes = express.Router();
     routes.use("/product", require("./product.routes"));
 
     // user
-    //routes.use("/user", require("./user.routes"));
+    routes.use("/user", require("./user.routes"));
 
 module.exports = routes;

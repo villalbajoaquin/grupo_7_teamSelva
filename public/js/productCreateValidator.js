@@ -10,7 +10,7 @@ let ulErrores = document.querySelector("#errores");
 
 inputName.focus();
 
-let arrayInput = [inputName, inputDate, inputTime, inputTickets, inputPrice];
+let arrayInput = [inputName, inputDate, inputTime, inputTickets, inputPrice, inputImage];
 
 formulario.addEventListener("submit", function(e) {
     let errores = 0;
@@ -36,12 +36,16 @@ formulario.addEventListener("submit", function(e) {
             ulErrores.innerHTML += `<li>El valor del campo ${input.dataset.nombre} debe estar entre 10 y 999.999</li>`;
             input.nextElementSibling.innerHTML = "El valor ingresado debe estar entre 10 y 999.999";
         }
-        
-        if((input.dataset.nombre == "Price")  && (input.value < 60 || input.value > 360)){
-            input.classList.add("is-invalid");
-            errores++;
-            ulErrores.innerHTML += `<li>El valor del campo ${input.dataset.nombre} debe estar entre 60 y 360</li>`;
-            input.nextElementSibling.innerHTML = "El valor ingresado debe estar entre 60 y 360";
+
+        if((input.dataset.nombre == "imgsrc")){
+            validExtensions.forEach(function(extension) {
+                if (!input.value.includes(extension)){
+                    input.classList.add("is-invalid");
+                    errores++;
+                    ulErrores.innerHTML += `<li>El valor del campo ${input.dataset.nombre} debe estar entre 10 y 999.999</li>`;
+                    input.nextElementSibling.innerHTML = "El valor ingresado debe estar entre 10 y 999.999";
+                }
+            })
         }
         
     });
@@ -55,7 +59,7 @@ formulario.addEventListener("submit", function(e) {
 arrayInput.forEach(function(input){
 
     input.addEventListener("blur", function() {
-        if(input.value == "") {
+        if((input.value == "") || (input.value == " ")) {
             input.classList.add("is-invalid");
             input.classList.remove("is-valid");
             input.nextElementSibling.innerHTML = "El campo no puede estar vacío";

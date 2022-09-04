@@ -85,14 +85,16 @@ main {
 
 .is-invalid {
     color: red;
+    background-color: lightcoral;
     border-color: red;
-  }
-  
-  .is-valid {
+}
+
+.is-valid {
     color: black;
     border-color: green;
-  }
-  
-  .alert-warning {
+}
+
+.alert-warning {
+    margin: 2%;
     background-color: crimson;
-  }
+}
