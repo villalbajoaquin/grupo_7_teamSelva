@@ -47,7 +47,11 @@ module.exports = (sequelize, DataTypes) => {
 
         User.belongsTo(models.userCategory,
             {
+<<<<<<< HEAD
                 as: "category1",
+=======
+                as: "1category",
+>>>>>>> 1dd320f44c091f48a72da55020a4aa5dbccf9244
                 foreignKey: "idUserCategory"
             }
         );

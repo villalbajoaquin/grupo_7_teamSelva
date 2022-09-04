@@ -8,13 +8,11 @@
 }
 
 main {
-    max-width: 550px;
+    max-width: 450px;
     margin: 0 auto;
 }
 
-.border {
-
-
+.box {
     box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
 
@@ -28,6 +26,14 @@ main {
     padding-top: 5%;
 }
 
+.box-caja-compra {
+    border-style: dashed;
+    border-color: #5D5D5D;
+    padding-left: 4%;
+    padding-right: 4%;
+    background: transparent;
+}
+
 .imagen-show {
     width: 40%;
     margin: 0 auto;
@@ -37,15 +43,14 @@ main {
     /* max-width: 400px;Duda? poner maximo ancho maximo para moviles? porque cuando se hace muy grande la resolucion, la imagen es muy grande */
 }
 
-.subtitulo {
+.info-del-show {
     width: 90%;
     margin: 0 auto;
-    display: flex;
-    justify-content: flex-start;
-    font-size: 24px;
     margin-top: 20px;
-    margin-bottom: 20px;
-    /* background-color: #90A955; */
+}
+
+.info-del-show h5 {
+    margin-bottom: 10px
 }
 
 a {
@@ -67,21 +72,6 @@ a {
     font-size: 13px;
 }
 
-.stock {
-    font-size: 15px;
-}
-
-.info-del-show {
-    width: 90%;
-    margin: 0 auto;
-    margin-top: 20px;
-
-}
-
-.info-del-show h5 {
-    margin-bottom: 10px
-}
-
 .caja-de-compra {
     width: 90%;
     margin: 0 auto;
@@ -91,13 +81,7 @@ a {
     padding-bottom: 5%;
 }
 
-.border-caja-compra {
-    border-style: dashed;
-    border-color: #5D5D5D;
-    padding-left: 4%;
-    padding-right: 4%;
-    background: transparent;
-}
+
 
 .caja-de-compra p {
     font-size: 28px;
@@ -125,7 +109,7 @@ a {
 
 
 .cuadro-de-cantidad {
-    width: 17px;
+    width: 40px;
     align-items: center;
     text-align: center;
     margin-top: 4px;

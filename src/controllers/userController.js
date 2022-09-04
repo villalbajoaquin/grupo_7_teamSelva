@@ -94,12 +94,10 @@ registerView: (req, res)=>{
 },
 /*
 userData: async (req, res) =>{
-    let userData = await db.Users.findByPk(Number( req.session.userLogged.userId),{
-        include: [{association: 'city'}]
+    let userData = await db.Users.findByPk(Number( req.session.userLogged.userId)
     })
-    let cities = await db.Cities.findAll({
     })
-    res.render(path.join(__dirname, '../views/users/edit-user'), {userData, cities, user:req.session.userLogged });
+    res.render(path.join(__dirname, '../views/users/edit-user'), {userData, user:req.session.userLogged });
 }, */
 
     profile: (req, res) => {
