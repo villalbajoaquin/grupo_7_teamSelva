@@ -82,3 +82,17 @@ main {
 .container form .info-show .button-reset button:hover {
     background-color: #ECF39E;
 }
+
+.is-invalid {
+    color: red;
+    border-color: red;
+  }
+  
+  .is-valid {
+    color: black;
+    border-color: green;
+  }
+  
+  .alert-warning {
+    background-color: crimson;
+  }

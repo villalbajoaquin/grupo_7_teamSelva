@@ -51,3 +51,6 @@ Por problemas en cuanto a lo personal y a nivel cursada, se vio afectado el rend
 
 **Fecha: Martes 23/08**
 * Joaquin: Trabajo con CRUD de productos, y asociaciones entre modelos.
+
+**Fecha: Martes 30/08**
+* Joaquin: Trabajo con Validaciones Back-end para creacion y modificacion de productos.

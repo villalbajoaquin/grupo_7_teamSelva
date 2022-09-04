@@ -43,7 +43,7 @@ module.exports = (sequelize, DataTypes) => {
             updatedAt: 'modifiedAt'
         });
 
-    User.associate = (models) => {
+    /*User.associate = (models) => {
 
         User.belongsTo(models.userCategory,
             {
@@ -51,6 +51,6 @@ module.exports = (sequelize, DataTypes) => {
                 foreignKey: "idUserCategory"
             }
         );
-    }
+    }*/
     return User;
 }
