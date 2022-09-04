@@ -43,14 +43,14 @@ module.exports = (sequelize, DataTypes) => {
             updatedAt: 'modifiedAt'
         });
 
-    /*User.associate = (models) => {
+    User.associate = (models) => {
 
         User.belongsTo(models.userCategory,
             {
-                as: "category",
+                as: "category1",
                 foreignKey: "idUserCategory"
             }
         );
-    }*/
+    }
     return User;
 }

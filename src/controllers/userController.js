@@ -1,4 +1,4 @@
-/*const path = require("path");
+const path = require("path");
 const fs = require('fs');
 const { json } = require('express');
 const bcrypt = require('bcryptjs');
@@ -11,84 +11,100 @@ const userController = {
     registerView: (req, res) => {
         res.render('users/register');
     },
-    register: (req, res) => {
+    register: async (req, res) => {
         let errors = validationResult(req);
+        console.log(errors);
         
-        let users = usersArray;
-        if (errors.length > 0) {
-            if (req.file) {
-                fs.unlinkSync(path.join(__dirname, "../public/img/users", req.file.filename));
-            }
-            res.render("./users/register", { errors: errors.mapped(), old: req.body });
-        } else {
+        if(!errors.isEmpty()){
 
-            let generadorId;
-            users.length === 0 ? generadorId = users.length : generadorId = (users.at(-1).id) + 1
-
-            let formDataUser = {
-            id: generadorId,
-            firstname: req.body.firstname,
-            lastname: req.body.lastname,
-            email: req.body.email,           
-            category: "user",
-            cud: req.body.cud,
-            avatar: `img/users/${req.file.filename}`,
-            }
-             users.push(formDataUser)
-        let newDataUsers = JSON.stringify(users, null, 4);
-        fs.writeFileSync(path.join(__dirname, "../data/users.json"), newDataUsers);
-
-        res.redirect('/login');
-        
-        }    
+        if (req.file) {
       
+        fs.unlinkSync(path.join(__dirname, "../../public/img/users", req.file.avatar));
+         }
+         return res.json({errors:errors});
+
+        } else{
+
+        let pass = await bcrypt.hash(req.body.password, 10);
+
+        await db.Users.create({
+        firstName: req.body.nombre,
+        lastName: req.body.apellido,
+        email: req.body.email,
+        categoryId: 2,
+        password: pass,
+        avatar: req.file.avatar,
+        })
+        .then(() =>{
+            return res.json(response)
+        })
+        .catch(error => res.send(error))
+
+        }
     },
 
-    login: (req, res) => {
-        res.render('users/login');
-    },
+    processLogin: async (req, res) =>{
 
-    loginProcess: (req, res) => {
-    let users = usersArray;
-    let errors = validationResult(req);
-    if (!errors.length > 0) {
-        res.render('./users/login', { errors: errors.mapped(), old: req.body });
-    } else {
+        let errors = validationResult(req);
 
-        //comparing database
-
-        let userMatch = users.find((user) => {
-            return user.email === req.body.email && bcrypt.compareSync(req.body.password, user.password);
+        if(!errors.isEmpty()){
+         res.render('./users/login', {errors:errors.mapped(), old: req.body});
+        } else{
+       
+            
+        let userMatch = await db.Users.findOne({
+            
+                where: {userEmail: req.body.email}
         });
-        // Aca vemos si el usuario existe, y sino mostramos un mensaje de error
 
-        if (userMatch) {
-            if (userMatch.category == 'admin') {
-                req.session.isAdmin = true;
-            }
+        let secure = await bcrypt.compare(req.body.password, userMatch.userPassword)
 
-            //delete userMatch.password;
-
+        if(userMatch && secure ){
+            
+            userMatch.idUserCategory == 1? req.session.isAdmin = true : undefined
+            
             req.session.userLogged = userMatch;
 
-            //si esta tildado el checkbox recordame //si no esta tildado viene como undefined
-
-            if (req.body.recordarme != undefined) {
-                res.cookie('recordarme', userMatch.email, { maxAge: 3600000 })
+            if(req.body.recordarme != undefined) {
+            res.cookie('recordarme', userMatch.userEmail, { maxAge: 3600000 })
             }
             res.redirect('/')
-        } else {
-            res.render(path.join(__dirname, '../views/users/login.ejs'), {
-                errors: [
-                    { msg: 'Datos Incorrectos' }
-                ]
-            });
-        }
+        }else{
+            res.render(path.join(__dirname, '../views/users/login.ejs'), {errors: [
+            {msg: 'Datos Incorrectos'}
+            
+        ]})
     }
+
+} 
 },
+  //para eliminar cookie al hacer logout
+  logout: (req, res) => {
+    res.clearCookie('userEmail');
+    req.session.destroy();
+    return res.redirect('/');
+},
+
+//Pendiente hacer Vista de Administrador
+admin: (req, res) =>{
+    res.render(path.join(__dirname, '../views/adminView.ejs'), {userLog: req.session.userLogged});
+},
+registerView: (req, res)=>{
+    res.render(path.join(__dirname, '../views/users/register.ejs'))
+},
+/*
+userData: async (req, res) =>{
+    let userData = await db.Users.findByPk(Number( req.session.userLogged.userId),{
+        include: [{association: 'city'}]
+    })
+    let cities = await db.Cities.findAll({
+    })
+    res.render(path.join(__dirname, '../views/users/edit-user'), {userData, cities, user:req.session.userLogged });
+}, */
+
     profile: (req, res) => {
         res.send('users/profile')
     }
 };
 
-module.exports = userController;*/
+module.exports = userController;
