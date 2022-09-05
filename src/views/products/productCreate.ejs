@@ -3,10 +3,10 @@
 
 <head>
     <%- include('../partials/head') %>
-    <link rel="stylesheet" href="/css/products/productCreate.css">
+        <link rel="stylesheet" href="/css/products/productCreate.css">
 
-    <script src="https://kit.fontawesome.com/d160ea4c64.js" crossorigin="anonymous"></script>
-    <title>Crear producto</title>
+        <script src="https://kit.fontawesome.com/d160ea4c64.js" crossorigin="anonymous"></script>
+        <title>Crear producto</title>
 </head>
 
 <body>
@@ -22,61 +22,82 @@
             </div>
 
             <div class="container">
-                <div class="standar-img"> <img src="/img/img-predet.png" > </div>
+                <div class="standar-img"> <img src="/img/img-predet.png"> </div>
                 <form action="/product/product_create" method="POST" enctype="multipart/form-data">
                     <section class="info-show">
 
+                        <ul id="errores">
+                        </ul>
+
                         <div>
                             <label for="name">Nombre del show</label>
-                            <input type="text" id="name" name="name" placeholder="Nombre del show" value="<%= locals.old && old.name ? old.name : '' %> ">
+                            <input type="text" id="name" name="name" placeholder="Nombre del show"
+                                value="<%= locals.old && old.name ? old.name : '' %> " data-nombre="name">
                             <% if (locals.errors && errors.name) { %>
-                              <p class="error-msg"> <%= errors.name.msg %> </p>
-                            <% } %>
+                                <p class="error-msg">
+                                    <%= errors.name.msg %>
+                                </p>
+                                <% } %>
                         </div>
 
                         <div>
                             <label for="date">Fecha show</label>
-                            <input type="date" id="date" name="date" placeholder="Fecha show" value="<%= locals.old && old.date ? old.date : '' %> ">
+                            <input type="date" id="date" name="date" placeholder="Fecha show"
+                                value="<%= locals.old && old.date ? old.date : '' %> " data-nombre="date">
                             <% if (locals.errors && errors.date) { %>
-                              <p class="error-msg"> <%= errors.date.msg %> </p>
-                            <% } %>
+                                <p class="error-msg">
+                                    <%= errors.date.msg %>
+                                </p>
+                                <% } %>
                         </div>
 
                         <div>
                             <label for="time">Hora del show</label>
-                            <input type="time" id="time" name="time" placeholder="Hora del show" value="<%= locals.old && old.time ? old.time : '' %> ">
+                            <input type="time" id="time" name="time" placeholder="Hora del show"
+                                value="<%= locals.old && old.time ? old.time : '' %> " data-nombre="time">
                             <% if (locals.errors && errors.time) { %>
-                              <p class="error-msg"> <%= errors.time.msg %> </p>
-                            <% } %>
+                                <p class="error-msg">
+                                    <%= errors.time.msg %>
+                                </p>
+                                <% } %>
                         </div>
 
                         <div>
                             <label for="tickets">Cantidad de tickets</label>
-                            <input type="text" id="tickets" name="tickets" placeholder="Cantidad de tickets" value="<%= locals.old && old.tickets ? old.tickets : '' %> ">
+                            <input type="text" id="tickets" name="tickets" placeholder="Cantidad de tickets"
+                                value="<%= locals.old && old.tickets ? old.tickets : '' %> " data-nombre="tickets">
                             <% if (locals.errors && errors.tickets) { %>
-                              <p class="error-msg"> <%= errors.tickets.msg %> </p>
-                            <% } %>
+                                <p class="error-msg">
+                                    <%= errors.tickets.msg %>
+                                </p>
+                                <% } %>
                         </div>
 
                         <div>
                             <label for="price">Precio del show</label>
-                            <input type="text" id="price" name="price" placeholder="Precio del show" value="<%= locals.old && old.price ? old.price : '' %> ">
+                            <input type="text" id="price" name="price" placeholder="Precio del show"
+                                value="<%= locals.old && old.price ? old.price : '' %> " data-nombre="price">
                             <% if (locals.errors && errors.price) { %>
-                              <p class="error-msg"> <%= errors.price.msg %> </p>
-                            <% } %>
+                                <p class="error-msg">
+                                    <%= errors.price.msg %>
+                                </p>
+                                <% } %>
                         </div>
-                        
+
                         <div>
                             <label for="imgsrc">Imagen del show</label>
-                            <input type="file" id="imgsrc" name="imgsrc" placeholder="Imagen del show" value="<%= locals.old && old.imgsrc ? old.imgsrc : '' %> ">
+                            <input type="file" id="imgsrc" name="imgsrc" placeholder="Imagen del show"
+                                value="<%= locals.old && old.imgsrc ? old.imgsrc : '' %> " data-nombre="imgsrc">
                             <% if (locals.errors && errors.imgsrc) { %>
-                              <p class="error-msg"> <%= errors.imgsrc.msg %> </p>
-                            <% } %> 
+                                <p class="error-msg">
+                                    <%= errors.imgsrc.msg %>
+                                </p>
+                                <% } %>
                         </div>
 
                         <div class="button-send">
                             <button type="submit">Enviar</button>
-                        </div>    
+                        </div>
 
                         <div class="button-reset">
                             <button type="reset">Borrar campos</button>
@@ -96,6 +117,7 @@
         <%- include('../partials/footer') %>
     </footer>
 
+    <script src="/js/productCreateValidator.js"></script>
 </body>
 
 </html>
