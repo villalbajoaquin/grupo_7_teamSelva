@@ -1,4 +1,4 @@
-/*const path = require("path");
+const path = require("path");
 const fs = require('fs');
 const { json } = require('express');
 const bcrypt = require('bcryptjs');
@@ -11,84 +11,195 @@ const userController = {
     registerView: (req, res) => {
         res.render('users/register');
     },
-    register: (req, res) => {
+    register: async (req, res) => {
         let errors = validationResult(req);
-        
-        let users = usersArray;
-        if (errors.length > 0) {
+        console.log(errors);
+
+        if (!errors.isEmpty()) {
+
             if (req.file) {
-                fs.unlinkSync(path.join(__dirname, "../public/img/users", req.file.filename));
+
+                fs.unlinkSync(path.join(__dirname, "../../public/img/users", req.file.avatar));
             }
-            res.render("./users/register", { errors: errors.mapped(), old: req.body });
+            return res.json({ errors: errors });
+
         } else {
 
-            let generadorId;
-            users.length === 0 ? generadorId = users.length : generadorId = (users.at(-1).id) + 1
+            let pass = await bcrypt.hash(req.body.password, 10);
 
-            let formDataUser = {
-            id: generadorId,
-            firstname: req.body.firstname,
-            lastname: req.body.lastname,
-            email: req.body.email,           
-            category: "user",
-            cud: req.body.cud,
-            avatar: `img/users/${req.file.filename}`,
-            }
-             users.push(formDataUser)
-        let newDataUsers = JSON.stringify(users, null, 4);
-        fs.writeFileSync(path.join(__dirname, "../data/users.json"), newDataUsers);
+            await db.Users.create({
+                firstName: req.body.nombre,
+                lastName: req.body.apellido,
+                email: req.body.email,
+                categoryId: 2,
+                password: pass,
+                avatar: req.file.avatar,
+            })
+                .then(() => {
+                    return res.json(response)
+                })
+                .catch(error => res.send(error))
 
-        res.redirect('/login');
-        
-        }    
-      
-    },
-
-    login: (req, res) => {
-        res.render('users/login');
-    },
-
-    loginProcess: (req, res) => {
-    let users = usersArray;
-    let errors = validationResult(req);
-    if (!errors.length > 0) {
-        res.render('./users/login', { errors: errors.mapped(), old: req.body });
-    } else {
-
-        //comparing database
-
-        let userMatch = users.find((user) => {
-            return user.email === req.body.email && bcrypt.compareSync(req.body.password, user.password);
-        });
-        // Aca vemos si el usuario existe, y sino mostramos un mensaje de error
-
-        if (userMatch) {
-            if (userMatch.category == 'admin') {
-                req.session.isAdmin = true;
-            }
-
-            //delete userMatch.password;
-
-            req.session.userLogged = userMatch;
-
-            //si esta tildado el checkbox recordame //si no esta tildado viene como undefined
-
-            if (req.body.recordarme != undefined) {
-                res.cookie('recordarme', userMatch.email, { maxAge: 3600000 })
-            }
-            res.redirect('/')
-        } else {
-            res.render(path.join(__dirname, '../views/users/login.ejs'), {
-                errors: [
-                    { msg: 'Datos Incorrectos' }
-                ]
-            });
         }
-    }
-},
+    },
+
+    processLogin: async (req, res) => {
+
+        let errors = validationResult(req);
+
+        if (!errors.isEmpty()) {
+            res.render('./users/login', { errors: errors.mapped(), old: req.body });
+        } else {
+
+
+            let userMatch = await db.Users.findOne({
+
+                where: { userEmail: req.body.email }
+            });
+
+            let secure = await bcrypt.compare(req.body.password, userMatch.userPassword)
+
+            if (userMatch && secure) {
+
+                userMatch.idUserCategory == 1 ? req.session.isAdmin = true : undefined
+
+                req.session.userLogged = userMatch;
+
+                if (req.body.recordarme != undefined) {
+                    res.cookie('recordarme', userMatch.userEmail, { maxAge: 3600000 })
+                }
+                res.redirect('/')
+            } else {
+                res.render(path.join(__dirname, '../views/users/login.ejs'), {
+                    errors: [
+                        { msg: 'Datos Incorrectos' }
+
+                    ]
+                })
+            }
+
+        }
+    },
+    //para eliminar cookie al hacer logout
+    logout: (req, res) => {
+        res.clearCookie('userEmail');
+        req.session.destroy();
+        return res.redirect('/');
+    },
+
+    //Pendiente hacer Vista de Administrador
+    
+    /*
+    admin: (req, res) =>{
+        res.render(path.join(__dirname, '../views/adminView.ejs'), {userLog: req.session.userLogged});
+    },
+    registerView: (req, res)=>{
+        res.render(path.join(__dirname, '../views/users/register.ejs'))
+    },
+    
+    userData: async (req, res) =>{
+        let userData = await db.Users.findByPk(Number( req.session.userLogged.userId)
+        })
+        })
+        res.render(path.join(__dirname, '../views/users/edit-user'), {userData, user:req.session.userLogged });
+    }, 
+    userEdit: (req, res) =>{
+        let errors = validationResult(req);
+        console.log(req, errors);
+        if(!errors.isEmpty()){
+            // // si existe un archivo con propiedad filename
+            if (req.file) {
+            //     //lo borramos 
+            fs.unlinkSync(path.join(__dirname, "../../public/img/users", req.file.filename));
+        }
+        res.render(path.join(__dirname,'../views/users/edit-user'), {user: userActual, errors:errors.mapped()});
+        }else{
+            let userData = {
+                firstName: req.body.nombre,
+                lastName: req.body.apellido,
+                email: req.body.email,
+                password: req.body.password,
+            }
+          
+            if(req.body.password != undefined){
+                userData.userPassword = bcrypt.hashSync(req.body.password, 10);
+            }else{
+                delete userData.userPassword;
+            }
+    
+            if(req.file){
+                fs.unlinkSync(path.join(__dirname, "../../public/img/users", userLogged.avatar));
+                userData.avatar = req.file.filename;
+            }
+    
+            db.Users.update(userData,
+            {
+                where:{
+                    userId: Number(req.body.id)
+                }
+            })
+            .then((response) =>{
+                return res.json(response)
+            })
+            .catch(error => res.send(error))
+        }
+    
+    }, 
+        userPermissions:(req, res) =>{
+            let user = db.Users.findByPk(Number(req.params.id),{
+                include: [{association: 'userCategory'}]
+            })
+            let categories = db.userCategory.findAll({
+            })
+            Promise.all ([user, categories]) 
+              .then(([user, categories]) => {
+               
+                res.render(path.join(__dirname, '../views/users/edit-permissions.ejs'), {user, categories, userLog: req.session.userLogged });
+              })
+              .catch(error => res.send(error))
+        },
+        permissionsProcess:(req, res) =>{
+            
+            db.Users.update({
+                idUserCategory:req.body.permisos,
+            },
+            {
+                where:{
+                    userId: req.body.id
+                }
+            })
+            .then(() =>{
+                res.redirect('/users/all-users');
+            })
+            .catch(error => res.send(error))
+        },
+    
+    cargarUsuarios: (req, res) =>{
+    
+        let users = db.Users.findAll({
+            include: [{association: 'userCategory'}]
+        })
+        let categories = db.userCategory.findAll({
+        })
+        Promise.all ([users, categories]) 
+          .then(([users, categories]) => {
+           
+            res.render(path.join(__dirname, '../views/users/all-users.ejs'), {users, categories, userLog: req.session.userLogged });
+          })
+          .catch(error => res.send(error))
+        
+    },
+    delete: async (req, res) => {
+        
+        await db.Users.destroy({
+            where: {userId: Number (req.params.id)} 
+        })
+        res.redirect('/users/all-users');
+    },
+    */
     profile: (req, res) => {
         res.send('users/profile')
     }
 };
 
-module.exports = userController;*/
+module.exports = userController;

@@ -3,7 +3,8 @@ const { check } = require('express-validator');
 const create = [
     check('name')
         .notEmpty().withMessage('Ingresa el nombre').bail()
-        .isLength({ max: 60 }).withMessage('No puede ser tan largo el nombre'),
+        .isLength({ max: 60 }).withMessage('No puede ser tan largo el nombre')
+        .isLength({ min: 5 }).withMessage('Ingrese un nombre de al menos 5 caracteres'),
     check('date')
         .notEmpty().withMessage('Ingresa la fecha').bail()
         .isDate().withMessage('Ingresa una fecha válida')
@@ -20,7 +21,7 @@ const create = [
         .isLength({ max: 8 }).withMessage('Ingresa una cantidad limitada'),
     check('imgsrc').custom((value, { req }) => {
             let file = req.file;
-            let extensionesPermitidas = ['.png', '.jpg', '.jpeg', '.gif', '.svg', '.jfif'];
+            let extensionesPermitidas = ['.png', '.jpg', '.jpeg', '.gif'];
             let fileExtension = path.extname(file.originalname);
             if (!file) {
                 throw new Error('Seleccioná una imagen para tu producto');
