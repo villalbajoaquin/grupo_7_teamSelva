@@ -10,7 +10,7 @@ let ulErrores = document.querySelector("#errores");
 
 inputName.focus();
 
-let arrayInput = [inputName, inputDate, inputTime, inputTickets, inputPrice, inputImage];
+let arrayInput = [inputName, inputDate, inputTime, inputTickets, inputPrice];
 
 formulario.addEventListener("submit", function (e) {
     let errores = 0;
@@ -51,17 +51,17 @@ formulario.addEventListener("submit", function (e) {
             input.nextElementSibling.innerHTML = "El valor ingresado debe estar entre 10 y 999.999";
         }
 
-        if ((input.dataset.nombre == "imgsrc")) {
-            let extFile = input.value.split('.').pop();
-            if (validExtensions.includes(extFile) == false) {
-                input.classList.add("is-invalid");
-                errores++;
-                ulErrores.innerHTML += `<li>El archivo del campo ${input.dataset.nombre} debe ser un .jpeg, .jpg, .png y .gif</li>`;
-                input.nextElementSibling.innerHTML = "Solo de admiten archivos .jpeg, .jpg, .png y .gif";
-            };
-        }
-
     });
+
+    if (inputImage.value != "") {
+        let extFile = inputImage.value.split('.').pop();
+        if (validExtensions.includes(extFile) == false) {
+            input.classList.add("is-invalid");
+            errores++;
+            ulErrores.innerHTML += `<li>El archivo del campo imagen debe ser un .jpeg, .jpg, .png y .gif</li>`;
+            input.nextElementSibling.innerHTML = "Solo de admiten archivos .jpeg, .jpg, .png y .gif";
+        };
+    }
 
     if (errores > 0) {
         e.preventDefault();
@@ -102,13 +102,23 @@ arrayInput.forEach(function (input) {
         }
 
         if ((input.dataset.nombre == "imgsrc")) {
-            let extFile = input.value.split('.').pop();
+            let extFile = fimg.value.split('.').pop();
             if (validExtensions.includes(extFile) == false) {
                 input.classList.add("is-invalid");
                 input.classList.remove("is-valid");
-                ulErrores.innerHTML += `<li>El archivo del campo ${input.dataset.nombre} debe ser un .jpeg, .jpg, .png y .gif</li>`;
                 input.nextElementSibling.innerHTML = "Solo de admiten archivos .jpeg, .jpg, .png y .gif";
             };
         }
     })
+});
+
+inputImage.addEventListener("blur", function(){
+    if (inputImage.value != "") {
+        let extFile = inputImage.value.split('.').pop();
+        if (validExtensions.includes(extFile) == false) {
+            input.classList.add("is-invalid");
+            ulErrores.innerHTML += `<li>El archivo del campo imagen debe ser un .jpeg, .jpg, .png y .gif</li>`;
+            input.nextElementSibling.innerHTML = "Solo de admiten archivos .jpeg, .jpg, .png y .gif";
+        };
+    }
 });
