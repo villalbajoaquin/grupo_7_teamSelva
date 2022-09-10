@@ -89,3 +89,22 @@
 * Mantener a los integrantes del proyecto al tanto de lo aplicado en el proyecto
 * Individualmente interpretar el codigo aplicado.
 * Comentar código propio para hacerse entender.
+
+# Retro Martes 06/09: Sprint Final
+
+**Nos funciona**
+
+* Mantener actualizado el *trello*
+* Dividir grandes objetivos.
+
+**Para mejorar:**
+
+* Mayor intercomunicación de lo aplicado y probarlo localmente.
+* Estar sincronizados entre los contenidos dados y lo aplicado en el proyecto.
+* No dejar pendientes tareas o agregados de sprints anteriores.
+
+**Para empezar a hacer:**
+
+* Mantener a los integrantes del proyecto al tanto de lo aplicado en el proyecto
+* Individualmente interpretar el codigo aplicado.
+* Comentar código propio para hacerse entender.
