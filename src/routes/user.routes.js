@@ -12,20 +12,24 @@ const upload = require("../middlewares/multerUser");
 userRoutes.get("/register", userController.registerView);
 
 // register (POST)
-userRoutes.post(
-    "/register",
-    upload.single("avatar"),
-    validations.validationsRegister,
-    userController.register
-);
-/*
+userRoutes.post("/register", upload.single("avatar"), validations.validationsRegister, userController.register);
+
 // login GET
-userRoutes.get("/login", userController.login);
+userRoutes.get("/login", userController.loginView);
 
 // login POST
-userRoutes.post("/login",validations.validationsLogin, userController.loginProcess
+userRoutes.post("/login", validations.validationsLogin, userController.processLogin
 );
 
+// profile GET
+
+userRoutes.get("/profile");
+
+// profile POST
+
+userRoutes.post("/profile", userController.profile);
+
+/*
 //user edit
 
 routes.get("/edit-user/:id", userLogg, usersController.userData);
@@ -39,12 +43,5 @@ routes.get("/edit-permissions/:id", adminMid, usersController.userPermissions);
 routes.put("/edit-permissions",[adminMid, upload],usersController.permissionsProcess
 );
 */
-// profile GET
-
-userRoutes.get("/profile");
-
-// profile POST
-
-userRoutes.post("/profile", userController.profile);
 
 module.exports = userRoutes;

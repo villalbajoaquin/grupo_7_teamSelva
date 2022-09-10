@@ -54,3 +54,7 @@ Por problemas en cuanto a lo personal y a nivel cursada, se vio afectado el rend
 
 **Fecha: Martes 30/08**
 * Joaquin: Trabajo con Validaciones Back-end para creacion y modificacion de productos.
+
+**Fecha: Martes 06/09**
+* Joaquin: Validaciones Front-end con JavaScript de formularios para creacion y modificacion de productos. Impedimento, poder hacer el codigo un poco mas reutilizable.
+* Walter: Solucionando conexiones de las vista de login y register para implentacion de otras funcionalidades
