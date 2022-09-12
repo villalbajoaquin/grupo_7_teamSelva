@@ -11,4 +11,7 @@ const routes = express.Router();
     // user
     routes.use("/user", require("./user.routes"));
 
+    // api
+    routes.use("/api", require("./api/api.routes"));
+
 module.exports = routes;
