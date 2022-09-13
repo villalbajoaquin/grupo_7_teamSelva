@@ -43,6 +43,47 @@ const productController = {
         } catch (err) {
             res.status(404).json(err);
         }
+    },
+    last_added: async (req, res) => {
+        try {
+            const product = await db.Product.findOne({
+                order: [
+                    ['id', 'DESC']
+                ]
+            });
+            const respuesta = {
+                meta: {
+                    status: 200,
+                    total: product.length,
+                    url: 'api/products/last-added'
+                },
+                data: product
+            };
+            res.json(respuesta);
+        } catch (err) {
+            res.status(404).json(err);
+        }
+    },
+    next_show: async (req, res) => {
+        try {
+            const product = await db.Product.findOne({
+                order: [
+                    ['date', 'ASC'],
+                    ['time', 'ASC']
+                ]
+            });
+            const respuesta = {
+                meta: {
+                    status: 200,
+                    total: product.length,
+                    url: 'api/products/last-added'
+                },
+                data: product
+            };
+            res.json(respuesta);
+        } catch (err) {
+            res.status(404).json(err);
+        }
     }
 };
 
