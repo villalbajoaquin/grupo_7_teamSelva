@@ -29,12 +29,20 @@ const productController = {
         }
     },
     detail: async (req, res) => {
-        /*db.Product.findByPk(req.params.id)
-            .then(show => {
-                res.render('products/productDetail', { show });
-            }).catch(err => {
-                res.send(err);
-            });*/
+        try {
+            const product = await db.Product.findByPk(req.params.id);
+            const respuesta = {
+                meta: {
+                    status: 200,
+                    total: product.length,
+                    url: 'api/products/:id'
+                },
+                data: product
+            };
+            res.json(respuesta);
+        } catch (err) {
+            res.status(404).json(err);
+        }
     }
 };
 

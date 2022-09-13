@@ -7,6 +7,6 @@ const productRoutes = express.Router();
     productRoutes.get('/', productController.list);
 
     // product detail
-    //productRoutes.get('/:id', productController.product_detail);
+    productRoutes.get('/:id', productController.detail);
 
 module.exports = productRoutes;
