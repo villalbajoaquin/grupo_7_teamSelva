@@ -83,6 +83,8 @@ main {
     background-color: #ECF39E;
 }
 
+/* Styles for validations*/
+
 .is-invalid {
     color: red;
     background-color: lightcoral;
