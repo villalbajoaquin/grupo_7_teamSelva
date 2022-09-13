@@ -34,7 +34,6 @@ const productController = {
             const respuesta = {
                 meta: {
                     status: 200,
-                    total: product.length,
                     url: 'api/products/:id'
                 },
                 data: product
@@ -54,7 +53,6 @@ const productController = {
             const respuesta = {
                 meta: {
                     status: 200,
-                    total: product.length,
                     url: 'api/products/last-added'
                 },
                 data: product
@@ -75,7 +73,6 @@ const productController = {
             const respuesta = {
                 meta: {
                     status: 200,
-                    total: product.length,
                     url: 'api/products/last-added'
                 },
                 data: product
