@@ -28,7 +28,7 @@ create table users (
     firstName varchar(55) not null,
     lastName varchar(55) not null,
     email  varchar(55) not null,
-    password varchar(55) not null,
+    password varchar(60) not null,
     avatar varchar(55) not null,
     categoryId int not null,
     cud int null,

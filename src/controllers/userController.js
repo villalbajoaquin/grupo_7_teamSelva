@@ -7,6 +7,7 @@ const db = require('../database/models');
 const Op = db.Sequelize.Op;
 const { validationResult } = require("express-validator");
 
+
 const userController = {
   //Register
   registerView: (req, res) => {
@@ -17,6 +18,7 @@ const userController = {
     console.log(errors);
 
     if (!errors.isEmpty()) {
+        res.render("./users/register", { errors: errors.mapped(), old: req.body });
       if (req.file) {
         fs.unlinkSync(
           path.join(__dirname, "../../public/img/users", req.file.avatar)
@@ -27,15 +29,15 @@ const userController = {
       let pass = await bcrypt.hash(req.body.password, 10);
 
       await db.Users.create({
-        firstName: req.body.nombre,
-        lastName: req.body.apellido,
+        firstName: req.body.firstname,
+        lastName: req.body.lastname,
         email: req.body.email,
         categoryId: 2,
         password: pass,
-        avatar: req.file.avatar,
+        avatar: `img/users/${req.file.filename}`,
       })
         .then(() => {
-          return res.json(response);
+          return res.redirect("/");
         })
         .catch((error) => res.send(error));
     }
@@ -52,23 +54,23 @@ const userController = {
       res.render("./users/login", { errors: errors.mapped(), old: req.body });
     } else {
       let userMatch = await db.Users.findOne({
-        where: { userEmail: req.body.email },
+        where: { email: req.body.email },
       });
 
       let secure = await bcrypt.compare(
         req.body.password,
-        userMatch.userPassword
+        userMatch.password
       );
 
-      if (userMatch && secure) {
-        userMatch.idUserCategory == 1
+     if (userMatch && secure) {
+       /*  userMatch.categoryId == 1
           ? (req.session.isAdmin = true)
           : undefined;
 
-        req.session.userLogged = userMatch;
+        req.session.userLogged = userMatch; */
 
         if (req.body.recordarme != undefined) {
-          res.cookie("recordarme", userMatch.userEmail, { maxAge: 3600000 });
+          res.cookie("recordarme", userMatch.email, { maxAge: 3600000 });
         }
         res.redirect("/");
       } else {

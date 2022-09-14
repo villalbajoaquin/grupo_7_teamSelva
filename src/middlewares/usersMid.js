@@ -1,7 +1,7 @@
 const { body } = require('express-validator');
 const fs = require("fs");
 const path = require('path');
-
+const db = require("../database/models");
 
 const validationsRegister = [
     body('firstname').notEmpty().withMessage('Por favor ingresa tu nombre'),
@@ -44,15 +44,16 @@ const validationsLogin = [
     body('email')
         .notEmpty().withMessage('Por favor completá tu correo').bail()
         .isEmail().withMessage('¡El formato del correo no es válido! Intentalo de nuevo')
-        .custom((value, {req})=>{
-            let usersFile = fs.readFileSync(path.join(__dirname, '../data/users.json'), { encoding: 'utf-8' });
-            let users = JSON.parse(usersFile);     
-            let match = users.find((user) => { return user.email === req.body.email})
-            if(!match){
+        .custom( async (value, {req})=>{
+            let users = await db.Users.findOne({
+                where: {email: req.body.email}
+            })
+            if(!users){
              throw new Error("El correo no coincide con un usuario registrado");
               }
               return true;
-            }),
+            })
+        ,
     body('password')
     .notEmpty().withMessage('No olvides tu contraseña')
     .isLength({ min: 8 })
