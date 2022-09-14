@@ -8,12 +8,12 @@ module.exports = (sequelize, DataTypes) => {
             primaryKey: true,
             type: DataTypes.INTEGER
         },
-        firstname: {
+        firstName: {
             allowNull: false,
             type: DataTypes.STRING
         },
-        lastname: {
-            allowNull: false,
+        lastName: {
+           allowNull: false,
             type: DataTypes.STRING
         },
         email: {
@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
             unique: true,
             type: DataTypes.STRING
         },
-        category: {
+        categoryId: {
             allowNull: false,
             type: DataTypes.INTEGER
         },
@@ -48,7 +48,7 @@ module.exports = (sequelize, DataTypes) => {
         User.belongsTo(models.userCategory,
             {
                 as: "category1",
-                foreignKey: "idUserCategory"
+                foreignKey: "categoryId"
             }
         );
     }
