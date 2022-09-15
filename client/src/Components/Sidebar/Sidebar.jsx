@@ -1,9 +1,9 @@
 import React from "react";
-import Logo from "../../Assets/images/logo-DH.png";
+import Logo from "../../Assets/images/logo-prop2-modo-oscuro.png";
 
 function Sidebar() {
     return (
-        <ul className="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul className="navbar-nav bg-dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
             {/* <!-- Sidebar - Brand --> */}
             <a className="sidebar-brand d-flex align-items-center justify-content-center" href="/">
@@ -19,14 +19,14 @@ function Sidebar() {
             <li className="nav-item active">
                 <a className="nav-link" href="/">
                     <i className="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard - DH movies</span></a>
+                    <span>Dashboard ticket-selva</span></a>
             </li>
 
             {/* <!-- Divider --> */}
             <hr className="sidebar-divider" />
 
             {/* <!-- Heading --> */}
-            <div className="sidebar-heading">Actions</div>
+            <div className="sidebar-heading text-light">Actions</div>
 
             {/* <!-- Nav Item - Pages --> */}
             <li className="nav-item">

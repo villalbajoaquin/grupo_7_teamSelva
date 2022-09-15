@@ -1,5 +1,5 @@
 import React from "react";
-import Avatar from "../../Assets/images/jordan-walke.png"
+import Avatar from "../../Assets/images/user_1.jpg"
 
 function Topbar(){
     return(
@@ -17,8 +17,6 @@ function Topbar(){
                     <li className="nav-item dropdown no-arrow mx-1">
                       <a className="nav-link dropdown-toggle" href="/" id="alertsDropdown">
                         <i className="fas fa-bell fa-fw"></i>
-                        {/* <!-- Counter - Alerts --> */}
-                        <span className="badge badge-danger badge-counter">3+</span>
                       </a>
                     </li>
 
@@ -26,8 +24,6 @@ function Topbar(){
                     <li className="nav-item dropdown no-arrow mx-1">
                       <a className="nav-link dropdown-toggle" href="/" id="messagesDropdown">
                         <i className="fas fa-envelope fa-fw"></i>
-                        {/* <!-- Counter - Messages --> */}
-                        <span className="badge badge-danger badge-counter">7</span>
                       </a>
                     </li>
 
