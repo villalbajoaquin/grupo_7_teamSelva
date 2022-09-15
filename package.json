@@ -22,7 +22,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js",
-    "dev": "concurrently \"npm start\" "
+    "client": "npm start --prefix ./client",
+    "dev": "concurrently \"npm run client\" \"npm start\" "
   },
   "repository": {
     "type": "git",

@@ -1,5 +1,9 @@
 # grupo_7_teamSelva
 
+- Para ejecutar localmente en la terminal la aplicación y el dashboard:
+
+    npm run dev
+
 - Enlace a la [App](https://ticket-selva.herokuapp.com).
 
 - Tema del sitio
