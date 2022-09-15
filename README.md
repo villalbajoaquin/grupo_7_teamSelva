@@ -2,7 +2,9 @@
 
 - Para ejecutar localmente en la terminal la aplicación y el dashboard:
 
-    npm run dev
+~~~
+npm run dev
+~~~
 
 - Enlace a la [App](https://ticket-selva.herokuapp.com).
 
