@@ -3,6 +3,9 @@ const userRoutes = express.Router();
 const userController = require("../controllers/userController");
 const validations = require("../middlewares/usersMid");
 const upload = require("../middlewares/multerUser");
+const authMid = require('../middlewares/authMid')
+const guestMid = require('../middlewares/guestMid');
+const profileMid = require("../middlewares/profileMid");
 
 // routes
 // register (GET)
@@ -15,12 +18,11 @@ userRoutes.post("/register", upload.single("avatar"), validations.validationsReg
 userRoutes.get("/login", userController.loginView);
 
 // login POST
-userRoutes.post("/login", validations.validationsLogin, userController.processLogin
-);
+userRoutes.post("/login",validations.validationsLogin, userController.processLogin);
 
 // profile GET
 
-userRoutes.get("/profile", userController.profile);
+userRoutes.get("/profile",[profileMid], userController.profile);
 
 // profile POST
 

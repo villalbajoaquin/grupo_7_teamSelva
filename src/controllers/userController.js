@@ -60,16 +60,19 @@ const userController = {
       let secure = await bcrypt.compare(req.body.password, userMatch.password);
 
       if (userMatch && secure) {
-        /*  userMatch.categoryId == 1
-          ? (req.session.isAdmin = true)
-          : undefined;
-
-        req.session.userLogged = userMatch; */
 
         if (req.body.recordarme != undefined) {
           res.cookie("recordarme", userMatch.email, { maxAge: 3600000 });
         }
-        res.redirect("/");
+
+        console.log(req.session)
+
+        req.session.userLogged = userMatch;
+        res.cookie("login", userMatch, { maxAge: 9999999999999 });
+
+        console.log(req.session)
+
+        return res.redirect("/");
       } else {
         res.render(path.join(__dirname, "../views/users/login"), {
           errors: [{ msg: "Datos Incorrectos" }],
@@ -80,7 +83,11 @@ const userController = {
 
   //Vista del Perfil
    profile: (req, res) => {
-     res.render('users/profile')       
+        const id = req.session.user.id;
+        db.users.findByPk(id)
+            .then((user) => {
+                return res.render('user/profile', { user })
+            })
     },
 
   //para eliminar cookie al hacer logout

@@ -27,15 +27,16 @@ app.use(methodOverride('_method'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-// routes
-app.use('/', require('./src/routes/index.routes'));
-
 // session
 app.use(session({
     secret: 'secret',
     resave: false,
     saveUninitialized: true
 }));  
+
+// routes
+app.use('/', require('./src/routes/index.routes'));
+
 
 // cookies
 app.use(cookie());
