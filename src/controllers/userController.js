@@ -41,9 +41,9 @@ const userController = {
         })
         .catch((error) => res.send(error));
     }
-    },
-  
-  //Login 
+  },
+
+  //Login
   loginView: (req, res) => {
     res.render("users/login");
   },
@@ -57,13 +57,10 @@ const userController = {
         where: { email: req.body.email },
       });
 
-      let secure = await bcrypt.compare(
-        req.body.password,
-        userMatch.password
-      );
+      let secure = await bcrypt.compare(req.body.password, userMatch.password);
 
-     if (userMatch && secure) {
-       /*  userMatch.categoryId == 1
+      if (userMatch && secure) {
+        /*  userMatch.categoryId == 1
           ? (req.session.isAdmin = true)
           : undefined;
 
@@ -79,13 +76,13 @@ const userController = {
         });
       }
     }
-    },
-  
+  },
+
   //Vista del Perfil
-  profile: (req, res) => {
-    res.send("users/profile");
+   profile: (req, res) => {
+     res.render('users/profile')       
     },
-  
+
   //para eliminar cookie al hacer logout
   logout: (req, res) => {
     res.clearCookie("email");
