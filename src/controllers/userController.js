@@ -18,13 +18,13 @@ const userController = {
     console.log(errors);
 
     if (!errors.isEmpty()) {
-        res.render("./users/register", { errors: errors.mapped(), old: req.body });
       if (req.file) {
         fs.unlinkSync(
           path.join(__dirname, "../../public/img/users", req.file.avatar)
         );
       }
-      return res.json({ errors: errors });
+
+      return res.render("./users/register", { errors: errors.mapped(), old: req.body });
     } else {
       let pass = await bcrypt.hash(req.body.password, 10);
 
@@ -88,7 +88,7 @@ const userController = {
   
   //para eliminar cookie al hacer logout
   logout: (req, res) => {
-    res.clearCookie("userEmail");
+    res.clearCookie("email");
     req.session.destroy();
     return res.redirect("/");
   },

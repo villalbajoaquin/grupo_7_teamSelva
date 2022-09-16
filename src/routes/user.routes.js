@@ -23,11 +23,11 @@ userRoutes.post("/login", validations.validationsLogin, userController.processLo
 
 // profile GET
 
-userRoutes.get("/profile");
+userRoutes.get("/profile",);
 
 // profile POST
 
-userRoutes.post("/profile", userController.profile);
+userRoutes.post("/profile");
 
 /*
 //user edit
