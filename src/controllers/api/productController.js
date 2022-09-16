@@ -1,9 +1,4 @@
-const path = require("path");
-const fs = require('fs');
-const { validationResult } = require('express-validator');
 const db = require('../../database/models');
-const Op = db.Sequelize.Op;
-
 
 // controller
 const productController = {
@@ -25,7 +20,11 @@ const productController = {
             };
             res.json(respuesta);
         } catch (err) {
-            res.status(404).json(err);
+            let errors = {
+                status: 500,
+                error: err,
+            };
+            res.json(errors);
         }
     },
     detail: async (req, res) => {
@@ -40,7 +39,11 @@ const productController = {
             };
             res.json(respuesta);
         } catch (err) {
-            res.status(404).json(err);
+            let errors = {
+                status: 500,
+                error: err,
+            };
+            res.json(errors);
         }
     },
     last_added: async (req, res) => {
@@ -59,7 +62,11 @@ const productController = {
             };
             res.json(respuesta);
         } catch (err) {
-            res.status(404).json(err);
+            let errors = {
+                status: 500,
+                error: err,
+            };
+            res.json(errors);
         }
     },
     next_show: async (req, res) => {
@@ -79,7 +86,11 @@ const productController = {
             };
             res.json(respuesta);
         } catch (err) {
-            res.status(404).json(err);
+            let errors = {
+                status: 500,
+                error: err,
+            };
+            res.json(errors);
         }
     }
 };
