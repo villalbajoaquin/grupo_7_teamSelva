@@ -18,13 +18,13 @@ const userController = {
     console.log(errors);
 
     if (!errors.isEmpty()) {
-        res.render("./users/register", { errors: errors.mapped(), old: req.body });
       if (req.file) {
         fs.unlinkSync(
           path.join(__dirname, "../../public/img/users", req.file.avatar)
         );
       }
-      return res.json({ errors: errors });
+
+      return res.render("./users/register", { errors: errors.mapped(), old: req.body });
     } else {
       let pass = await bcrypt.hash(req.body.password, 10);
 
@@ -41,9 +41,9 @@ const userController = {
         })
         .catch((error) => res.send(error));
     }
-    },
-  
-  //Login 
+  },
+
+  //Login
   loginView: (req, res) => {
     res.render("users/login");
   },
@@ -57,38 +57,42 @@ const userController = {
         where: { email: req.body.email },
       });
 
-      let secure = await bcrypt.compare(
-        req.body.password,
-        userMatch.password
-      );
+      let secure = await bcrypt.compare(req.body.password, userMatch.password);
 
-     if (userMatch && secure) {
-       /*  userMatch.categoryId == 1
-          ? (req.session.isAdmin = true)
-          : undefined;
-
-        req.session.userLogged = userMatch; */
+      if (userMatch && secure) {
 
         if (req.body.recordarme != undefined) {
           res.cookie("recordarme", userMatch.email, { maxAge: 3600000 });
         }
-        res.redirect("/");
+
+        console.log(req.session)
+
+        req.session.userLogged = userMatch;
+        res.cookie("login", userMatch, { maxAge: 9999999999999 });
+
+        console.log(req.session)
+
+        return res.redirect("/");
       } else {
         res.render(path.join(__dirname, "../views/users/login"), {
           errors: [{ msg: "Datos Incorrectos" }],
         });
       }
     }
-    },
-  
+  },
+
   //Vista del Perfil
-  profile: (req, res) => {
-    res.send("users/profile");
+   profile: (req, res) => {
+        const id = req.session.user.id;
+        db.users.findByPk(id)
+            .then((user) => {
+                return res.render('user/profile', { user })
+            })
     },
-  
+
   //para eliminar cookie al hacer logout
   logout: (req, res) => {
-    res.clearCookie("userEmail");
+    res.clearCookie("email");
     req.session.destroy();
     return res.redirect("/");
   },
