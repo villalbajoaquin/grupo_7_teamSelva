@@ -9,19 +9,19 @@ function ContentRowTop() {
 			title: "Movies in Data Base",
 			borderColor: "border-left-primary",
 			value: 21,
-			icon:"fa-film"
+			icon: "fa-film"
 		},
 		{
 			title: "Total awards",
 			borderColor: "border-left-success",
 			value: 49,
-			icon:"fa-award"
+			icon: "fa-award"
 		},
 		{
 			title: "Actors quantity",
 			borderColor: "border-left-warning",
 			value: 79,
-			icon:"fa-user"
+			icon: "fa-user"
 		}
 	]
 
