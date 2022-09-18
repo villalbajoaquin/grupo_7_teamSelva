@@ -22,12 +22,12 @@ class ContentWrapper extends React.Component {
   render() {
 
     return (
-      
-<>
+
+      <>
         {/* <!-- Main Content --> */}
         <div id="content">
 
-        
+
 
           {/* <!-- Content Row Top --> */}
           <ContentRowTop />
@@ -35,9 +35,9 @@ class ContentWrapper extends React.Component {
         </div>
         {/* <!-- End of MainContent --> */}
         <Table data={this.state.movies} />
-        
-</>
-      
+
+      </>
+
     )
   }
 

@@ -6,4 +6,4 @@ const userRoutes = express.Router();
 userRoutes.get();
 
 
-module.exports = userRoutes;
+module.exports = userRoutes;*/
