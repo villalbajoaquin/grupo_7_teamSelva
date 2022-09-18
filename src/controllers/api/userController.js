@@ -3,17 +3,18 @@ const db = require("../../database/models");
 const userController = {
   list: async (req, res) => {
     try {
-      const users = await db.users.findAll({
+      // alias del modelo en users.js = 'Users'
+      const users = await db.Users.findAll({
         order: [
           ["id", "ASC"],
-          ["name", "ASC"],
+          ["firstName", "ASC"],
           ["email", "ASC"],
         ],
       });
       const respuesta = {
         meta: {
           status: 200,
-          total: user.length,
+          total: users.length,
           url: "api/users",
         },
         data: users,
@@ -29,7 +30,7 @@ const userController = {
   },
   detail: async (req, res) => {
     try {
-      const users = await db.users.findByPk(req.params.id);
+      const users = await db.Users.findByPk(req.params.id);
       const respuesta = {
         meta: {
           status: 200,
