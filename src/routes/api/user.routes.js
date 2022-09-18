@@ -5,6 +5,6 @@ const userRoutes = express.Router();
 userRoutes.get("/", userController.list);
 
 // product detail
-// userRoutes.get('/:id', userController.detail);
+userRoutes.get('/:id', userController.detail);
 
 module.exports = userRoutes;
