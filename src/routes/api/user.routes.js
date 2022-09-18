@@ -1,9 +1,10 @@
-/*const express = require("express");
+const express = require("express");
 const userController = require("../../controllers/api/userController");
 const userRoutes = express.Router();
 
+userRoutes.get("/", userController.list);
 
-userRoutes.get();
+// product detail
+// userRoutes.get('/:id', userController.detail);
 
-
-module.exports = userRoutes;*/
+module.exports = userRoutes;
