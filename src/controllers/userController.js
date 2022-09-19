@@ -72,7 +72,7 @@ const userController = {
 
         console.log(req.session)
 
-        return res.redirect("/");
+        return res.redirect("profile");
       } else {
         res.render(path.join(__dirname, "../views/users/login"), {
           errors: [{ msg: "Datos Incorrectos" }],
