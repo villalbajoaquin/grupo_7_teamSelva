@@ -2,33 +2,35 @@ import React from "react";
 import GenresInDB from "../GenresInDB/GenresInDB";
 import LastMovieInDB from "../LastMovieInDB/LastMovieInDB";
 import MoviesInDB from "../MoviesInDB/MoviesInDB";
-function ContentRowTop() {
+function ContentRowTop(props) {
+
+	const firstProduct = props.products[0];
 
 	const moviesData = [
 		{
-			title: "Movies in Data Base",
+			title: "Usuarios Registrados",
 			borderColor: "border-left-primary",
-			value: 21,
-			icon: "fa-film"
+			value: props.users.length,
+			icon: "fa-users"
 		},
 		{
-			title: "Total awards",
+			title: "Eventos Cargados",
 			borderColor: "border-left-success",
-			value: 49,
-			icon: "fa-award"
+			value: props.products.length,
+			icon: "fa-receipt"
 		},
 		{
-			title: "Actors quantity",
+			title: "Fecha Proximo Evento",
 			borderColor: "border-left-warning",
-			value: 79,
-			icon: "fa-user"
+			value: firstProduct.date,
+			icon: "fa-calendar-alt"
 		}
 	]
 
     return(
         <div className="container-fluid">
 					<div className="d-sm-flex align-items-center justify-content-between mb-4">
-						<h1 className="h3 mb-0 text-gray-800">App Dashboard</h1>
+						<h1 className="h3 mb-0 text-gray-800">Dashboard ticket-selva</h1>
 					</div>
 				
 					{/* <!-- Content Row Movies--> */}
