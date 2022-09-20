@@ -1,50 +1,79 @@
-import React from "react";
-import * as Request from "../../utils/Request";
-import Topbar from "../../Components/Topbar/Topbar";
-import Footer from "../../Components/Footer/Footer";
+import React, { useState, useEffect } from "react";
 import ContentRowTop from "../../Components/ContentRowTop/ContentRowTop";
 import Table from "../../Components/Table/Table";
 
-class ContentWrapper extends React.Component {
+const ContentWrapper = () => {
 
-  constructor() {
-    super();
-    this.state = {
-      movies: []
-    }
-  }
+  const [products, setProducts] = useState([]);
+  const [users, setUsers] = useState([]);
+  const [nextShow, setNext] = useState([]);
+  const [lastAdded, setLast] = useState([]);
 
-  async componentDidMount() {
-    const response = await Request.get("http://localhost:3001/api/movies");
+  useEffect(() => {
+    // fetch products
+    fetch("http://localhost:8080/api/products")
+      .then(res => res.json())
+      .then(list => {
+        if (!list.data) {
+          setProducts([])
+        } else {
+          setProducts(list.data);
+        };
+      })
+      .catch(err => console.log(err));
 
-    this.setState({ movies: response.data })
-  }
+    // fetch next show
+    fetch("http://localhost:8080/api/products/next-show")
+      .then(res => res.json())
+      .then(result => {
+        if (!result.data) {
+          setNext([])
+        } else {
+          setNext(result.data);
+        };
+      })
+      .catch(err => console.log(err));
 
-  render() {
-    return (
-      <div id="content-wrapper" className="d-flex flex-column">
+      // fetch last added
+      fetch("http://localhost:8080/api/products/last-added")
+        .then(res => res.json())
+        .then(result => {
+          if (!result.data) {
+            setLast([])
+          } else {
+            setLast(result.data);
+          };
+        })
+        .catch(err => console.log(err));
 
-        {/* <!-- Main Content --> */}
-        <div id="content">
+    // fetch users
+    fetch("http://localhost:8080/api/users")
+      .then(res => res.json())
+      .then(list => {
+        if (!list.data) {
+          setUsers([])
+        } else {
+          setUsers(list.data);
+        };
+      })
+      .catch(err => console.log(err));
+  }, []);
 
-          {/* <!-- Topbar --> */}
-          <Topbar />
-          {/* <!-- End of Topbar --> */}
 
-          {/* <!-- Content Row Top --> */}
-          <ContentRowTop />
-          {/* <!--End Content Row Top--> */}
-        </div>
-        {/* <!-- End of MainContent --> */}
-        <Table data={this.state.movies} />
-        {/* <!-- Footer --> */}
-        <Footer />
-        {/* <!-- End of Footer --> */}
+  return (
+    <>
+      {/* <!-- Main Content --> */}
+      <div id="content">
+
+        {/* <!-- Content Row Top --> */}
+        <ContentRowTop products={products} nextShow={nextShow} lastAdded={lastAdded} users={users}/>
 
       </div>
-    )
-  }
+      {/* <!-- End of MainContent --> */}
 
-}
+      <Table data={products} />
+    </>
+  )
+};
 
 export default ContentWrapper;

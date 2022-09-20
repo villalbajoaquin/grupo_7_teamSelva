@@ -1,25 +1,26 @@
 import React from "react";
 import Logo from "../../Assets/images/logo-prop2-modo-oscuro.png";
+import { Link } from "react-router-dom";
 
 function Sidebar() {
     return (
         <ul className="navbar-nav bg-dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
             {/* <!-- Sidebar - Brand --> */}
-            <a className="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+            <Link className="sidebar-brand d-flex align-items-center justify-content-center" to="/">
                 <div className="sidebar-brand-icon">
-                    <img className="w-100" src={Logo} alt="Digital House" />
+                    <img className="w-100" src={Logo} alt="ticket-selva" />
                 </div>
-            </a>
+            </Link>
 
             {/* <!-- Divider --> */}
             <hr className="sidebar-divider my-0" />
 
             {/* <!-- Nav Item - Dashboard --> */}
             <li className="nav-item active">
-                <a className="nav-link" href="/">
+                <Link className="nav-link" to="/">
                     <i className="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard ticket-selva</span></a>
+                    <span>Dashboard ticket-selva</span></Link>
             </li>
 
             {/* <!-- Divider --> */}
@@ -30,24 +31,18 @@ function Sidebar() {
 
             {/* <!-- Nav Item - Pages --> */}
             <li className="nav-item">
-                <a className="nav-link collapsed" href="/">
-                    <i className="fas fa-fw fa-folder"></i>
-                    <span>Pages</span>
-                </a>
+                <Link className="nav-link collapsed" to="/users-list">
+                    <i className="fas fa-user fa-folder"></i>
+                    <span>Usuarios</span>
+                </Link>
             </li>
 
-            {/* <!-- Nav Item - Charts --> */}
+            {/* <!-- Nav Item - Pages --> */}
             <li className="nav-item">
-                <a className="nav-link" href="/">
-                    <i className="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span></a>
-            </li>
-
-            {/* <!-- Nav Item - Tables --> */}
-            <li className="nav-item">
-                <a className="nav-link" href="/">
-                    <i className="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
+                <Link className="nav-link collapsed" to="/products-list">
+                    <i className="fas fa-film"></i>
+                    <span>Eventos</span>
+                </Link>
             </li>
 
             {/* <!-- Divider --> */}

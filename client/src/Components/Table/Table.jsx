@@ -17,7 +17,7 @@ function Table(props) {
             <tbody>
                 
                 {
-                   Array.isArray(props.data) && props.data.map((element, i) => <Row key={element.title + i} rowData={element} />)
+                   Array.isArray(props.data) && props.data.map((element, i) => <Row key={element.firstName + i} rowData={element} />)
                 }
                 
             </tbody>

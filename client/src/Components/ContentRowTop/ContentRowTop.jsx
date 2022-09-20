@@ -1,34 +1,33 @@
 import React from "react";
-import GenresInDB from "../GenresInDB/GenresInDB";
-import LastMovieInDB from "../LastMovieInDB/LastMovieInDB";
+import ProductInDB from "../ProductInDB/ProductInDB";
 import MoviesInDB from "../MoviesInDB/MoviesInDB";
-function ContentRowTop() {
+function ContentRowTop(props) {
 
 	const moviesData = [
 		{
-			title: "Movies in Data Base",
+			title: "Usuarios Registrados",
 			borderColor: "border-left-primary",
-			value: 21,
-			icon:"fa-film"
+			value: props.users.length,
+			icon: "fa-users"
 		},
 		{
-			title: "Total awards",
+			title: "Eventos Cargados",
 			borderColor: "border-left-success",
-			value: 49,
-			icon:"fa-award"
+			value: props.products.length,
+			icon: "fa-receipt"
 		},
 		{
-			title: "Actors quantity",
+			title: "Fecha Proximo Evento",
 			borderColor: "border-left-warning",
-			value: 79,
-			icon:"fa-user"
+			value: props.nextShow.date,
+			icon: "fa-calendar-alt"
 		}
-	]
+	];
 
     return(
         <div className="container-fluid">
 					<div className="d-sm-flex align-items-center justify-content-between mb-4">
-						<h1 className="h3 mb-0 text-gray-800">App Dashboard</h1>
+						<h1 className="h3 mb-0 text-gray-800">Dashboard ticket-selva</h1>
 					</div>
 				
 					{/* <!-- Content Row Movies--> */}
@@ -44,17 +43,19 @@ function ContentRowTop() {
 					{/* <!-- End movies in Data Base --> */}
 					
 	
-					{/* <!-- Content Row Last Movie in Data Base --> */}
+					{/* <!-- Content Row Last Added & Next Show in Data Base --> */}
 					<div className="row">
-						{/* <!-- Last Movie in DB --> */}
-						<LastMovieInDB />
+
+						{/* <!-- Last Product in DB --> */}
+						<ProductInDB show={props.nextShow} showType="Próximo Evento"/>
+
+						{/* <!-- Next Product --> */}
+						<ProductInDB show={props.lastAdded} showType="Ultimo Evento cargado"/>
 						{/* <!-- End content row last movie in Data Base --> */}
 
-						{/* <!-- Genres in DB --> */}
-						<GenresInDB />
 					</div>
 				</div>
-    )
+    );
 }
 
 export default ContentRowTop;

@@ -72,7 +72,7 @@ const userController = {
 
         console.log(req.session)
 
-        return res.redirect("/");
+        return res.redirect("profile");
       } else {
         res.render(path.join(__dirname, "../views/users/login"), {
           errors: [{ msg: "Datos Incorrectos" }],
@@ -83,16 +83,17 @@ const userController = {
 
   //Vista del Perfil
    profile: (req, res) => {
-        const id = req.session.user.id;
-        db.users.findByPk(id)
+        const id = req.session.userLogged.id;
+        db.Users.findByPk(id)
             .then((user) => {
-                return res.render('user/profile', { user })
+                return res.render('./users/profile', { user })
             })
     },
 
   //para eliminar cookie al hacer logout
   logout: (req, res) => {
-    res.clearCookie("email");
+    res.clearCookie("login");
+    res.clearCookie("recordarme");
     req.session.destroy();
     return res.redirect("/");
   },
