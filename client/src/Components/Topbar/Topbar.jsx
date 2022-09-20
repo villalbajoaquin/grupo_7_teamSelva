@@ -27,6 +27,13 @@ function Topbar(){
                       </a>
                     </li>
 
+                    {/* <!-- Nav Item - React --> */}
+                    <li className="nav-item dropdown no-arrow mx-1">
+                      <a className="nav-link dropdown-toggle" href="/" id="messagesDropdown">
+                        <i className="fab fa-react fa-fw"></i>
+                      </a>
+                    </li>
+
                     <div className="topbar-divider d-none d-sm-block"></div>
 
                     {/* <!-- Nav Item - User Information --> */}

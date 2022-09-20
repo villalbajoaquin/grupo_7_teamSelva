@@ -32,7 +32,7 @@ class MoviesInDBView extends React.Component {
         return (
             <div className="container-fluid">
                 <div className="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 className="h3 mb-0 text-gray-800">Detalles de la APP</h1>
+                    <h1 className="h3 mb-0 text-gray-800">Detalle de la APP</h1>
                 </div>
                 <div className="row">
 

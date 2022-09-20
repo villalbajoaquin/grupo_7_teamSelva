@@ -2,47 +2,12 @@ import React, { useState, useEffect } from "react";
 import ContentRowTop from "../../Components/ContentRowTop/ContentRowTop";
 import Table from "../../Components/Table/Table";
 
-/*class ContentWrapper extends React.Component {
-
-  constructor(props) {
-    super();
-    this.state = {
-      movies: []
-    }
-  }
-
-
-  async componentDidMount() {
-    const response = await fetch("http://localhost:8080/api/users");
-    const data = response.json();
-
-    console.log(data)
-
-    this.setState({ movies: response.data })
-  }
-
-  render() {
-
-    return (
-      <>
-        {/* <!-- Main Content -->
-        <div id="content">
-          <!-- Content Row Top -->
-          <ContentRowTop />
-          <!--End Content Row Top-->
-        </div>
-        <!-- End of MainContent -->
-        <Table data={this.state.movies} />
-      </>
-    )
-  }
-
-}*/
-
 const ContentWrapper = () => {
 
   const [products, setProducts] = useState([]);
   const [users, setUsers] = useState([]);
+  const [nextShow, setNext] = useState([]);
+  const [lastAdded, setLast] = useState([]);
 
   useEffect(() => {
     // fetch products
@@ -56,6 +21,30 @@ const ContentWrapper = () => {
         };
       })
       .catch(err => console.log(err));
+
+    // fetch next show
+    fetch("http://localhost:8080/api/products/next-show")
+      .then(res => res.json())
+      .then(result => {
+        if (!result.data) {
+          setNext([])
+        } else {
+          setNext(result.data);
+        };
+      })
+      .catch(err => console.log(err));
+
+      // fetch last added
+      fetch("http://localhost:8080/api/products/last-added")
+        .then(res => res.json())
+        .then(result => {
+          if (!result.data) {
+            setLast([])
+          } else {
+            setLast(result.data);
+          };
+        })
+        .catch(err => console.log(err));
 
     // fetch users
     fetch("http://localhost:8080/api/users")
@@ -75,11 +64,13 @@ const ContentWrapper = () => {
     <>
       {/* <!-- Main Content --> */}
       <div id="content">
+
         {/* <!-- Content Row Top --> */}
-        <ContentRowTop products={products} users={users}/>
-        {/* <!--End Content Row Top--> */}
+        <ContentRowTop products={products} nextShow={nextShow} lastAdded={lastAdded} users={users}/>
+
       </div>
       {/* <!-- End of MainContent --> */}
+
       <Table data={products} />
     </>
   )

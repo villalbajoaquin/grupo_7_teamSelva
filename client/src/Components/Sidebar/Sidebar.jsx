@@ -31,30 +31,18 @@ function Sidebar() {
 
             {/* <!-- Nav Item - Pages --> */}
             <li className="nav-item">
-                <Link className="nav-link collapsed" to="/generos">
+                <Link className="nav-link collapsed" to="/users-list">
                     <i className="fas fa-user fa-folder"></i>
-                    <span>Generos</span>
+                    <span>Usuarios</span>
                 </Link>
             </li>
 
-            {/* <!-- Nav Item - Charts --> */}
+            {/* <!-- Nav Item - Pages --> */}
             <li className="nav-item">
-                <Link className="nav-link" to="/ultima-pelicula">
-                    <i className="fas fa-film fa-chart-area"></i>
-                    <span>Ultima película</span></Link>
-            </li>
-
-            {/* <!-- Nav Item - Tables --> */}
-            <li className="nav-item">
-                <Link className="nav-link" to="/detalles">
-                    <i className="fas fa-fw fa-table"></i>
-                    <span>Detalles</span></Link>
-            </li>
-
-            <li className="nav-item">
-                <Link className="nav-link" to="/search">
-                    <i className="fas fa-search"></i>
-                    <span>Buscar</span></Link>
+                <Link className="nav-link collapsed" to="/products-list">
+                    <i className="fas fa-film"></i>
+                    <span>Eventos</span>
+                </Link>
             </li>
 
             {/* <!-- Divider --> */}

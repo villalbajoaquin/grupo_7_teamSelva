@@ -1,10 +1,7 @@
 import React from "react";
-import GenresInDB from "../GenresInDB/GenresInDB";
-import LastMovieInDB from "../LastMovieInDB/LastMovieInDB";
+import ProductInDB from "../ProductInDB/ProductInDB";
 import MoviesInDB from "../MoviesInDB/MoviesInDB";
 function ContentRowTop(props) {
-
-	const firstProduct = props.products[0];
 
 	const moviesData = [
 		{
@@ -22,10 +19,10 @@ function ContentRowTop(props) {
 		{
 			title: "Fecha Proximo Evento",
 			borderColor: "border-left-warning",
-			value: firstProduct.date,
+			value: props.nextShow.date,
 			icon: "fa-calendar-alt"
 		}
-	]
+	];
 
     return(
         <div className="container-fluid">
@@ -46,17 +43,19 @@ function ContentRowTop(props) {
 					{/* <!-- End movies in Data Base --> */}
 					
 	
-					{/* <!-- Content Row Last Movie in Data Base --> */}
+					{/* <!-- Content Row Last Added & Next Show in Data Base --> */}
 					<div className="row">
-						{/* <!-- Last Movie in DB --> */}
-						<LastMovieInDB />
+
+						{/* <!-- Last Product in DB --> */}
+						<ProductInDB show={props.nextShow} showType="Próximo Evento"/>
+
+						{/* <!-- Next Product --> */}
+						<ProductInDB show={props.lastAdded} showType="Ultimo Evento cargado"/>
 						{/* <!-- End content row last movie in Data Base --> */}
 
-						{/* <!-- Genres in DB --> */}
-						<GenresInDB />
 					</div>
 				</div>
-    )
+    );
 }
 
 export default ContentRowTop;
