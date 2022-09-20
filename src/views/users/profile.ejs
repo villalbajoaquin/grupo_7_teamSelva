@@ -3,7 +3,7 @@
 
 <head>
     <%- include('../partials/head') %>
-    <link rel="stylesheet" href="/css/products/productDetail.css">
+    <link rel="stylesheet" href="/css/users/profile.css">
 
     <link rel="shortcut icon" href="/img/favicon.ico">
     <script src="https://kit.fontawesome.com/d160ea4c64.js" crossorigin="anonymous"></script>
@@ -21,25 +21,25 @@
     <!--Product Detail version 1-->
     <main>
         <div class="border">
-            <h1 class="titulo-show">Bienvenido <%= user.firstName %> <%= user.lastName %></h1>
-            <div class="description-product">
-                <div class="imagen-show">
-                    <img src= /<%= user.avatar %> class="imagen-show" alt="Imagen del Show correspondiente">
+            <h1 class="nombre-usuario">Bienvenido <%= user.firstName %> <%= user.lastName %></h1>
+            <div class="description-user">
+                <div class="imagen-usuario">
+                    <img src= /<%= user.avatar %> class="imagen-usuario" alt="Imagen del Show correspondiente">
                 </div>
                 <div class="media">
-                    <div class="info-del-show">
+                    <div class="info-del-usuario">
                         <h5>Nombre: <%= user.firstName %></h5>
                         <h5>Apellido: <%= user.lastName %></h5>
-                        <h5>Email: <%= user.Email %></h5>
+                        <h5>Email: <%= user.email %></h5>
                     </div>
-                    <div class="caja-de-compra">
-                        <div class="border-caja-compra">
-                            <div>
-                                <button class="add-to-cart" data-button-action="add-to-cart" type="submit">
+                    <div class="caja-de-logout">
+                            <div> 
+                                <form method="POST" action="/user/profile">
+                                <button class="logout" data-button-action="logout" type="submit">
                                     <i class="fa-solid fa-right-from-bracket"></i></i><span>Cerrar sesion</span>
                                 </button>
+                            </form>
                             </div>
-                        </div>
                     </div>
                 </div>
             </div>
