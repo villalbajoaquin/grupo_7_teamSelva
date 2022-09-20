@@ -65,3 +65,6 @@ Por problemas en cuanto a lo personal y a nivel cursada, se vio afectado el rend
 **Fecha: Martes 13/09**
 * Joaquin: API de productos: endpoints de listado y detalle completos.
 * Uriel: Register 100% funcional.
+
+**Fecha: Martes 20/09**
+* Joaquin: React: Componentes con totales y, de ultimo y siguiente evento.
