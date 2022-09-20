@@ -1,26 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= user.email %>  | ticket-selva</title>
+    <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/css/users/profile.css">
+
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <script src="https://kit.fontawesome.com/d160ea4c64.js" crossorigin="anonymous"></script>
+    <title>Bienvenido <%= user.firstName %> <%= user.firstName %></title>
 </head>
+
 <body>
     <header>
-        <%- include('../partials/topheader') %>
+
+        <%- include('../partials/navbar') %>
+
+        <%- include('../partials/navSearch') %>
+
     </header>
-    
-    <form action="/user/profile" method="post">
+    <!--Product Detail version 1-->
+    <main>
+        <div class="border">
+            <h1 class="nombre-usuario">Bienvenido <%= user.firstName %> <%= user.lastName %></h1>
+            <div class="description-user">
+                <div class="imagen-usuario">
+                    <img src= /<%= user.avatar %> class="imagen-usuario" alt="Imagen del Show correspondiente">
+                </div>
+                <div class="media">
+                    <div class="info-del-usuario">
+                        <h5>Nombre: <%= user.firstName %></h5>
+                        <h5>Apellido: <%= user.lastName %></h5>
+                        <h5>Email: <%= user.email %></h5>
+                    </div>
+                    <div class="caja-de-logout">
+                            <div> 
+                                <form method="POST" action="/user/profile">
+                                <button class="logout" data-button-action="logout" type="submit">
+                                    <i class="fa-solid fa-right-from-bracket"></i></i><span>Cerrar sesion</span>
+                                </button>
+                            </form>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 
-        <div class="imgprofile">
-            <img src="">
-        </div>  
-
-    </form>   
-
-     <footer>
-        <%- include('../partials/bottomfooter') %>
-    </footer> 
+    <footer>
+        <%- include('../partials/footer') %>
+    </footer>
 </body>
+
 </html>

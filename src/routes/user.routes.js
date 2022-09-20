@@ -22,11 +22,11 @@ userRoutes.post("/login",validations.validationsLogin, userController.processLog
 
 // profile GET
 
-userRoutes.get("/profile",[profileMid], userController.profile);
+userRoutes.get("/profile", profileMid, userController.profile);
 
 // profile POST
 
-//userRoutes.post("/profile", userController.profile);
+userRoutes.post("/profile", userController.logout);
 
 /*
 //user edit

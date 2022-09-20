@@ -1,9 +1,9 @@
 export const get = async (url) => {
-    try{
+    try {
         const response = await fetch(url);
         return response.json();
 
-    }catch(error){
+    } catch (error) {
         console.error(error)
     }
 } 
