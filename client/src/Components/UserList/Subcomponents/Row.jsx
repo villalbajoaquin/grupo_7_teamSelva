@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Row(props) {
 
-    const {id, firstName, lastName, email, tickets, price} = props.rowData;
+    const {id, firstName, lastName, email} = props.rowData;
 
     return (
         <tr>

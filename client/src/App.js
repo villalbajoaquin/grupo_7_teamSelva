@@ -5,9 +5,9 @@ import ContentWrapper from "./Views/ContentWrapper/ContentWrapper";
 import Sidebar from "./Components/Sidebar/Sidebar";
 import { Switch, Route, Redirect } from "react-router-dom";
 import SearchMovies from "./Components/SearchMovies/SearchMovies";
-import DetailView from "./Views/DetailView";
 import ProductList from "./Components/ProductsList/ProductList";
 import UserList from "./Components/UserList/UserList";
+import ProductDetail from "./Components/ProductDetail/ProductDetail";
 
 function App() {
   return (
@@ -29,10 +29,9 @@ function App() {
             <Route exact path="/users-list" component={UserList} />
 
             <Route exact path="/products/:id" >
-              <DetailView titleType="Producto"/>
+              <ProductDetail />
             </Route>
             <Route exact path="/users/:id" >
-              <DetailView titleType="Usuario"/>
             </Route>
             <Route>
               <Redirect to="/?error=pagina_no_encontrada" />

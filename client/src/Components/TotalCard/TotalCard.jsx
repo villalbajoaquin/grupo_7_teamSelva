@@ -1,10 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function MoviesInDB(props) {
+function TotalCard(props) {
 
     const { title, icon, value, borderColor } = props.data;
-    //const { title, icon, value, borderColor } = props.data ?? {title: "", value: 0, icon: "", borderColor: "border-left-primary"}
 
     return (
         <div className="col-md-4 mb-4">
@@ -12,7 +11,7 @@ function MoviesInDB(props) {
                 <div className="card-body">
                     <div className="row no-gutters align-items-center">
                         <div className="col mr-2">
-                            <div className="text-xs font-weight-bold text-primary text-uppercase mb-1">{ title }</div>
+                            <div className="text-xs font-weight-bold text-primary text-uppercase mb-1">{title}</div>
                             <div className="h5 mb-0 font-weight-bold text-gray-800">{value}</div>
                         </div>
                         <div className="col-auto">
@@ -25,17 +24,17 @@ function MoviesInDB(props) {
     )
 }
 
- MoviesInDB.propTypes = {
+TotalCard.propTypes = {
     data: PropTypes.object.isRequired
 }
 
-MoviesInDB.defaultProps = {
+TotalCard.defaultProps = {
     data: {
         title: "No title",
         value: 0,
         icon: "fas fa-user",
         borderColor: "border-left-primary"
     }
-} 
+}
 
-export default MoviesInDB;
+export default TotalCard;

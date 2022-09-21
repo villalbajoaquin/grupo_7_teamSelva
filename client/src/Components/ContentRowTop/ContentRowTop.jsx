@@ -1,6 +1,6 @@
 import React from "react";
 import ProductInDB from "../ProductInDB/ProductInDB";
-import MoviesInDB from "../MoviesInDB/MoviesInDB";
+import TotalCard from "../TotalCard/TotalCard";
 function ContentRowTop(props) {
 
 	const moviesData = [
@@ -35,7 +35,7 @@ function ContentRowTop(props) {
 
 						{
 							moviesData.map(function(element, i){
-								return <MoviesInDB key={element.title + i} data={element} />
+								return <TotalCard key={element.title + i} data={element} />
 							})
 						}
 						
