@@ -5,3 +5,6 @@
         
         email: pipiromagnoli@gmail.com
         password: libertadoresmiobsesion
+
+        email: admin@admin.com
+        password: administrador

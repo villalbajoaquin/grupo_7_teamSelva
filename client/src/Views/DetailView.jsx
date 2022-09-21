@@ -6,7 +6,7 @@ const DetailView = (props) => {
 
     useEffect(() => {
         // fetch products
-        
+
         fetch("http://localhost:8080/api/products")
             .then(res => res.json())
             .then(list => {
@@ -22,13 +22,13 @@ const DetailView = (props) => {
     return (
         <div className="container-fluid">
             <div className="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 className="h3 mb-0 text-gray-800">Listado de Eventos</h1>
+                <h1 className="h3 mb-0 text-gray-800">Detalle de Evento</h1>
             </div>
             <div className="row">
 
                 {
-                    products.map((element, i) => {
-                        return //<MoviesInDB key={element.title + i} data={element} />
+                    products.map((/*element, i*/) => {
+                        return "a"//<MoviesInDB key={element.title + i} data={element} />
                     })
                 }
 

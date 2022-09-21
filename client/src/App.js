@@ -7,6 +7,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import SearchMovies from "./Components/SearchMovies/SearchMovies";
 import DetailView from "./Views/DetailView";
 import ProductList from "./Components/ProductsList/ProductList";
+import UserList from "./Components/UserList/UserList";
 
 function App() {
   return (
@@ -24,9 +25,8 @@ function App() {
 
             <Route exact path="/" component={ContentWrapper} />
             <Route path="/search" component={SearchMovies} />
-            <Route exact path="/products-list" >
-              <ProductList />
-            </Route>
+            <Route exact path="/products-list" component={ProductList} />
+            <Route exact path="/users-list" component={UserList} />
 
             <Route exact path="/products/:id" >
               <DetailView titleType="Producto"/>

@@ -3,18 +3,18 @@ import Row from './Subcomponents/Row';
 
 const ProductList = () => {
 
-    const [products, setProducts] = useState([]);
+    const [users, setUsers] = useState([]);
 
     useEffect(() => {
 
-        // fetch products
-        fetch("http://localhost:8080/api/products")
+        // fetch users
+        fetch("http://localhost:8080/api/users")
             .then(res => res.json())
             .then(list => {
                 if (!list.data) {
-                    setProducts([])
+                    setUsers([])
                 } else {
-                    setProducts(list.data);
+                    setUsers(list.data);
                 };
             })
             .catch(err => console.log(err));
@@ -24,25 +24,23 @@ const ProductList = () => {
 
         <div className="container-fluid">
             <div className="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 className="h3 mb-0 text-gray-800">Listado de Eventos</h1>
+                <h1 className="h3 mb-0 text-gray-800">Usuarios Registrados</h1>
             </div>
             <table className="table">
                 <thead>
                     <tr>
                         <th scope="col">id</th>
                         <th scope="col">Nombre</th>
-                        <th scope="col">Fecha</th>
-                        <th scope="col">Hora</th>
-                        <th scope="col">Tickets</th>
-                        <th scope="col">Precio</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Email</th>
                         <th scope="col">Ver</th>
                     </tr>
                 </thead>
                 <tbody>
 
                     {
-                        Array.isArray(products) && products.map((element, i) => {
-                            return <Row key={element.name + i} rowData={element} />
+                        Array.isArray(users) && users.map((element, i) => {
+                            return <Row key={element.firstNname + i} rowData={element} />
                         })
                     }
 

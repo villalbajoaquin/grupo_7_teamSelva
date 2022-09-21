@@ -81,7 +81,7 @@ const productController = {
     db.Product.findAll({
       where: {
         date: {
-          [Op.lte]: new Date(new Date() + 24 * 60 * 60 * 1000),
+          [Op.lte]: new Date(Date.now() + 24 * 60 * 60 * 1000),
         },
       },
       order: [
@@ -100,7 +100,7 @@ const productController = {
     db.Product.findAll({
       where: {
         date: {
-          [Op.lte]: new Date(new Date() + 7 * 24 * 60 * 60 * 1000),
+          [Op.lte]: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
         },
       },
       order: [
@@ -119,7 +119,7 @@ const productController = {
     db.Product.findAll({
       where: {
         date: {
-          [Op.lte]: new Date(new Date() + 30 * 24 * 60 * 60 * 1000),
+          [Op.lte]: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000),
         },
       },
       order: [
