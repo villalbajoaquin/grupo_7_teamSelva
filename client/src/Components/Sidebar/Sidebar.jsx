@@ -40,7 +40,7 @@ function Sidebar() {
             {/* <!-- Nav Item - Pages --> */}
             <li className="nav-item">
                 <Link className="nav-link collapsed" to="/products-list">
-                    <i className="fas fa-film"></i>
+                    <i className="fas fa-receipt"></i>
                     <span>Eventos</span>
                 </Link>
             </li>

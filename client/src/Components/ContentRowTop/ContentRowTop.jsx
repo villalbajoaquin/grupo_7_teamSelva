@@ -30,7 +30,7 @@ function ContentRowTop(props) {
 						<h1 className="h3 mb-0 text-gray-800">Dashboard ticket-selva</h1>
 					</div>
 				
-					{/* <!-- Content Row Movies--> */}
+					{/* <!-- Content Row --> */}
 					<div className="row">
 
 						{
@@ -40,7 +40,6 @@ function ContentRowTop(props) {
 						}
 						
 					</div>
-					{/* <!-- End movies in Data Base --> */}
 					
 	
 					{/* <!-- Content Row Last Added & Next Show in Data Base --> */}
@@ -51,8 +50,7 @@ function ContentRowTop(props) {
 
 						{/* <!-- Next Product --> */}
 						<ProductInDB show={props.lastAdded} showType="Ultimo Evento cargado"/>
-						{/* <!-- End content row last movie in Data Base --> */}
-
+						
 					</div>
 				</div>
     );

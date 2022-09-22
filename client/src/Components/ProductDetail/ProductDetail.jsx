@@ -11,11 +11,11 @@ const ProductDetail = () => {
         // fetch product by id from params
         fetch(`http://localhost:8080/api/products/${id}`)
             .then(res => res.json())
-            .then(list => {
-                if (list.data == null) {
+            .then(result => {
+                if (result.data == null) {
                     setProduct([])
                 } else {
-                    setProduct(list.data);
+                    setProduct(result.data);
                 };
             })
             .catch(err => console.log(err));

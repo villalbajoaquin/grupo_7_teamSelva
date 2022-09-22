@@ -4,10 +4,10 @@ import Footer from "./Components/Footer/Footer";
 import ContentWrapper from "./Views/ContentWrapper/ContentWrapper";
 import Sidebar from "./Components/Sidebar/Sidebar";
 import { Switch, Route, Redirect } from "react-router-dom";
-import SearchMovies from "./Components/SearchMovies/SearchMovies";
 import ProductList from "./Components/ProductsList/ProductList";
-import UserList from "./Components/UserList/UserList";
 import ProductDetail from "./Components/ProductDetail/ProductDetail";
+import UserList from "./Components/UserList/UserList";
+import UserDetail from "./Components/UserDetail/UserDetail";
 
 function App() {
   return (
@@ -24,7 +24,6 @@ function App() {
           <Switch>
 
             <Route exact path="/" component={ContentWrapper} />
-            <Route path="/search" component={SearchMovies} />
             <Route exact path="/products-list" component={ProductList} />
             <Route exact path="/users-list" component={UserList} />
 
@@ -32,6 +31,7 @@ function App() {
               <ProductDetail />
             </Route>
             <Route exact path="/users/:id" >
+              <UserDetail />
             </Route>
             <Route>
               <Redirect to="/?error=pagina_no_encontrada" />
