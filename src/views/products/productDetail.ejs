@@ -52,9 +52,12 @@
                                 </div>
                             </div>
                             <div>
-                                <button class="add-to-cart" data-button-action="add-to-cart" type="submit">
+                                <a href="/product/product_cart/<%=show.id%>">
+                                    <button class="add-to-cart" data-button-action="add-to-cart" type="submit">
                                     <i class="fa-solid fa-cart-shopping"></i><span>Añadir al carrito</span>
-                                </button>
+                                    </button>
+                                </a>
+                                
                             
                                 <a href="/product/product_edit/<%=show.id%>">
                                     <button class="add-to-cart" data-button-action="add-to-cart">

@@ -254,19 +254,19 @@ const productController = {
     const product_id = req.params.id;
 
     // Buscamos el carrito activo del usuario incluyendo los productos que contiene
-    db.cart
-      .findByPk(req.session.user.cartId, { include: db.products })
-      .then((cart) => {
+    db.carts
+      .findByPk(req.session.user.userId, { include: db.products })
+      .then((carts) => {
         // Del carrito encontrado, buscamos si existe ya el producto a agregar
-        let product_found = cart.products.find((p) => p.id == product_id);
+        let product_found = carts.products.find((p) => p.id == product_id);
 
         // Si existe el producto, en la tabla intermedia, en la columna de cantidad, le sumamos la cantidad solicitada
         if (product_found) {
-          db.cartProduct
+          db.productsCart
             .update(
               {
                 // A la cantidad que ya contiene le sumamos lo solicitado ( se suma 2 a mano, pero hay que recibir la cantidad deseada )
-                cant: product_found.cartProduct.cant + 1,
+                cant: product_found.productsCart.cant + 1,
               },
               {
                 where: {
@@ -282,7 +282,7 @@ const productController = {
 
           // Si el producto no se encontraba en el carrito, se procede a agregarlo y la cantidad se está escribiendo a mano. ( hay que recibir la cantidad deseada )
         } else {
-          cart.addProduct(product_id, { through: { cant: 1 } }).then(() => {
+          carts.addProduct(product_id, { through: { cant: 1 } }).then(() => {
             // Redireccionamos a la vista de listado de productos
             return res.redirect("/product");
           });
@@ -290,28 +290,6 @@ const productController = {
       });
   },
 
-  /**
-   *
-   * @desc Renderiza la vista de carrito con los productos que contiene
-   *
-   */
-  cart: (req, res) => {
-    // Buscamos el carrito por su id
-    db.cart
-      .findOne({
-        where: {
-          id: req.session.user.id_cart,
-        },
-
-        // Incluimos los productos del carrito
-        include: [{ model: db.Product, include: [db.imgsrc] }],
-
-        // Renderizamos la vista de carrito enviando los datos del mismo
-      })
-      .then((cart) => {
-        return res.render("product_cart", { cart });
-      });
-  },
 };
 
 module.exports = productController; 
