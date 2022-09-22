@@ -1,5 +1,6 @@
 import React from "react";
-import Avatar from "../../Assets/images/user_1.jpg"
+import Avatar from "../../Assets/images/user_1.jpg";
+import { Link } from "react-router-dom";
 
 function Topbar(){
     return(
@@ -15,33 +16,33 @@ function Topbar(){
 
                     {/* <!-- Nav Item - Alerts --> */}
                     <li className="nav-item dropdown no-arrow mx-1">
-                      <a className="nav-link dropdown-toggle" href="/" id="alertsDropdown">
+                      <Link className="nav-link dropdown-toggle" to="/" id="alertsDropdown">
                         <i className="fas fa-bell fa-fw"></i>                        
-                      </a>
+                      </Link>
                     </li>
 
                     {/* <!-- Nav Item - Messages --> */}
                     <li className="nav-item dropdown no-arrow mx-1">
-                      <a className="nav-link dropdown-toggle" href="/" id="messagesDropdown">
+                      <Link className="nav-link dropdown-toggle" to="/" id="messagesDropdown">
                         <i className="fas fa-envelope fa-fw"></i>
-                      </a>
+                      </Link>
                     </li>
 
                     {/* <!-- Nav Item - React --> */}
                     <li className="nav-item dropdown no-arrow mx-1">
-                      <a className="nav-link dropdown-toggle" href="/" id="messagesDropdown">
+                      <Link className="nav-link dropdown-toggle" to="/" id="messagesDropdown">
                         <i className="fab fa-react fa-fw"></i>
-                      </a>
+                      </Link>
                     </li>
 
                     <div className="topbar-divider d-none d-sm-block"></div>
 
                     {/* <!-- Nav Item - User Information --> */}
                     <li className="nav-item dropdown no-arrow">
-                      <a className="nav-link dropdown-toggle" href="/" id="userDropdown">
+                      <Link className="nav-link dropdown-toggle" to="/" id="userDropdown">
                         <span className="mr-2 d-none d-lg-inline text-gray-600 small">Administrador</span>
                         <img className="img-profile rounded-circle" src={Avatar} alt="Administrador" width="60" />
-                      </a>
+                      </Link>
                     </li>
 
                   </ul>

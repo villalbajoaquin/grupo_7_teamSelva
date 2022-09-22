@@ -34,7 +34,11 @@ const UserDetail = () => {
             <p>Nombre: {user.firstName}</p>
             <p>Apellido: {user.lastName}</p>
             <p>Email: {user.email}</p>
+
+            { // desactivo el aviso porque me sugiere usar '==='
+            /*eslint-disable-next-line*/}
             {user.categoryId == 1 && <p>{user.firstName} {user.lastName} es Administrador</p>}
+            
         </>;
         usertitle = `${user.firstName} ${user.lastName}`;
     } else {
