@@ -68,3 +68,4 @@ Por problemas en cuanto a lo personal y a nivel cursada, se vio afectado el rend
 
 **Fecha: Martes 20/09**
 * Joaquin: React: Componentes con totales y, de ultimo y siguiente evento.
+* Uriel: Profile: 100% funcional.
