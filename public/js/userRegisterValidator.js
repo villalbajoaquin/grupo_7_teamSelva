@@ -1,7 +1,7 @@
 window.addEventListener('load', () => {
     let formulario = document.querySelector("form");
-    let inputFirstName = document.querySelector("#firstName");
-    let inputLastName = document.querySelector("#lastName");
+    let inputFirstName = document.querySelector("#firstname");
+    let inputLastName = document.querySelector("#lastname");
     let inputEmail = document.querySelector("#email");
     let inputPassword = document.querySelector("#password");
     let inputPasswordRe = document.querySelector("#passwordRe");
@@ -9,7 +9,7 @@ window.addEventListener('load', () => {
     let validExtensions = [".jpg", ".jpeg", ".png", ".gif"];
     let ulErrores = document.querySelector("#errores");
 
-    inputName.focus();
+    inputFirstName.focus();
 
     let arrayInput = [inputFirstName, inputLastName, inputEmail, inputPassword, inputPasswordRe, inputImage];
 
@@ -31,14 +31,14 @@ window.addEventListener('load', () => {
                 input.nextElementSibling.innerHTML = ""
             }
 
-            if ((input.dataset.nombre == "firstName" || input.dataset.nombre == "lastName") && (input.value.length > 60)) {
+            if ((input.dataset.nombre == "firstname" || input.dataset.nombre == "lastname") && (input.value.length > 60)) {
                 input.classList.add("is-invalid");
                 errores++;
                 ulErrores.innerHTML += `<li>El campo no puede ser de más de 60 caracteres</li>`;
                 input.nextElementSibling.innerHTML = "El largo del campo no puede ser tan largo";
             }
 
-            if ((input.dataset.nombre == "firstName" || input.dataset.nombre == "lastName") && (input.value.length < 3)) {
+            if ((input.dataset.nombre == "firstname" || input.dataset.nombre == "lastname") && (input.value.length < 3)) {
                 input.classList.add("is-invalid");
                 errores++;
                 ulErrores.innerHTML += `<li>El campo no puede ser de menor a 3 caracteres</li>`;
@@ -98,13 +98,13 @@ window.addEventListener('load', () => {
                 input.nextElementSibling.innerHTML = "";
             }
 
-            if ((input.dataset.nombre == "firstName") || (input.dataset.nombre == "lastName") && (input.value.length > 60)) {
+            if ((input.dataset.nombre == "firstname") || (input.dataset.nombre == "lastname") && (input.value.length > 60)) {
                 input.classList.add("is-invalid");
                 input.classList.add("is-valid");
                 input.nextElementSibling.innerHTML = "El largo del campo no puede ser tan largo";
             }
 
-            if ((input.dataset.nombre == "firstName") || (input.dataset.nombre == "lastName") && (input.value.length < 3)) {
+            if ((input.dataset.nombre == "firstname") || (input.dataset.nombre == "lastname") && (input.value.length < 3)) {
                 input.classList.add("is-invalid");
                 input.classList.add("is-valid");
                 input.nextElementSibling.innerHTML = "El largo del campo no puede ser tan corto";
@@ -127,15 +127,16 @@ window.addEventListener('load', () => {
                 input.classList.add("is-valid");
                 input.nextElementSibling.innerHTML = "El largo del campo no puede ser tan corto";
 
-                if ((input.dataset.nombre == "avatar")) {
-                    let extFile = input.value.split('.').pop();
-                    if (validExtensions.includes(extFile) == false) {
-                        input.classList.add("is-invalid");
-                        input.classList.remove("is-valid");
-                        ulErrores.innerHTML += `<li>El archivo del campo ${input.dataset.nombre} debe ser un .jpeg, .jpg, .png y .gif</li>`;
-                        input.nextElementSibling.innerHTML = "Solo de admiten archivos .jpeg, .jpg, .png y .gif";
-                    };
-                }
+            }
+
+            if ((input.dataset.nombre == "avatar")) {
+                let extFile = input.value.split('.').pop();
+                if (validExtensions.includes(extFile) == false) {
+                    input.classList.add("is-invalid");
+                    input.classList.remove("is-valid");
+                    ulErrores.innerHTML += `<li>El archivo del campo ${input.dataset.nombre} debe ser un .jpeg, .jpg, .png y .gif</li>`;
+                    input.nextElementSibling.innerHTML = "Solo de admiten archivos .jpeg, .jpg, .png y .gif";
+                };
             }
         })
     });

@@ -12,7 +12,7 @@ function Row(props) {
             <td>{date}</td>
             <td>{time}</td>
             <td>{tickets}</td>
-            <td>${price}</td>
+            <td>$ {price}</td>
             <td><Link className="btn btn-success" to={`products/${id}`}>Detalle</Link></td>
         </tr>
     )
