@@ -188,6 +188,24 @@ footer .footer-bottom1 {
     align-items: center;
 }
 
+/* Styles for validations*/
+
+.is-invalid {
+    color: red;
+    background-color: lightcoral;
+    border-color: red;
+}
+
+.is-valid {
+    color: black;
+    border-color: green;
+}
+
+.alert-warning {
+    margin: 2%;
+    background-color: crimson;
+}
+
 @media(min-width:768px){
     
     header{
