@@ -17,14 +17,14 @@
       <h1>Ingresar</h1>
       <div class="input-contenedor">
         <i class="fa-solid fa-circle-user icon"></i>
-        <input class="input1" type="email" name="email" value="<%= (locals.old && old.email ? old.email : '') %> "  placeholder="Indique su email" >
+        <input class="input1" type="email" name="email" id="email" data-nombre="email" value="<%= (locals.old && old.email ? old.email : '') %> "  placeholder="Indique su email" >
           <% if(locals.errors && errors.email) { %> 
             <p class="error-msg"> <%= errors.email.msg %> </p>
           <%}%> 
       </div>
       <div class="input-contenedor">
         <i class="fa-solid fa-lock icon"></i>
-        <input class="input1" type="password" name="password" placeholder="Indique su contraseña">
+        <input class="input1" type="password" name="password" id="password" data-nombre="email" placeholder="Indique su contraseña">
         <% if(locals.errors && errors.password) { %> 
           <p class="error-msg"> <%= errors.password.msg %> </p>
         <%}%> 
