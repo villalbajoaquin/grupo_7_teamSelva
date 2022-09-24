@@ -247,49 +247,15 @@ const productController = {
       });
   },
   product_cart: (req, res) => {
-    res.render("products/productCart");
-  },
-  product_addToCart: (req, res) => {
-    // Guardamos el id del producto
-    const product_id = req.params.id;
-
-    // Buscamos el carrito activo del usuario incluyendo los productos que contiene
-    db.carts
-      .findByPk(req.session.user.userId, { include: db.products })
-      .then((carts) => {
-        // Del carrito encontrado, buscamos si existe ya el producto a agregar
-        let product_found = carts.products.find((p) => p.id == product_id);
-
-        // Si existe el producto, en la tabla intermedia, en la columna de cantidad, le sumamos la cantidad solicitada
-        if (product_found) {
-          db.productsCart
-            .update(
-              {
-                // A la cantidad que ya contiene le sumamos lo solicitado ( se suma 2 a mano, pero hay que recibir la cantidad deseada )
-                cant: product_found.productsCart.cant + 1,
-              },
-              {
-                where: {
-                  id_cart: req.session.user.id_cart,
-                  id_product: product_id,
-                },
-              }
-            )
-            .then(() => {
-              // Redireccionamos a la vista de listado de productos
-              return res.redirect("/product");
-            });
-
-          // Si el producto no se encontraba en el carrito, se procede a agregarlo y la cantidad se está escribiendo a mano. ( hay que recibir la cantidad deseada )
-        } else {
-          carts.addProduct(product_id, { through: { cant: 1 } }).then(() => {
-            // Redireccionamos a la vista de listado de productos
-            return res.redirect("/product");
-          });
-        }
+    db.Product.findByPk(req.params.id)
+      .then((show) => {
+        res.render("products/productCart", { show });
+      })
+      .catch((err) => {
+        res.send(err);
       });
   },
-
+  
 };
 
 module.exports = productController; 

@@ -11,8 +11,6 @@ const productRoutes = express.Router();
     // product cart
     productRoutes.get('/product_cart/:id', productController.product_cart);
     
-    productRoutes.get("/product_cart/:id",upload.single("imgsrc"), productController.product_addToCart);
-    
     // product create (GET)
     productRoutes.get('/product_create', productController.product_createA);
 
