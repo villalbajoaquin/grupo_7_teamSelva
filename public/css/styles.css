@@ -175,16 +175,36 @@ nav {
     background-color: #ffffff;
     color: #132A13;
     border: none;
-    border-top: 1px solid #132a1331;
     cursor: pointer;
     transition: all 500ms;
     margin-left: 25%;
 }
 
-
 .btn-cart button:hover {
     color: #4F772D;
 }
+
+/* profile  button */
+
+.profile-img {
+    height: 35px;
+    width: 35px;
+    border-radius: 50px;
+    border: solid 1px #132A13;
+    cursor: pointer;
+    transition: all 500ms;
+   
+}
+
+.buttom-pro{
+    border-radius: 50px;
+    border: none;
+    margin-top: 5px;
+    margin-left: 15px;
+    background-color: #ffffff;
+}
+
+
 
 /* Footer */
 
