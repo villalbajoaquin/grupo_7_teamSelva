@@ -1,4 +1,5 @@
 const { check } = require('express-validator');
+const path = require('path');
 
 const create = [
     check('name')
@@ -19,32 +20,17 @@ const create = [
         .notEmpty().withMessage('Ingresa el precio por cada ticket').bail()
         .isNumeric().withMessage('Ingresa un numero para el precio')
         .isLength({ max: 8 }).withMessage('Ingresa una cantidad limitada'),
-    /*check('imgsrc').custom(({ req }) => {
-            let file = req.file;
-            let extensionesPermitidas = ['.png', '.jpg', '.jpeg', '.gif'];
-            let fileExtension = path.extname(file.originalname);
-            if (!file) {
-                throw new Error('Seleccioná una imagen para tu producto');
-            } else if (!extensionesPermitidas.includes(fileExtension.toLowerCase())) {
-                throw new Error(`Las extensiones de archivo permitidas son ${extensionesPermitidas.join(", ")}`);
-            };
-            return true;
-        })*/
-
-       /* check('imgsrc').trim().custom((value, {req})=>{
-            let file = req.file;
-            let aceptedExtensions = ['.jpg', '.png', '.gif' ,'.webp'];
-            if(!file){
-              throw new Error('Tienes que subir una imagen')
-            } else{
-              let fileExtension = path.extname(file.originalname);
-             if(!aceptedExtensions.includes(fileExtension)){
-              throw new Error('Las extensiones permitidas son: ' + aceptedExtensions.join(', '));
-            }
-            }
-        
-            return true;
-        })*/
+    check('imgsrc').custom((value, { req }) => {
+        let file = req.file;
+        let extensionesPermitidas = ['.png', '.jpg', '.jpeg', '.gif'];
+        let fileExtension = path.extname(file.originalname);
+        if (!file) {
+            throw new Error('Seleccioná una imagen para tu producto');
+        } else if (!extensionesPermitidas.includes(fileExtension.toLowerCase())) {
+            throw new Error(`Las extensiones de archivo permitidas son ${extensionesPermitidas.join(", ")}`);
+        };
+        return true;
+    })
 ];
 const edit = [
     check('name')
