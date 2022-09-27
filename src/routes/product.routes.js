@@ -9,9 +9,7 @@ const productRoutes = express.Router();
     productRoutes.get('/', productController.product_list);
 
     // product cart
-    productRoutes.get('/product_cart', productController.product_cart);
-    
-    productRoutes.get("/product_cart/:id", productController.product_addToCart);
+    productRoutes.get('/product_cart/:id', productController.product_cart);
     
     // product create (GET)
     productRoutes.get('/product_create', productController.product_createA);

@@ -53,8 +53,8 @@ h1{
 .formulario{
 background: #90A955 ;
 opacity: 0.89;
-margin-bottom: 35%;
-margin-top: 25%;
+margin-bottom: 55%;
+margin-top: 55%;
 margin-left: 5%;
 margin-right: 5%;
 border-radius: 5px;
@@ -65,8 +65,8 @@ text-align: center;
 .formulario1 {
     background: #90A955;
     opacity: 0.89;
-    margin-top: 15%;
-    margin-bottom: 15%;
+    margin-top: 25%;
+    margin-bottom: 25%;
     margin-left: 5%;
     margin-right: 5%;
     border-radius: 5px;
@@ -121,14 +121,14 @@ input[type="text"]{
 .button {
    position: relative;
    width: 70px;  
-   height: 40px;
+   height: 30px;
    font-size: 10px;
    background-color: #747474;
    color: #fff;
    border: none;
    border-radius: 4px;
    cursor: pointer;
-   transition: width .5s, 
+   transition: width .3s, 
    border-radius .5s;
 }
 
@@ -188,6 +188,24 @@ footer .footer-bottom1 {
     align-items: center;
 }
 
+/* Styles for validations*/
+
+.is-invalid {
+    color: red;
+    background-color: lightcoral;
+    border-color: red;
+}
+
+.is-valid {
+    color: black;
+    border-color: green;
+}
+
+.alert-warning {
+    margin: 2%;
+    background-color: crimson;
+}
+
 @media(min-width:768px){
     
     header{
@@ -205,15 +223,15 @@ footer .footer-bottom1 {
     .formulario{
         margin: auto;
         width: 600px;
-        margin-top: 21%;
-        margin-bottom: 21%;
+        margin-top: 50%;
+        margin-bottom: 50%;
     }
 
      .formulario1 {
             margin: auto;
             width: 600px;
-            margin-top: 10%;
-            margin-bottom: 20%;
+            margin-top: 50%;
+            margin-bottom: 50%;
      }
 }
 

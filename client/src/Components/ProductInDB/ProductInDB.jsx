@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function ProductInDB(props) {
 
@@ -14,7 +15,7 @@ function ProductInDB(props) {
                         <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{ width: "22rem" }} src={`http://localhost:8080/${props.show.imgsrc}`} alt=" Star Wars - Mandalorian " />
                     </div>
                     <p>Fecha: {props.show.date}</p>
-                    <a className="btn btn-success" target="_blank" rel="nofollow" href="/">Detalle</a>
+                    <Link className="btn btn-success" to={`products/${props.show.id}`}>Detalle</Link>
                 </div>
             </div>
         </div>

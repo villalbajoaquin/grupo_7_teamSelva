@@ -1,6 +1,12 @@
 use dbSelva;
 insert into users (firstName, lastName, email, password, avatar, categoryId)
 values 
+    ("Administrante",
+    "Administrador",
+    "admin@admin.com",
+    "$2y$10$b3e6DSHsdUAmcDjSZ7n56uDsd0dNpbObWrqTby/KL9WwarQUlNdMG",
+    "img/users/user_1.jpg",
+    "1")
 	("Pedro",
     "Gaston",
     "Pedro@gmail.com",

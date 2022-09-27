@@ -1,6 +1,6 @@
 import React from "react";
 import ProductInDB from "../ProductInDB/ProductInDB";
-import MoviesInDB from "../MoviesInDB/MoviesInDB";
+import TotalCard from "../TotalCard/TotalCard";
 function ContentRowTop(props) {
 
 	const moviesData = [
@@ -30,17 +30,16 @@ function ContentRowTop(props) {
 						<h1 className="h3 mb-0 text-gray-800">Dashboard ticket-selva</h1>
 					</div>
 				
-					{/* <!-- Content Row Movies--> */}
+					{/* <!-- Content Row --> */}
 					<div className="row">
 
 						{
 							moviesData.map(function(element, i){
-								return <MoviesInDB key={element.title + i} data={element} />
+								return <TotalCard key={element.title + i} data={element} />
 							})
 						}
 						
 					</div>
-					{/* <!-- End movies in Data Base --> */}
 					
 	
 					{/* <!-- Content Row Last Added & Next Show in Data Base --> */}
@@ -51,8 +50,7 @@ function ContentRowTop(props) {
 
 						{/* <!-- Next Product --> */}
 						<ProductInDB show={props.lastAdded} showType="Ultimo Evento cargado"/>
-						{/* <!-- End content row last movie in Data Base --> */}
-
+						
 					</div>
 				</div>
     );
