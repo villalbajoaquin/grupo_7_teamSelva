@@ -4,7 +4,6 @@
 <head>
     <%- include('../partials/head') %>
     <link rel="stylesheet" href="/css/products/productDetail.css">
-
     <link rel="shortcut icon" href="/img/favicon.ico">
     <script src="https://kit.fontawesome.com/d160ea4c64.js" crossorigin="anonymous"></script>
     <title><%= show.name %>  | ticket-selva</title>
@@ -58,16 +57,17 @@
                                     </button>
                                 </a>
 
+
+
                                 <a href="/product/product_edit/<%=show.id%>">
                                     <button class="add-to-cart" data-button-action="add-to-cart">
                                     <i class="fa-solid fa-pen-to-square"></i><span>Editar show</span>
                                 </button>
                                 </a>
-
                                   <form method="POST" action="/product/<%=show.id%>?_method=DELETE">
                                     <button class="add-to-trash" data-button-action="add-to-cart" type="submit">
                                         <i class="fa-solid fa-trash"></i><span>Borrar show</span>
-                                    </button>
+                                    </button> 
                                 </form>
                             </div>
                         </div>
