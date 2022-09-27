@@ -25,11 +25,11 @@ const ProductList = () => {
         <div className="container-fluid">
             <div className="d-sm-flex align-items-center justify-content-between mb-4">
                 <h1 className="h3 mb-0 text-gray-800">Usuarios Registrados</h1>
+                <h1 className="h3 mb-0 text-gray-800">Cantidad: {users.length}</h1>
             </div>
             <table className="table">
                 <thead>
                     <tr>
-                        <th scope="col">id</th>
                         <th scope="col">Nombre</th>
                         <th scope="col">Apellido</th>
                         <th scope="col">Email</th>

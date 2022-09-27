@@ -3,11 +3,10 @@ import { Link } from "react-router-dom";
 
 function Row(props) {
 
-    const {id, name, date, time, tickets, price} = props.rowData;
+    const { id, name, date, time, tickets, price } = props.rowData;
 
     return (
         <tr>
-            <td>{id}</td>
             <td>{name}</td>
             <td>{date}</td>
             <td>{time}</td>
