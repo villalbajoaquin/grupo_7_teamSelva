@@ -2,6 +2,7 @@ const express = require("express");
 const productController = require("../controllers/productController");
 const upload = require('../middlewares/multerMid'); // multer config
 const adminMid = require('../middlewares/adminMid');
+const detailMid = require('../middlewares/detailMid');
 const validations = require('../middlewares/productsMid'); // product edit & create
 const productRoutes = express.Router();
 
@@ -41,6 +42,6 @@ const productRoutes = express.Router();
     productRoutes.delete('/:id', adminMid, productController.product_delete);
 
     // product detail
-    productRoutes.get('/:id', productController.product_detail);
+    productRoutes.get('/:id', detailMid, productController.product_detail);
 
 module.exports = productRoutes;
