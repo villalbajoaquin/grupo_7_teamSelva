@@ -53,7 +53,7 @@ h1{
 .formulario{
 background: #90A955 ;
 opacity: 0.89;
-margin-bottom: 55%;
+margin-bottom: 56%;
 margin-top: 55%;
 margin-left: 5%;
 margin-right: 5%;
@@ -223,15 +223,15 @@ footer .footer-bottom1 {
     .formulario{
         margin: auto;
         width: 600px;
-        margin-top: 50%;
-        margin-bottom: 50%;
+        margin-top: 25%;
+        margin-bottom: 38%;
     }
 
      .formulario1 {
             margin: auto;
             width: 600px;
-            margin-top: 50%;
-            margin-bottom: 50%;
+            margin-top: 20%;
+            margin-bottom: 20%;
      }
 }
 
@@ -252,14 +252,14 @@ footer .footer-bottom1 {
         .formulario {
          margin: auto;
          width: 600px;
-         margin-top: 10%;
-         margin-bottom: 23%;
+         margin-top: 20%;
+         margin-bottom: 30%;
                          }
             
         .formulario1 {
          margin: auto;
          width: 600px;
          margin-top: 10%;
-         margin-bottom: 15%;
+         margin-bottom: 26%;
                          }
 }
