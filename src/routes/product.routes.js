@@ -11,7 +11,9 @@ const productRoutes = express.Router();
     productRoutes.get('/', productController.product_list);
 
     // product cart
-    productRoutes.get('/product_cart/:id', productController.product_cart);
+    productRoutes.get('/product_cart/:id', detailMid, productController.product_cart);
+
+    productRoutes.get('/product_cart',  productController.product_all);
     
     // product create (GET)
     productRoutes.get('/product_create', adminMid, productController.product_createA);
@@ -20,7 +22,7 @@ const productRoutes = express.Router();
     productRoutes.post('/product_create', upload.single("imgsrc"), validations.create, productController.product_createB);
 
     // product edit (GET)
-    productRoutes.get('/product_edit/:id', adminMid, productController.product_editA);
+    productRoutes.get('/product_edit/:id', adminMid, detailMid, productController.product_editA);
     
     // product edit (PUT)
     productRoutes.put("/product_list/:id", upload.single("imgsrc"), validations.edit, productController.product_editB)
