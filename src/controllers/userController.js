@@ -37,7 +37,7 @@ const userController = {
         avatar: `img/users/${req.file.filename}`,
       })
         .then(() => {
-          return res.redirect("/");
+          return res.redirect("/user/login");
         })
         .catch((error) => res.send(error));
     }

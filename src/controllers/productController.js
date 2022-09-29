@@ -255,7 +255,15 @@ const productController = {
         res.send(err);
       });
   },
-  
+  product_all: (req, res) => {
+    db.Product.findByPk(req.params.id)
+      .then((show) => {
+        res.render("products/productCartAll", { show });
+      })
+      .catch((err) => {
+        res.send(err);
+      });
+  },
 };
 
 module.exports = productController; 
