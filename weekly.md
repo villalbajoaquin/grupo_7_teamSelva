@@ -56,6 +56,7 @@ Por problemas en cuanto a lo personal y a nivel cursada, se vio afectado el rend
 **Fecha: Martes 30/08**
 * Joaquin: Trabajo con Validaciones Back-end para creacion y modificacion de productos.
 * Uriel: Trabajo en los modelos del usuarios.
+* Walter: Trabajo con Validaciones
 
 **Fecha: Martes 06/09**
 * Joaquin: Validaciones Front-end con JavaScript de formularios para creacion y modificacion de productos. Impedimento, poder hacer el codigo un poco mas reutilizable.
@@ -65,3 +66,9 @@ Por problemas en cuanto a lo personal y a nivel cursada, se vio afectado el rend
 **Fecha: Martes 13/09**
 * Joaquin: API de productos: endpoints de listado y detalle completos.
 * Uriel: Register 100% funcional.
+* Walter: API de usuarios funcional 
+
+**Fecha: Martes 20/09**
+* Joaquin: React: Componentes con totales y, de ultimo y siguiente evento.
+* Uriel: Profile: 100% funcional.
+* Walter: Trabajo ProductCart

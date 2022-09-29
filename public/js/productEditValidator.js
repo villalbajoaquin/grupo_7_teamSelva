@@ -28,7 +28,7 @@ window.addEventListener('load', () => {
 
             if (input.value != "") {
                 input.classList.remove("is-invalid");
-                input.nextElementSibling.innerHTML = ""
+                input.nextElementSibling.innerHTML = "";
             }
 
             if ((input.dataset.nombre == "name") && (input.value.length > 60)) {

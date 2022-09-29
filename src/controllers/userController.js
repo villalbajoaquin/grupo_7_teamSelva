@@ -37,7 +37,7 @@ const userController = {
         avatar: `img/users/${req.file.filename}`,
       })
         .then(() => {
-          return res.redirect("/");
+          return res.redirect("/user/login");
         })
         .catch((error) => res.send(error));
     }
@@ -98,112 +98,7 @@ const userController = {
     return res.redirect("/");
   },
 
-  //Pendiente hacer Vista de Administrador
-
-  /*
-    admin: (req, res) =>{
-        res.render(path.join(__dirname, '../views/adminView.ejs'), {userLog: req.session.userLogged});
-    },   
-    userData: async (req, res) =>{
-        let userData = await db.Users.findByPk(Number( req.session.userLogged.userId)
-        })
-        })
-        res.render(path.join(__dirname, '../views/users/edit-user'), {userData, user:req.session.userLogged });
-    }, 
-    userEdit: (req, res) =>{
-        let errors = validationResult(req);
-        console.log(req, errors);
-        if(!errors.isEmpty()){
-            // // si existe un archivo con propiedad filename
-            if (req.file) {
-            //     //lo borramos 
-            fs.unlinkSync(path.join(__dirname, "../../public/img/users", req.file.filename));
-        }
-        res.render(path.join(__dirname,'../views/users/edit-user'), {user: userActual, errors:errors.mapped()});
-        }else{
-            let userData = {
-                firstName: req.body.nombre,
-                lastName: req.body.apellido,
-                email: req.body.email,
-                password: req.body.password,
-            }
-          
-            if(req.body.password != undefined){
-                userData.userPassword = bcrypt.hashSync(req.body.password, 10);
-            }else{
-                delete userData.userPassword;
-            }
-    
-            if(req.file){
-                fs.unlinkSync(path.join(__dirname, "../../public/img/users", userLogged.avatar));
-                userData.avatar = req.file.filename;
-            }
-    
-            db.Users.update(userData,
-            {
-                where:{
-                    userId: Number(req.body.id)
-                }
-            })
-            .then((response) =>{
-                return res.json(response)
-            })
-            .catch(error => res.send(error))
-        }
-    
-    }, 
-        userPermissions:(req, res) =>{
-            let user = db.Users.findByPk(Number(req.params.id),{
-                include: [{association: 'userCategory'}]
-            })
-            let categories = db.userCategory.findAll({
-            })
-            Promise.all ([user, categories]) 
-              .then(([user, categories]) => {
-               
-                res.render(path.join(__dirname, '../views/users/edit-permissions.ejs'), {user, categories, userLog: req.session.userLogged });
-              })
-              .catch(error => res.send(error))
-        },
-        permissionsProcess:(req, res) =>{
-            
-            db.Users.update({
-                idUserCategory:req.body.permisos,
-            },
-            {
-                where:{
-                    userId: req.body.id
-                }
-            })
-            .then(() =>{
-                res.redirect('/users/all-users');
-            })
-            .catch(error => res.send(error))
-        },
-    
-    cargarUsuarios: (req, res) =>{
-    
-        let users = db.Users.findAll({
-            include: [{association: 'userCategory'}]
-        })
-        let categories = db.userCategory.findAll({
-        })
-        Promise.all ([users, categories]) 
-          .then(([users, categories]) => {
-           
-            res.render(path.join(__dirname, '../views/users/all-users.ejs'), {users, categories, userLog: req.session.userLogged });
-          })
-          .catch(error => res.send(error))
-        
-    },
-    delete: async (req, res) => {
-        
-        await db.Users.destroy({
-            where: {userId: Number (req.params.id)} 
-        })
-        res.redirect('/users/all-users');
-    },
-    */
+  
 };
 
 module.exports = userController;

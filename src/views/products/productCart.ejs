@@ -19,18 +19,18 @@
     </header>
 
     <main>
-
+         <form method="get" action="/product/"></form>
         <div class="box">
 
             <h1 class="titulo-show">Tus TicketSelva son</h1>
             <div>
-                <img src="/img/uploads/1656008293278_pdt_.jpg" class="imagen-show" ">
+                  <img src= /<%= show.imgsrc %> class="imagen-show" alt="Imagen del Show correspondiente">
             </div>
 
             <div class="info-del-show">
 
-                <h5>Precio $1500</h5>
-                <h5>Fecha: Miercoles 25 de Mayo</h5>
+                <h5>Precio $<%= show.price %></h5>
+                <h5>Fecha:  <%= show.date %> </h5>
 
                 <div class="cantidad-de-entradas">
                     <h5 class="">Cantidad</h5>
@@ -39,7 +39,7 @@
                     <i class="fa-solid fa-circle-arrow-right"></i>
                 </div>
 
-            </div>
+                </div>
             
                     <div>
                         

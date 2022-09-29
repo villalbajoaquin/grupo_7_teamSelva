@@ -16,56 +16,73 @@
     <h1>Registrate</h1>
 
     <div class="contenedor">
-       
+      <ul id="errores">
+      </ul>
+
       <div class="input-contenedor">
         <i class="fa-solid fa-circle-user icon"></i>
-        <input type="text" name="firstname" placeholder="Indique su nombre"/>
-          <% if(locals.errors && errors.firstname) { %> 
-            <p class="error-msg"> <%= errors.firstname.msg %> </p>
-          <%}%> 
+        <input type="text" id="firstname" name="firstname" placeholder="Indique su nombre" data-nombre="firstname" />
+        <% if(locals.errors && errors.firstname) { %>
+          <p class="error-msg">
+            <%= errors.firstname.msg %>
+          </p>
+          <%}%>
       </div>
 
       <div class="input-contenedor">
         <i class="fa-solid fa-circle-user icon"></i>
-        <input type="text" name="lastname" placeholder="Indique su apellido" />
-          <% if(locals.errors && errors.lastname) { %> 
-            <p class="error-msg"> <%= errors.lastname.msg %> </p>
-          <%}%> 
+        <input type="text" id="lastname" name="lastname" placeholder="Indique su apellido" data-nombre="lastname" />
+        <% if(locals.errors && errors.lastname) { %>
+          <p class="error-msg">
+            <%= errors.lastname.msg %>
+          </p>
+          <%}%>
       </div>
 
       <div class="input-contenedor">
         <i class="fa-solid fa-envelope icon"></i>
-        <input type="email" name="email" value="<%= (locals.old && old.email ? old.email : '') %>" placeholder="Indique su email" />   
-        <% if(locals.errors && errors.email) { %> 
-            <p class="error-msg"> <%= errors.email.msg %> </p>
-          <%}%> 
+        <input type="email" id="email" name="email" value="<%= (locals.old && old.email ? old.email : '') %>"
+          placeholder="Indique su email" data-nombre="email" />
+        <% if(locals.errors && errors.email) { %>
+          <p class="error-msg">
+            <%= errors.email.msg %>
+          </p>
+          <%}%>
       </div>
 
       <div class="input-contenedor">
         <i class="fa-solid fa-lock icon"></i>
-        <input type="password" name="password" placeholder="Indique su contraseña" />
-        <% if(locals.errors && errors.password) { %> 
-          <p class="error-msg"> <%= errors.password.msg %> </p>
-        <%}%> 
+        <input type="password" id="password" name="password" placeholder="Indique su contraseña"
+          data-nombre="password" />
+        <% if(locals.errors && errors.password) { %>
+          <p class="error-msg">
+            <%= errors.password.msg %>
+          </p>
+          <%}%>
       </div>
 
       <div class="input-contenedor">
         <i class="fa-solid fa-lock icon"></i>
-        <input type="password" name="passwordRe" placeholder="Indique nuevamente su contraseña" />
-        <% if(locals.errors && errors.passwordRe) { %> 
-          <p class="error-msg"> <%= errors.passwordRe.msg %> </p>
-        <%}%> 
+        <input type="password" id="passwordRe" name="passwordRe" placeholder="Indique nuevamente su contraseña"
+          data-nombre="passwordRe" />
+        <% if(locals.errors && errors.passwordRe) { %>
+          <p class="error-msg">
+            <%= errors.passwordRe.msg %>
+          </p>
+          <%}%>
       </div>
 
-      <div >
+      <div>
         <label for="">Foto de Avatar</label>
-        <input type="file" name="avatar" />
-        <% if(locals.errors && errors.avatar) { %> 
-          <p class="error-msg"> <%= errors.avatar.msg %> </p>
-        <%}%> 
+        <input type="file" id="avatar" name="avatar" data-nombre="avatar" />
+        <% if(locals.errors && errors.avatar) { %>
+          <p class="error-msg">
+            <%= errors.avatar.msg %>
+          </p>
+          <%}%>
       </div>
-      
-      <button class="button"> 
+
+      <button class="button">
         <input type="submit" value="Registrate" class="button1" />
         <i class="fa-solid fa-check icon1"></i>
       </button>
@@ -79,11 +96,15 @@
         </a>
       </p>
     </div>
+    <ul id="errores">
+    </ul>
   </form>
 
   <footer>
-    <%- include('../partials/bottomfooter') %>
+    <%- include('../partials/footer') %>
   </footer>
+
+  <script src="/js/userRegisterValidator.js"></script>
 
 </body>
 

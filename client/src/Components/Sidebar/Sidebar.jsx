@@ -7,11 +7,11 @@ function Sidebar() {
         <ul className="navbar-nav bg-dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
             {/* <!-- Sidebar - Brand --> */}
-            <Link className="sidebar-brand d-flex align-items-center justify-content-center" to="/">
+            <a className="sidebar-brand d-flex align-items-center justify-content-center" href="http://localhost:8080/">
                 <div className="sidebar-brand-icon">
                     <img className="w-100" src={Logo} alt="ticket-selva" />
                 </div>
-            </Link>
+            </a>
 
             {/* <!-- Divider --> */}
             <hr className="sidebar-divider my-0" />
@@ -40,7 +40,7 @@ function Sidebar() {
             {/* <!-- Nav Item - Pages --> */}
             <li className="nav-item">
                 <Link className="nav-link collapsed" to="/products-list">
-                    <i className="fas fa-film"></i>
+                    <i className="fas fa-receipt"></i>
                     <span>Eventos</span>
                 </Link>
             </li>
