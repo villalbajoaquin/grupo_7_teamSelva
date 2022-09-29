@@ -26,7 +26,7 @@ window.addEventListener('load', () => {
                 input.nextElementSibling.innerHTML = ""
             }
 
-            if ((input.dataset.nombre == "email") && (input.value.includes('@'))) {
+            if ((input.dataset.nombre == "email") && !(input.value.includes('@'))) {
                 input.classList.add("is-invalid");
                 errores++;
                 ulErrores.innerHTML += `<li>El valor del campo ${input.dataset.nombre} no es valido</li>`;
@@ -40,7 +40,7 @@ window.addEventListener('load', () => {
                 input.nextElementSibling.innerHTML = "El largo de la contraseña no puede ser tan largo";
             }
 
-            if ((input.dataset.nombre == "password") && (input.value.length <= 8)) {
+            if ((input.dataset.nombre == "password") && (input.value.length < 8)) {
                 input.classList.add("is-invalid");
                 errores++;
                 ulErrores.innerHTML += `<li>La cantraseña no puede ser de menor a 8 caracteres</li>`;
@@ -68,10 +68,15 @@ window.addEventListener('load', () => {
                 input.nextElementSibling.innerHTML = "";
             }
 
-            if ((input.dataset.nombre == "email") && (input.value.includes('@'))) {
+            if ((input.dataset.nombre == "email") && !(input.value.includes('@'))) {
                 input.classList.add("is-invalid");
                 input.classList.remove("is-valid")
                 input.nextElementSibling.innerHTML = "El email no es valido";
+            }
+
+            if ((input.dataset.nombre == "email") && (input.value.includes('@'))) {
+                input.classList.add("is-valid");
+                input.classList.remove("is-invalid");
             }
 
             if ((input.dataset.nombre == "password") && (input.value.length > 60)) {
