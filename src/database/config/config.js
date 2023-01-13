@@ -9,7 +9,7 @@ module.exports = {
     "define": {
       "timestamps": false
     },
-    "host": process.env.DB_PORT,
+    "host": process.env.DB_HOST,
     "dialect": "mysql"
   },
   "test": {
