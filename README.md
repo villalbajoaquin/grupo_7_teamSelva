@@ -6,8 +6,6 @@
 npm run dev
 ~~~
 
-- Enlace a la [App](https://ticket-selva.herokuapp.com).
-
 - Tema del sitio
 
 Nuestro proyecto será un e-commerce de ventas de entradas para espectáculos en vivo. En dicho sitio se podrá consultar por los shows a la venta

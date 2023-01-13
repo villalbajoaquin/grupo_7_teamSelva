@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import ContentRowTop from "../../Components/ContentRowTop/ContentRowTop";
-import Table from "../../Components/Table/Table";
 
 const ContentWrapper = () => {
 
@@ -70,8 +69,6 @@ const ContentWrapper = () => {
 
       </div>
       {/* <!-- End of MainContent --> */}
-
-      <Table data={products} />
     </>
   )
 };

@@ -15,4 +15,5 @@ const productRoutes = express.Router();
     // product detail
     productRoutes.get('/:id', productController.detail);
 
+
 module.exports = productRoutes;

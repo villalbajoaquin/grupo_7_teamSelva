@@ -1,4 +1,4 @@
-const path = require("path");
+const path = require('path');
 const fs = require('fs');
 const { validationResult } = require('express-validator');
 const db = require('../database/models');
@@ -81,7 +81,7 @@ const productController = {
     db.Product.findAll({
       where: {
         date: {
-          [Op.lte]: new Date(new Date() + 24 * 60 * 60 * 1000),
+          [Op.lte]: new Date(Date.now() + 24 * 60 * 60 * 1000),
         },
       },
       order: [
@@ -100,7 +100,7 @@ const productController = {
     db.Product.findAll({
       where: {
         date: {
-          [Op.lte]: new Date(new Date() + 7 * 24 * 60 * 60 * 1000),
+          [Op.lte]: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
         },
       },
       order: [
@@ -119,7 +119,7 @@ const productController = {
     db.Product.findAll({
       where: {
         date: {
-          [Op.lte]: new Date(new Date() + 30 * 24 * 60 * 60 * 1000),
+          [Op.lte]: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000),
         },
       },
       order: [
@@ -247,69 +247,21 @@ const productController = {
       });
   },
   product_cart: (req, res) => {
-    res.render("products/productCart");
-  },
-  product_addToCart: (req, res) => {
-    // Guardamos el id del producto
-    const product_id = req.params.id;
-
-    // Buscamos el carrito activo del usuario incluyendo los productos que contiene
-    db.cart
-      .findByPk(req.session.user.cartId, { include: db.products })
-      .then((cart) => {
-        // Del carrito encontrado, buscamos si existe ya el producto a agregar
-        let product_found = cart.products.find((p) => p.id == product_id);
-
-        // Si existe el producto, en la tabla intermedia, en la columna de cantidad, le sumamos la cantidad solicitada
-        if (product_found) {
-          db.cartProduct
-            .update(
-              {
-                // A la cantidad que ya contiene le sumamos lo solicitado ( se suma 2 a mano, pero hay que recibir la cantidad deseada )
-                cant: product_found.cartProduct.cant + 1,
-              },
-              {
-                where: {
-                  id_cart: req.session.user.id_cart,
-                  id_product: product_id,
-                },
-              }
-            )
-            .then(() => {
-              // Redireccionamos a la vista de listado de productos
-              return res.redirect("/product");
-            });
-
-          // Si el producto no se encontraba en el carrito, se procede a agregarlo y la cantidad se está escribiendo a mano. ( hay que recibir la cantidad deseada )
-        } else {
-          cart.addProduct(product_id, { through: { cant: 1 } }).then(() => {
-            // Redireccionamos a la vista de listado de productos
-            return res.redirect("/product");
-          });
-        }
+    db.Product.findByPk(req.params.id)
+      .then((show) => {
+        res.render("products/productCart", { show });
+      })
+      .catch((err) => {
+        res.send(err);
       });
   },
-
-  /**
-   *
-   * @desc Renderiza la vista de carrito con los productos que contiene
-   *
-   */
-  cart: (req, res) => {
-    // Buscamos el carrito por su id
-    db.cart
-      .findOne({
-        where: {
-          id: req.session.user.id_cart,
-        },
-
-        // Incluimos los productos del carrito
-        include: [{ model: db.Product, include: [db.imgsrc] }],
-
-        // Renderizamos la vista de carrito enviando los datos del mismo
+  product_all: (req, res) => {
+    db.Product.findByPk(req.params.id)
+      .then((show) => {
+        res.render("products/productCartAll", { show });
       })
-      .then((cart) => {
-        return res.render("product_cart", { cart });
+      .catch((err) => {
+        res.send(err);
       });
   },
 };

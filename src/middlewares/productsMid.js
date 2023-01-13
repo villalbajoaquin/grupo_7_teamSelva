@@ -1,4 +1,5 @@
 const { check } = require('express-validator');
+const path = require('path');
 
 const create = [
     check('name')
@@ -20,16 +21,16 @@ const create = [
         .isNumeric().withMessage('Ingresa un numero para el precio')
         .isLength({ max: 8 }).withMessage('Ingresa una cantidad limitada'),
     check('imgsrc').custom((value, { req }) => {
-            let file = req.file;
-            let extensionesPermitidas = ['.png', '.jpg', '.jpeg', '.gif'];
-            let fileExtension = path.extname(file.originalname);
-            if (!file) {
-                throw new Error('Seleccioná una imagen para tu producto');
-            } else if (!extensionesPermitidas.includes(fileExtension.toLowerCase())) {
-                throw new Error(`Las extensiones de archivo permitidas son ${extensionesPermitidas.join(", ")}`);
-            };
-            return true;
-        })
+        let file = req.file;
+        let extensionesPermitidas = ['.png', '.jpg', '.jpeg', '.gif'];
+        let fileExtension = path.extname(file.originalname);
+        if (!file) {
+            throw new Error('Seleccioná una imagen para tu producto');
+        } else if (!extensionesPermitidas.includes(fileExtension.toLowerCase())) {
+            throw new Error(`Las extensiones de archivo permitidas son ${extensionesPermitidas.join(", ")}`);
+        };
+        return true;
+    })
 ];
 const edit = [
     check('name')
